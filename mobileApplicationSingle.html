@@ -61,14 +61,14 @@
             <div class="container">
                 <div class="row">
                     <br>
-                    <h5 style="text-align:center;">APPLICATION</h5>	<br />
+                    <h5 style="text-align:center;">APPLICATION</h5>
                 </div>
                 <div class="row">
-                    <div class="input-field col m4 s12">
-                        <p style="text-align: left;color:black;font-weight:bold;">APPLICATION NUMBER : <span id="Span25"></span></p>
+                    <div class="input-field col m5 s12">
+                        <p style="text-align: left;color:black;font-weight:bold;">APPLICATION NUMBER : <span id="Span25" ></span></p>
                     </div>
-                    <div class="input-field col m4 s12">
-                        <p style="color:black;font-weight:bold;font-family: " Helvetica Neue";" class="apl_sta">APPLICATION STATUS : <span id="appStatus_track"></span></p>
+                    <div class="input-field col m3 s12">
+                        <p style="color:black;font-weight:bold;font-family:Helvetica Neue;" class="apl_sta">APPLICATION STATUS : <span id="appStatus_track" style="color:Red"></span></p>
                     </div>
                     <div class="input-field col m4 s12">
                         <p style="text-align: right;color:black;font-weight:bold;">APPLICATION DATE : <span id="Span26"></span></p>
@@ -124,347 +124,421 @@
             <!------------------------------------------------------------------------------------------------------------------>
 
             <div id="editState">
-                <div class="container" style="width:65%;">
-                    <div class="row">
-                        <div class="col s12">
+                
+                <div class="container">
+                <div class="row">
+                <div class="container">
+                    <div class="col s12">
 
-                            <ul class="tabs" id="dis">
-                                <li class="tab col s4"><a href="#test1">Step 1</a></li>
-                                <li class="tab col s4"><a href="#test2">Step 2</a></li>
-                            </ul>
+                        <ul class="tabs" id="dis">
+                            <li class="tab col s4"><a href="#test1">Step 1</a></li>
+                            <li class="tab col s4"><a href="#test2">Step 2</a></li>
+                        </ul>
 
-                        </div>
-                        <div id="test1" class="tab_content col s12" style="background-color:#e2e2e2">
-                            <div class="container" style="width: 65%;">
-                                <br />
-                                <div class="row">
-                                    <p>
-                                        <h6>Name*</h6>
-                                        <input id="txt_name" type="text" class="validate">
-                                        <input id="txt_user_id_bnd" type="text" class="validate" style="display:none;">
-                                    </p>
+                    </div>
+                    <div id="test1" class="tab_content col s12" style="background-color:#e2e2e2">
+                        <div class="container" style="width: 65%;">
+                            <br />                           
+                            <div class="row">
+                                <p>
+                                    <h6>Name*</h6>
+                                    <input id="txt_name" type="text" class="">
+                                    <input id="txt_user_id_bnd" type="text" class="validate" style="display:none;">
+                                </p>
 
-                                    <p id="e_gender">
+                                <div id="e_gender">
+                                    <h6>Gender*</h6><br>
+                                    <input id="Mal" type="radio" name="gender" value="Male" >
+                                    <label for="Mal">Male</label><br><br>
+                                    <input id="Fem" type="radio" name="gender" value="Female">
+                                    <label for="Fem">Female</label>
+                                    <input id="dum1" type="radio" name="gender" value="summa" checked="checked">
+                                    <label for="dum1" style="display:none;">summa</label>
+                                </div><br>
+                                <p>
+                                    <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
+                                    <input id="txt_NRIC" type="text" class="validate" maxlength="9">
+                                </p>
+                                <p>
+                                    <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>
+                                    <input class="datepicker_dob" id="txt_dob">
+                                </p>
+                                <p>
+                                    <h6 for='txt_occup' style="text-align: left;">Occupation *</h6>
+                                    <input id="txt_occup" type="text" class="validate">
+                                </p>
+                                <p>
+                                    <h6 for='txt_cont' style="text-align: left;">Contact *</h6>
+                                    <input id="txt_cont"  name="number" class="validate"  maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    
+                                </p>
+                                <p>
+                                    <h6 for='txt_knok' style="text-align: left;"> Next of Kin (NOK) name and relationship *</h6>
+                                    <input id="txt_knok" type="text" class="validate">
+                                </p>
+                                <p>
+                                    <h6 for='txt_nok' style="text-align: left;">Contact of NOK *</h6>
+                                    <input id="txt_nok" name="number" type="text" maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                </p>
+                                <p>
+                                    <h6 style="" id="myMed">Type of shield plan (with or without rider) / PA plan & Inforce date *</h6>
+                                    <input id="txt_plan" type="text" class="validate1">
+                                </p>
+                                <div id="e_txt_AnyExc">
+                                    <h6>Any Exclusion in plans? *</h6><br>
+                                    <input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes" >
+                                    <label for="txt_Exc">Yes</label><br><br>
+                                    <input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No">
+                                    <label for="txt_Excplan">No</label>
+                                    <input id="dum2" type="radio" name="txt_AnyExc" value="summa" checked="checked">
+                                    <label for="dum2" style="display:none;">summa</label>
+                                </div><br>
+                                <div id="e_txt_condition">
+                                    <h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6><br>
+                                    <input id="txt_policy" type="radio" name="txt_condition" value="Yes">
+                                    <label for="txt_policy">Yes</label><br><br>
+                                    <input id="txt_medicine" type="radio" name="txt_condition" value="No">
+                                    <label for="txt_medicine">No</label>
+                                    <input id="dum3" type="radio" name="txt_condition" value="summa" checked="checked">
+                                    <label for="dum3" style="display:none;">summa</label>
+                                </div><br>
+                                <div id="e_txt_Pressure">
+                                    <h6>High Blood Pressure : *</h6><br>
+                                    <input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes" checked="checked">
+                                    <label for="txt_Blood">Yes</label><br><br>
+                                    <input id="txt_Pressure" type="radio" name="txt_Pressure" value="No">
+                                    <label for="txt_Pressure">No</label>
+                                    <input id="dum4" type="radio" name="txt_Pressure" value="summa" checked="checked">
+                                    <label for="dum4" style="display:none;">summa</label>
+                                </div><br>
+                                <div id="e_txt_Diabetes">
+                                    <h6>Diabetes : *</h6><br>
+                                    <input id="txt_DiabetesYes" type="radio" name="txt_Diabetes" value="Yes" checked="checked">
+                                    <label for="txt_DiabetesYes">Yes</label><br><br>
+                                    <input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No">
+                                    <label for="txt_DiabetesNo">No</label>
+                                    <input id="dum5" type="radio" name="txt_Diabetes" value="summa" checked="checked">
+                                    <label for="dum5" style="display:none;">summa</label>
+                                </div><br>
+                                <div id="e_txt_highCol">
+                                    <h6>High Cholesterol: *</h6><br>
+                                    <input id="txt_High" type="radio" name="txt_highCol" value="Yes" checked="checked">
+                                    <label for="txt_High">Yes</label><br><br>
+                                    <input id="txt_Choles" type="radio" name="txt_highCol" value="No">
+                                    <label for="txt_Choles">No</label>
+                                    <input id="dum6" type="radio" name="txt_highCol" value="summa" checked="checked">
+                                    <label for="dum6" style="display:none;">summa</label>
+                                </div><br>
+                                <p>
+                                    <h6>Any of the above is Yes, date of diagnosis</h6>
+                                    <input class="datepicker_dod" id="Text1">
+                               
+                               </p>
+                                <div id="e_txt_Pending">
+                                    <h6>Any Pending Claims for the current shield plan?*</h6><br>
+                                    <input id="txt_PendingYes" type="radio" name="txt_Pending" value="Yes" checked="checked">
+                                    <label for="txt_PendingYes">Yes</label><br><br>
+                                    <input id="txt_PendingNo" type="radio" name="txt_Pending" value="No">
+                                    <label for="txt_PendingNo">No</label>
+                                    <input id="dum7" type="radio" name="txt_Pending" value="summa" checked="checked">
+                                    <label for="dum7" style="display:none;">summa</label>
+                                </div><br>
+                                <div id="e_MC_pressure">
+                                    <h6>Any other cash paying entitlement policies(MC or daily hospitalization cash benefits) *</h6><br>
+                                    <input id="txt_paying" type="radio" name="MC_pressure" value="Yes" checked="checked">
+                                    <label for="txt_paying">Yes</label><br><br>
+                                    <input id="txt_Policies" type="radio" name="MC_pressure" value="No">
+                                    <label for="txt_Policies">No</label>
+                                    <input id="dum8" type="radio" name="MC_pressure" value="summa" checked="checked">
+                                    <label for="dum8" style="display:none;">summa</label>
+                                </div><br>
+                                <p>
+                                    <h6 for='txt_compliant' style="text-align: left;">Cause of complaint *</h6>
+                                    <input id="txt_compliant" type="text" class="validate">
+                                </p>
+                                <p>
+                                    <h6 for='txt_signSymp' style="text-align: left;">Signs and Symptoms *</h6>
+                                    <input id="txt_signSymp" type="text" class="validate">
+                                </p>
+                                <p>
+                                    <h6 for='txt_DOA' style="text-align: left;">Preffered date of admission*</h6>
+                                    <input class="datepicker_pdate" id="txt_DOA" type="text">
+                                </p>
+                                <p>
+                                    <input id="insAgnetName" type="text" class="validate" readonly>
+                                </p>
+                                <p>
+                                    <input id="insAgnetContact" type="text" class="validate" readonly>
+                                </p>
 
-                                    </p><br>
-                                    <p>
-                                        <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
-                                        <input id="txt_NRIC" type="text" class="validate" maxlength="9">
-                                    </p>
-                                    <p>
-                                        <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>
-                                        <input class="datepicker_dob" id="txt_dob">
-                                    </p>
-                                    <p>
-                                        <h6 for='txt_occup' style="text-align: left;">Occupation *</h6>
-                                        <input id="txt_occup" type="text" class="validate">
-                                    </p>
-                                    <p>
-                                        <h6 for='txt_cont' style="text-align: left;">Contact *</h6>
-                                        <input id="txt_cont" type="number" class="validate" onkeypress="return validate1(event)">
-                                    </p>
-                                    <p>
-                                        <h6 for='txt_knok' style="text-align: left;"> Next of Kin (NOK) name and relationship *</h6>
-                                        <input id="txt_knok" type="text" class="validate">
-                                    </p>
-                                    <p>
-                                        <h6 for='txt_nok' style="text-align: left;">Contact of NOK *</h6>
-                                        <input id="txt_nok" type="number" class="validate" onkeypress="return validate(event)">
-                                    </p>
-                                    <p>
-                                        <h6 style="" id="myMed">Type of shield plan (with or without rider) / PA plan & Inforce date *</h6>
-                                        <input id="txt_plan" type="text" class="validate1">
-                                    </p>
-                                    <p id="e_txt_AnyExc">
+                                <p>
+                                       <h6 for='rem' style="text-align: left;">Remarks</h6>
+                                       <textarea id="rem" class="materialize-textarea"></textarea>
+                                </p>
 
-                                    </p><br>
-                                    <p id="e_txt_condition">
 
-                                    </p><br>
-                                    <p id="e_txt_Pressure">
-
-                                    </p><br>
-                                    <p id="e_txt_Diabetes">
-
-                                    </p><br>
-                                    <p id="e_txt_highCol">
-
-                                    </p><br>
-                                    <p id="e_txt_Pending">
-
-                                    </p><br>
-                                    <p id="e_MC_pressure">
-
-                                    </p><br>
-                                    <p>
-                                        <h6 for='txt_compliant' style="text-align: left;">Cause of complaint *</h6>
-                                        <input id="txt_compliant" type="text" class="validate">
-                                    </p>
-                                    <p>
-                                        <h6 for='txt_signSymp' style="text-align: left;">Signs and Symptoms *</h6>
-                                        <input id="txt_signSymp" type="text" class="validate">
-                                    </p>
-                                    <p>
-                                        <h6 for='txt_DOA' style="text-align: left;">Preffered date of admission*</h6>
-                                        <input class="datepicker_pdate" id="txt_DOA" type="text">
-                                    </p>
-                                    <p>
-                                        <input id="insAgnetName" type="text" class="validate" readonly>
-                                    </p>
-                                    <p>
-                                        <input id="insAgnetContact" type="text" class="validate" readonly>
-                                    </p>
-                                    <p>
-                                        <h6 for='Span24' style="text-align: left;">Remarks *</h6>
-                                        <textarea id="Span24" class="materialize-textarea"></textarea>
-                                    </p>
-                                    <br><br>
+                                <p>
                                     <center>
-                                        <button type='submit' id='btn_Submit' class='col s12 btn btn-large blue lighten-1'>Next</button>
+                                        <button type='submit' id='btn_DraftSave' class='col s12 btn btn-large blue lighten-1'>Next</button>
                                     </center><br><br>
-                                    </p>
-                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="test2" class="tab_content col s12">
-                    <div class="container" style="background-color:#e2e2e2">
-                        <br />
-                        <center><h5>UPLOAD DOCUMENTS</h5></center>
-                        <br />
-
-                        <div class="container">
-
-                            <div class="row">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>NRIC FRONT</label><br>
-                                                <input type="file" id="nricF">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                    </div>
-                                </div>
+					
+					<div id="test2" class="tab_content col s12" style="background-color:#e2e2e2">
+                        <div class="container" style="width: 65%;"><br />                           
+							<div class="row">
+								<center><h5>UPLOAD DOCUMENTS</h5></center>
                             </div>
-                            <div class="row">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>NRIC BACK</label><br>
-                                                <input type="file" id="nricB">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>NRIC FRONT</label><br>
+												<input type="file" id="nricF">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>NRIC BACK</label><br>
+												<input type="file" id="nricB">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+									</div>
+								</div>
+							</div>
 
-                            <hr style="border-color: #42a5f5;">
+							<hr style="border-color: #42a5f5;">
 
-                            <div class="row">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 1</label><br>
-                                                <input type="file" id="f1">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br />
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 1</label><br>
+												<input type="file" id="f1">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br />
+									</div>
+								</div>
+							</div>
 
-                            <div class="row">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 2</label><br>
-                                                <input type="file" id="f2">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 2</label><br>
+												<input type="file" id="f2">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+									</div>
+								</div>
+							</div>
 
-                            <div class="row">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 3</label><br>
-                                                <input type="file" id="f3">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 3</label><br>
+												<input type="file" id="f3">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+									</div>
+								</div>
+							</div>
 
-                            <div class="row">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 4</label><br>
-                                                <input type="file" id="f4">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                        <div class="col m4 s12">
-                                            <div class="row">
-                                                <a type='submit' id='a4' class='col m5 btn blue green darken-2'>Add</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 4</label><br>
+												<input type="file" id="f4">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+										<div class="col m4 s12">
+											<div class="row">
+												<a type='submit' id='a4' class='col m5 btn blue green darken-2'>Add</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-                            <div class="row" id="img5">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 5</label><br>
-                                                <input type="file" id="f5">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                        <div class="col m4 s12">
-                                            <div class="row">
-                                                <a type='submit' id='a5' class='col m5 btn blue green darken-2'>Add</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row" id="img5">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 5</label><br>
+												<input type="file" id="f5">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+										<div class="col m4 s12">
+											<div class="row">
+												<a type='submit' id='a5' class='col m5 btn blue green darken-2'>Add</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row" id="img6">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 6</label><br>
+												<input type="file" id="f6">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+										<div class="col m5 s12">
+											<div class="row">
+												<a type='submit' id='a6' class='col m5 btn blue green darken-2'>Add</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-                            <div class="row" id="img6">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 6</label><br>
-                                                <input type="file" id="f6">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                        <div class="col m5 s12">
-                                            <div class="row">
-                                                <a type='submit' id='a6' class='col m5 btn blue green darken-2'>Add</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row" id="img7">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 7</label><br>
+												<input type="file" id="f7">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+										<div class="col m5 s12">
+											<div class="row">
+												<a type='submit' id='a7' class='col m5 btn blue green darken-2'>Add</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-                            <div class="row" id="img7">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 7</label><br>
-                                                <input type="file" id="f7">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                        <div class="col m5 s12">
-                                            <div class="row">
-                                                <a type='submit' id='a7' class='col m5 btn blue green darken-2'>Add</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row" id="img8">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 8</label><br>
+												<input type="file" id="f8">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+										<div class="col m5 s12">
+											<div class="row">
+												<a type='submit' id='a8' class='col m5 btn blue green darken-2'>Add</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-                            <div class="row" id="img8">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 8</label><br>
-                                                <input type="file" id="f8">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                        <div class="col m5 s12">
-                                            <div class="row">
-                                                <a type='submit' id='a8' class='col m5 btn blue green darken-2'>Add</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row" id="img9">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 9</label><br>
+												<input type="file" id="f9">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div><br>
+										<div class="col m5 s12">
+											<div class="row">
+												<a type='submit' id='a9' class='col m5 btn blue green darken-2'>Add</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-                            <div class="row" id="img9">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 9</label><br>
-                                                <input type="file" id="f9">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div><br>
-                                        <div class="col m5 s12">
-                                            <div class="row">
-                                                <a type='submit' id='a9' class='col m5 btn blue green darken-2'>Add</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="row" id="img10">
+								<div class="col l12 m6 s12">
+									<div class="row">
+										<div class="col m7 s12">
+											<div class="file-field input-field">
+												<label>Document 10</label><br>
+												<input type="file" id="f10">
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+                            <p id="nricFT" style="display:none">Nil</p>
+                            <p id="nricBT" style="display:none">Nil</p>
+                            <p id="f1T" style="display:none">Nil</p>
+                            <p id="f2T" style="display:none">Nil</p>
+                            <p id="f3T" style="display:none">Nil</p>
+                            <p id="f4T" style="display:none">Nil</p>
+                            <p id="f5T" style="display:none">Nil</p>
+                            <p id="f6T" style="display:none">Nil</p>
+                            <p id="f7T" style="display:none">Nil</p>
+                            <p id="f8T" style="display:none">Nil</p>
+                            <p id="f9T" style="display:none">Nil</p>
+                            <p id="f10T" style="display:none">Nil</p>
 
-                            <div class="row" id="img10">
-                                <div class="col l12 m6 s12">
-                                    <div class="row">
-                                        <div class="col m7 s12">
-                                            <div class="file-field input-field">
-                                                <label>Document 10</label><br>
-                                                <input type="file" id="f10">
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+							
+								<p>
+                                    <center>
+                                        <button type='submit' id='btn_compSave' class='col s12 btn btn-large blue lighten-1'>Submit</button>
+                                    </center>
+                                </p><br><br><br><br>
+					
                         </div>
-
-                        <center><a type='submit' id='btn_compSave' class='col m8 btn blue lighten-1'>Submit</a></center>
-                        <br>
-
                     </div>
+					</div>
                 </div>
+            </div>
 
             </div>
 
@@ -502,6 +576,7 @@
         $(document).ready(function () {
             var user_id = localStorage.getItem('uid');
             var admission_number = localStorage.getItem('admission_number');
+
 
             $("#gifer").hide();
 
@@ -541,7 +616,7 @@
             $("#editState").hide();
 
             getAmendApplication(admission_number);
-            getStatEditValues(admission_number);
+            // getStatEditValues(admission_number);
             getSessionName(user_id);
 
 
@@ -582,211 +657,22 @@
 
 
             $("#btn_Edit").click(function () {
-
-                $("#formApplication").hide();
-                $("#gifer").show();
-
-                $("#btn_Submit").show();
-                $("#btn_Edit").hide(); //btn_Edit
-                $("#btn_resend").hide(); //btn_resend
-                $("#viewState").hide();
-                $("#editState").show();
-                $.ajax({
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    url: "Functions.aspx/getAmendSingle",
-                    data: "{dadmission_number:'" + admission_number + "'}",
-                    dataType: "json",
-                    async: false,
-                    success: function (data) {
-                        //alert(booking_id);
-                        $("#txt_name").empty();
-                        $("#e_gender").empty();
-                        $("#txt_NRIC").empty();
-                        $("#txt_dob").empty();
-                        $("#txt_occup").empty();
-                        $("#txt_cont").empty();
-                        $("#txt_knok").empty();
-                        $("#txt_nok").empty();
-                        $("#txt_plan").empty();
-                        $("#e_txt_AnyExc").empty();
-                        $("#e_txt_condition").empty();
-                        $("#e_txt_Pressure").empty();
-                        $("#e_txt_Diabetes").empty();
-                        $("#e_txt_highCol").empty();
-                        $("#e_txt_Pending").empty();
-                        $("#e_MC_pressure").empty();
-                        $("#Span19").empty();
-                        $("#Span20").empty();
-                        $("#Span21").empty();
-                        $("#insAgnetName").empty();
-                        $("#insAgnetContact").empty();
-
-                        var E_admission_number = localStorage.getItem('E_admission_number');
-                        var E_admision_name = localStorage.getItem('E_admision_name');
-                        var E_admision_gender = localStorage.getItem('E_admision_gender');
-                        var E_admision_nric = localStorage.getItem('E_admision_nric');
-                        var E_admision_dob = localStorage.getItem('E_admision_dob');
-                        var E_admision_occupation = localStorage.getItem('E_admision_occupation');
-                        var E_admision_contact = localStorage.getItem('E_admision_contact');
-                        var E_admision_nok_name = localStorage.getItem('E_admision_nok_name');
-                        var E_admision_nok_contact = localStorage.getItem('E_admision_nok_contact');
-                        var E_admision_pa_plan = localStorage.getItem('E_admision_pa_plan');
-                        var E_admision_exclusion_plan = localStorage.getItem('E_admision_exclusion_plan');
-                        var E_admision_pre_existing_condition = localStorage.getItem('E_admision_pre_existing_condition');
-                        var E_admision_hign_bp = localStorage.getItem('E_admision_hign_bp');
-                        var E_admision_diabetes = localStorage.getItem('E_admision_diabetes');
-                        var E_admision_high_cholesterol = localStorage.getItem('E_admision_high_cholesterol');
-                        var E_admision_pending_claims = localStorage.getItem('E_admision_pending_claims');
-                        var E_admision_cash_pay_mc = localStorage.getItem('E_admision_cash_pay_mc');
-                        var E_admision_cause_complaint = localStorage.getItem('E_admision_cause_complaint');
-                        var E_admision_sign_symptoms = localStorage.getItem('E_admision_sign_symptoms');
-                        var E_admision_preferred_date_admission = localStorage.getItem('E_admision_preferred_date_admission');
-
-                        $("#txt_name").val(data.d[0].admision_name);
-
-                        if (data.d[0].admision_gender == "Male") {
-                            $("#e_gender").append('<h6>Gender*</h6>' +
-                                '<input id="Mal" type="radio" name="gender" value="Male" checked="checked">' +
-                                '<label for="Mal">Male</label>' +
-                                '<br><br><input id="Fem" type="radio" name="gender" value="Female">' +
-                                '<label for="Fem">Female</label>');
-                        } else if (data.d[0].admision_gender == "Female") {
-                            $("#e_gender").append('<h6>Gender*</h6>' +
-                                '<input id="Mal" type="radio" name="gender" value="Male">' +
-                                '<label for="Mal">Male</label>' +
-                                '<br><br><input id="Fem" type="radio" name="gender" value="Female" checked="checked">' +
-                                '<label for="Fem">Female</label>');
-                        }
-                        $("#txt_NRIC").val(data.d[0].admision_nric);
-                        $("#txt_dob").val(data.d[0].admision_dob);
-                        $("#txt_occup").val(data.d[0].admision_occupation);
-                        $("#txt_cont").val(data.d[0].admision_contact);
-                        $("#txt_knok").val(data.d[0].admision_nok_name);
-                        $("#txt_nok").val(data.d[0].admision_nok_contact);
-                        $("#txt_plan").val(data.d[0].admision_pa_plan);
-                        if (data.d[0].admision_exclusion_plan == "Yes") {
-                            $("#e_txt_AnyExc").append('<h6>Any Exclusion in plans? *</h6>' +
-                                '<input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes" checked="checked">' +
-                                '<label for="txt_Exc">Yes</label>' +
-                                '<br><br><input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No">' +
-                                '<label for="txt_Excplan">No</label>');
-                        } else if (data.d[0].admision_exclusion_plan == "No") {
-                            $("#e_txt_AnyExc").append('<h6>Any Exclusion in plans? *</h6>' +
-                                '<input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes">' +
-                                '<label for="txt_Exc">Yes</label>' +
-                                '<br><br><input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No" checked="checked">' +
-                                '<label for="txt_Excplan">No</label>');
-                        }
-                        if (data.d[0].admision_pre_existing_condition == "Yes") {
-                            $("#e_txt_condition").append('<h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6>' +
-                                '<input id="txt_policy" type="radio" name="txt_condition" value="Yes" checked="checked">' +
-                                '<label for="txt_policy">Yes</label>' +
-                                '<br><br><input id="txt_medicine" type="radio" name="txt_condition" value="No">' +
-                                '<label for="txt_medicine">No</label>');
-                        } else if (data.d[0].admision_pre_existing_condition == "No") {
-                            $("#e_txt_condition").append('<h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6>' +
-                                '<input id="txt_policy" type="radio" name="txt_condition" value="Yes">' +
-                                '<label for="txt_policy">Yes</label>' +
-                                '<br><br><input id="txt_medicine" type="radio" name="txt_condition" value="No" checked="checked">' +
-                                '<label for="txt_medicine">No</label>');
-                        }
-                        if (data.d[0].admision_hign_bp == "Yes") {
-                            $("#e_txt_Pressure").append('<h6>Any of the above is Yes, date of diagnosis</h6><h6>High Blood Pressure : *</h6>' +
-                                '<input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes" checked="checked">' +
-                                '<label for="txt_Blood">Yes</label>' +
-                                '<br><br><input id="txt_Pressures" type="radio" name="txt_Pressure" value="No">' +
-                                '<label for="txt_Pressures">No</label>');
-                        } else if (data.d[0].admision_hign_bp == "No") {
-                            $("#e_txt_Pressure").append('<h6>Any of the above is Yes, date of diagnosis</h6><h6>High Blood Pressure : *</h6>' +
-                                '<input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes">' +
-                                '<label for="txt_Blood">Yes</label>' +
-                                '<br><br><input id="txt_Pressures" type="radio" name="txt_Pressure" value="No" checked="checked">' +
-                                '<label for="txt_Pressures">No</label>');
-                        }
-                        if (data.d[0].admision_diabetes == "Yes") {
-                            $("#e_txt_Diabetes").append('<h6>Diabetes : *</h6>' +
-                                '<input id="txt_DiabetesYes" type="radio" name="txt_Diabetes" value="Yes" checked="checked">' +
-                                '<label for="txt_DiabetesYes">Yes</label>' +
-                                '<br><br><input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No">' +
-                                '<label for="txt_DiabetesNo">No</label>');
-                        } else if (data.d[0].admision_diabetes == "No") {
-                            $("#e_txt_Diabetes").append('<h6>Diabetes : *</h6>' +
-                                '<input id="txt_DiabetesYes" type="radio" name="txt_Diabetes" value="Yes" >' +
-                                '<label for="txt_DiabetesYes">Yes</label>' +
-                                '<br><br><input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No" checked="checked">' +
-                                '<label for="txt_DiabetesNo">No</label>');
-                        }
-                        if (data.d[0].admision_high_cholesterol == "Yes") {
-                            $("#e_txt_highCol").append('<h6>High Cholesterol *</h6>' +
-                                '<input id="txt_High" type="radio" name="txt_highCol" value="Yes" checked="checked">' +
-                                '<label for="txt_High">Yes</label>' +
-                                '<br><br><input id="txt_Choles" type="radio" name="txt_highCol" value="No">' +
-                                '<label for="txt_Choles">No</label>');
-                        } else if (data.d[0].admision_high_cholesterol == "No") {
-                            $("#e_txt_highCol").append('<h6>High Cholesterol *</h6>' +
-                                '<input id="txt_High" type="radio" name="txt_highCol" value="Yes">' +
-                                '<label for="txt_High">Yes</label>' +
-                                '<br><br><input id="txt_Choles" type="radio" name="txt_highCol" value="No" checked="checked">' +
-                                '<label for="txt_Choles">No</label>');
-                        }
-                        if (data.d[0].admision_pending_claims == "Yes") {
-                            $("#e_txt_Pending").append('<h6>Any Pending Claims for the current shield plan? *</h6>' +
-                                '<input id="txt_PendingYes" type="radio" name="txt_Pending" value="Yes" checked="checked">' +
-                                '<label for="txt_PendingYes">Yes</label>' +
-                                '<br><br><input id="txt_PendingNo" type="radio" name="txt_Pending" value="No">' +
-                                '<label for="txt_PendingNo">No</label>');
-                        } else if (data.d[0].admision_pending_claims == "No") {
-                            $("#e_txt_Pending").append('<h6>Any Pending Claims for the current shield plan? *</h6>' +
-                                '<input id="txt_PendingYes" type="radio" name="txt_Pending" value="Yes">' +
-                                '<label for="txt_PendingYes">Yes</label>' +
-                                '<br><br><input id="txt_PendingNo" type="radio" name="txt_Pending" value="No" checked="checked">' +
-                                '<label for="txt_PendingNo">No</label>');
-                        }
-                        if (data.d[0].admision_exclusion_plan == "Yes") {
-                            $("#e_MC_pressure").append('<h6>Any other cash paying entitlement policies(MC or daily hospitalization cash benefits) *</h6>' +
-                                '<input id="txt_paying" type="radio" name="MC_pressure" value="Yes" checked="checked">' +
-                                '<label for="txt_paying">Yes</label>' +
-                                '<br><br><input id="txt_Policies" type="radio" name="MC_pressure" value="No">' +
-                                '<label for="txt_Policies">No</label>');
-                        } else if (data.d[0].admision_exclusion_plan == "No") {
-                            $("#e_MC_pressure").append('<h6>Any other cash paying entitlement policies(MC or daily hospitalization cash benefits) *</h6>' +
-                                '<input id="txt_paying" type="radio" name="MC_pressure" value="Yes">' +
-                                '<label for="txt_paying">Yes</label>' +
-                                '<br><br><input id="txt_Policies" type="radio" name="MC_pressure" value="No" checked="checked">' +
-                                '<label for="txt_Policies">No</label>');
-                        }
-                        $("#txt_compliant").val(data.d[0].admision_cause_complaint);
-                        $("#txt_signSymp").val(data.d[0].admision_sign_symptoms);
-                        $("#txt_DOA").val(data.d[0].admision_preferred_date_admission);
-                        $("#insAgnetName").val(data.d[0].admision_insurance_agent_name);
-                        $("#insAgnetContact").val(data.d[0].admision_insurance_agent_contact);
-
-                        $("#gifer").hide();
-                        $("#formApplication").show();
-                    },
-                    error: function (result) {
-                        //alert("fail......."); bindCustomerBookings
-                    }
-                });
-
+                window.location = "mobileViewSubmit.html";
             });
 
 
 
             $("#btn_compSave").click(function () {
-                var admision_slno = localStorage.getItem('totApp'); //no val
+                var admision_slno = localStorage.getItem('totApp');
                 var user_id = localStorage.getItem('uid');
 
-                //alert(user_id);
-
-                var admission_number = $('#appNum').text(); //no val
+                var admission_number = $('#appNum').text();
                 var admision_name = $('#txt_name').val();
                 var admision_gender = $('input[name="gender"]:checked').val();
                 var admision_nric = $("#txt_NRIC").val();
                 var admision_dob = $("#txt_dob").val();
-                var admision_application_date = $("#appDate").text();  //no val
-                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_application_date = $("#appDate").text();
+                var admision_time = (new Date().toString("hh:mm tt"));
                 var admision_occupation = $("#txt_occup").val();
                 var admision_contact = $("#txt_cont").val();
                 var admision_nok_name = $("#txt_knok").val();
@@ -802,16 +688,12 @@
                 var admision_cause_complaint = $("#txt_compliant").val();
                 var admision_sign_symptoms = $("#txt_signSymp").val();
                 var admision_preferred_date_admission = $("#txt_DOA").val();
-                var admision_insurance_agent_id = user_id; //no val
-                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
-                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
-                var admision_remarks_admin = "Nil"; //no val
-                var admision_remarks_agent = "Nil"; //no val
-                var admision_status = "Pending"; //no val
-                var status = "1"; //no val
-                var saveType = "mobile";
-                var submissionType = "normal";
-                //var appSave = "Draft";
+                var admision_insurance_agent_id = user_id;
+                var admision_insurance_agent_name = $("#insAgnetName").val();
+                var admision_insurance_agent_contact = $("#insAgnetContact").val();
+                var admision_remarks_agent = $("#Span24").val();
+                var admision_remarks_admin = "Nill";
+                
                 //---------------previous-
                 var nricF = $('#nricF').val();
                 var nricB = $('#nricB').val();
@@ -903,25 +785,37 @@
 
                     var admission_number = localStorage.getItem('admission_number');
 
-                    var nricFront = "Demo file";
+                    var nricF = $('#nricFT').text();
+                    var nricB = $('#nricBT').text();
+                    var f1 = $('#f1T').text();
+                    var f2 = $('#f2T').text();
+                    var f3 = $('#f3T').text();
+                    var f4 = $('#f4T').text();
+                    var f5 = $('#f5T').text();
+                    var f6 = $('#f6T').text();
+                    var f7 = $('#f7T').text();
+                    var f8 = $('#f8T').text();
+                    var f9 = $('#f9T').text();
+                    var f10 = $('#f10T').text();
 
+                    var admision_remarks_agent = $("#Span24").val();
+                    var admision_remarks_admin = "Nill";
+                    var admision_status = "Pending";
+                    var status = "1";
+                    var saveType = "mobile";
+                    var submissionType = "normal";
                     var appSave = "Complete";
+
+
                     $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
-                        url: "Functions.aspx/update_ApplicationDocuments_nricFront",
-                        data: "{admission_number :'" + admission_number + "',nricFront :'" + nricFront + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                        url: "Functions.aspx/update_ApplicationDocuments",
+                        data: "{admission_number :'" + admission_number + "',admision_nric_front_screen :'" + nricF + "', admision_nric_back_screen :'" + nricB + "' , admision_policy_file1 :'" + f1 + "', admision_policy_file2 :'" + f2 + "', admision_policy_file3 :'" + f3 + "', admision_policy_file4 :'" + f4 + "', admision_policy_file5 :'" + f5 + "', admision_policy_file6 :'" + f6 + "', admision_policy_file7 :'" + f7 + "', admision_policy_file8 :'" + f8 + "', admision_policy_file9 :'" + f9 + "', admision_policy_file10 :'" + f10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_remarks_admin :'" + admision_remarks_admin + "'}",
                         dataType: "json",
                         success: function (data) {
-                            //uploadDocNricBack();
-                            /*$("#gifer").hide();
-                            $("#formApplication").show();
-
                             alert("Successfully applied the application..!");
-                            window.location = "dashboad.html";*/
-
-                            
-
+                            window.location = "dashboad.html";
                         }
                     });
                 }
@@ -931,20 +825,16 @@
 
 
             //Update start
-            $("#btn_Submit").click(function () {
-                $("#gifer").show();
-                $("#formApplication").hide();
+            $("#btn_DraftSave").click(function () {
                 //var admision_slno = localStorage.getItem('totApp');//no val
                 var user_id = localStorage.getItem('uid');
 
                 var admission_number = localStorage.getItem('admission_number');
-                //var admission_number = $('#appNum').text();//no val
                 var admision_name = $('#txt_name').val();
                 var admision_gender = $('input[name="gender"]:checked').val();
                 var admision_nric = $("#txt_NRIC").val();
                 var admision_dob = $("#txt_dob").val();
-                var admision_application_date = $("#appDate").text();  //no val                   
-                //var admision_time = (new Date().toString("hh:mm tt"));//no val
+                var admision_application_date = $("#appDate").text();
                 var admision_occupation = $("#txt_occup").val();
                 var admision_contact = $("#txt_cont").val();
                 var admision_nok_name = $("#txt_knok").val();
@@ -962,11 +852,8 @@
                 var admision_preferred_date_admission = $("#txt_DOA").val();
                 var admision_insurance_agent_id = user_id; //no val
                 var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
-                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
-                //var admision_remarks_admin = "Nil";//no val
+                var admision_insurance_agent_contact = $("#insAgnetContact").val();
                 var admision_remarks_agent = $("#Span24").val();
-                var admision_status = "Pending"; //no val
-                var status = "1"; //no val
 
                 if (admision_name == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
@@ -1019,7 +906,10 @@
                     $("#txt_DOA").focus();
                 } else {
                     //alert("success...!");
-                    $.ajax({
+                    var admision_status = "Pending";
+                    var status = "1";
+                    $('ul.tabs').tabs('select_tab', 'test2');
+                   /* $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
                         url: "Functions.aspx/updateAmendApplicationWork",
@@ -1027,13 +917,6 @@
                         dataType: "json",
                         success: function (data) {
                             if (data.d === "true") {
-                                /*$("#gifer").hide();
-                                $("#formApplication").show();
-                                alert('Successfully updated....!');
-                                localStorage.setItem('admission_number', admission_number);
-                                window.location = "dashboad.html";*/
-                                $("#gifer").hide();
-                                $("#formApplication").show();
                                 Materialize.toast('You will upload the preffered documents...!', 2000);
                                 localStorage.setItem('admission_number', admission_number);
                                 $('ul.tabs').tabs('select_tab', 'test2');
@@ -1041,7 +924,7 @@
                                 //alert("Add Error...");
                             }
                         }
-                    });
+                    });*/
                 }
             });
             //Update end   
