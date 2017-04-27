@@ -129,7 +129,7 @@
 
 
                                                         </span>
-                                                        <span class="col m6 s12">
+                                                        <span class="col m6 s12" id="whatsappbtn">
                                                             <p class="flow-text" style="text-align:center;color:black;">
                                                                 <a id="aWhatsAppShare" data-action="share/whatsapp/share" data-text="Test message...">
                                                                     <img src="images/whatsapp.png" style="width:50px;" /><br>
@@ -271,6 +271,50 @@
                 $("#userId").append(user_id);
 
                 $("#gifer").hide();
+
+                var isMobile = {
+
+                    Android: function () {
+
+                        return navigator.userAgent.match(/Android/i);
+                    },
+
+                    BlackBerry: function () {
+
+                        return navigator.userAgent.match(/BlackBerry/i);
+
+                    },
+
+                    iOS: function () {
+
+                        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+
+                    },
+
+                    Opera: function () {
+
+                        return navigator.userAgent.match(/Opera Mini/i);
+
+                    },
+
+                    Windows: function () {
+
+                        return navigator.userAgent.match(/IEMobile/i);
+
+                    },
+
+                    any: function () {
+
+                        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+
+                    }
+
+                };
+
+                if (!isMobile.any()) {
+                    $("#whatsappbtn").hide();
+                }
+
 
 
                 getApplication(user_id);
