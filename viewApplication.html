@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Dashboad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+    <style>
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+
+        h6 {
+            font-size: 17px;
+            font-family: "Helvetica Neue";
+            color: #777474;
+            line-height: 50px;
+            font-weight: bold;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    
+    <div id="gifer">
+        <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
+    </div>
+
+    <div id="formApplication">
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="dashboad.html" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
+                        <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
+                            <li><a href="index.html">LOG OUT</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+
+        <br />
+
+        <div class="container" style="background-color:white;width:85%;">
+            <!--Application form--><br>
+            <h5 style="text-align:center;color: #5764aa;"><u>APPLICATION FORM</u> </h5>
+            <!--<a><p style="text-align:right;font-weight:bold;padding-right:30px;" id="prnt">Print Preview</p>	</a>--><br />
+            <br>
+            <div class="container" style="width:85%;">
+
+                <div class="row">
+                    <div class="input-field col m4 s12">
+                        <p style="color:black;font-weight:bold;font-family: " Helvetica Neue";">APPLICATION NUMBER : <span id="Span25">1234567</span></p>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <p style="color:black;font-weight:bold;font-family: " Helvetica Neue";" class="apl_sta">APPLICATION STATUS : <span id="appStatus_track"></span></p>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <p style="color:black;font-weight:bold;font-family: " Helvetica Neue";">APPLICATION DATE : <span id="Span26">12-jun-1997</span></p>
+                    </div>
+                </div>
+               
+                <h6>NAME:<span id="Span0">Test</span></h6>
+                <h6>GENDER : <span id="Span1">Test</span></h6>
+                <h6>NRIC : <span id="Span2">Test</span></h6>
+                <h6>DATE OF BIRTH : <span id="Span3">Test</span></h6>
+                <h6>OCCUPATION : <span id="Span4">Test</span></h6>
+                <h6>CONTACT : <span id="Span5">Test</span></h6>
+                <h6>NOK NAME & RELATIONSHIP : <span id="Span6">Test</span></h6>
+                <h6>NOK CONTACT : <span id="Span7">Test</span></h6>
+                <h6>TYPE OF SHIELD PLAN (with or without rider) / PA PLAN & INFORCE DATE  : <span id="Span8">Test</span></h6>
+                <h6>EXCLUSION PLANS : <span id="Span9">Test</span></h6>
+                <h6>PRE-EXISTING CONDITIONS [medical condition & medicine / past operation done not mentioned in policy] : <span id="Span10">Test</span></h6>
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>HIGH BLOOD PRESSURE</th>
+                            <th>DIABETES</th>
+                            <th>HIGH CHOLESTEROL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span id="Span11">Test</span></td>
+                            <td><span id="Span12">Test</span></td>
+                            <td><span id="Span13">Test</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6>PENDING CLAIM PLAN FOR THE CURRENT SHIELD PLAN : <span id="Span14">Test</span></h6>
+                <h6>ANY OTHER CASH PAYING ENTITLEMENT POLICIES [MC or daily hospitalization cash benefits] : <span id="Span15">Test</span></h6>
+                <h6>CAUSE OF COMPLIANT : <span id="Span19">Test</span></h6>
+                <h6>SIGNS AND SYMPTOMS : <span id="Span20">Test</span></h6>
+                <h6>DATE OF ADMISSION : <span id="Span21">Test</span></h6>
+                <h6>INSURANCE AGENT NAME : <span id="Span22">Test</span></h6>
+                <h6>INSURANCE AGENT CONTACT : <span id="Span23">Test</span></h6>
+            </div>
+
+        <!--Application form-->
+        <br><br>
+
+
+
+        </div>
+        <footer class="page-footer blue lighten-1">
+            <div class="container">
+                <p class="flow-text" style="text-align:center;color:white;">ZDO</p><br>
+            </div>
+        </footer>
+
+    </div>
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+
+        <script src="session.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var admission_number = localStorage.getItem('admission_number');
+                var user_id = localStorage.getItem('uid');
+                // alert("Admission number : " + admission_number);
+
+                $("#gifer").hide();
+
+                getAmendApplication(admission_number);
+                getSessionName(user_id);
+            });
+        </script>
+
+        <script type="text/javascript">
+
+            function getAmendApplication(admission_number) {
+                $("#formApplication").hide();
+                $("#gifer").show();
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/getAmendSingle",
+                    data: "{dadmission_number:'" + admission_number + "'}",
+                    dataType: "json",
+                    async: false,
+                    success: function (data) {
+                        //alert(booking_id);appStatus_track
+                        $("#appStatus_track").empty();
+                        $("#Span0").empty();
+                        $("#Span1").empty();
+                        $("#Span2").empty();
+                        $("#Span3").empty();
+                        $("#Span4").empty();
+                        $("#Span5").empty();
+                        $("#Span6").empty();
+                        $("#Span7").empty();
+                        $("#Span8").empty();
+                        $("#Span9").empty();
+                        $("#Span10").empty();
+                        $("#Span11").empty();
+                        $("#Span12").empty();
+                        $("#Span13").empty();
+                        $("#Span14").empty();
+                        $("#Span15").empty();
+                        $("#Span19").empty();
+                        $("#Span20").empty();
+                        $("#Span21").empty();
+                        $("#Span22").empty();
+                        $("#Span23").empty();
+                        $("#Span25").empty();
+                        $("#Span26").empty();
+
+                        //alert(data.d[0].admision_status); //appStatus_track
+
+                        $("#appStatus_track").append(data.d[0].admision_status);
+                        $("#Span25").append(data.d[0].admission_number);
+                        $("#Span26").append(data.d[0].admision_application_date);
+                        $("#Span0").append(data.d[0].admision_name);
+                        $("#Span1").append(data.d[0].admision_gender);
+                        $("#Span2").append(data.d[0].admision_nric);
+                        $("#Span3").append(data.d[0].admision_dob);
+                        $("#Span4").append(data.d[0].admision_occupation);
+                        $("#Span5").append(data.d[0].admision_contact);
+                        $("#Span6").append(data.d[0].admision_nok_name);
+                        $("#Span7").append(data.d[0].admision_nok_contact);
+                        $("#Span8").append(data.d[0].admision_pa_plan);
+                        $("#Span9").append(data.d[0].admision_exclusion_plan);
+                        $("#Span10").append(data.d[0].admision_pre_existing_condition);
+                        $("#Span11").append(data.d[0].admision_hign_bp);
+                        $("#Span12").append(data.d[0].admision_diabetes);
+                        $("#Span13").append(data.d[0].admision_high_cholesterol);
+                        $("#Span14").append(data.d[0].admision_pending_claims);
+                        $("#Span15").append(data.d[0].admision_cash_pay_mc);
+                        $("#Span19").append(data.d[0].admision_cause_complaint);
+                        $("#Span20").append(data.d[0].admision_sign_symptoms);
+                        $("#Span21").append(data.d[0].admision_preferred_date_admission);
+                        $("#Span22").append(data.d[0].admision_insurance_agent_name);
+                        $("#Span23").append(data.d[0].admision_insurance_agent_contact);
+
+                        $("#gifer").hide();
+                        $("#formApplication").show();
+
+                    },
+                    error: function (result) {
+                        //alert("fail......."); bindCustomerBookings
+                    }
+                });
+            }
+        </script>
+
+
+
+
+
+</body >
+</html >

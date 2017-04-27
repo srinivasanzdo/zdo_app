@@ -1,0 +1,828 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Dashboad</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <style>
+        @media screen and (max-width: 580px) and (min-width: 120px) {
+            .pAppnum {
+                margin-top: -30px;
+            }
+            body h6 {
+                font-size: 15px;
+            }
+        }
+        h6 {
+            font-size: 17px;
+            font-family: "arial";
+            color: #565656;
+            line-height: 1.8;
+        }
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		margin: 0; 
+		}
+    </style>
+
+</head>
+<body>
+    
+    <div id="gifer">
+        <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
+    </div>
+
+    <div id="formApplication">
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="dashboad.html" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
+                        <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
+                            <li><a href="index.html">LOG OUT</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <div class="row">
+                    <br>
+                    <h5 style="text-align:center;">AMEND APPLICATION</h5>	<br />
+                </div>
+                <div class="row">
+                    <div class="input-field col m5 s12">
+                        <p style="text-align: left;color:black;font-weight:bold;">APPLICATION NUMBER : <span id="Span25"></span></p>
+                    </div>
+                    <div class="input-field col m3 s12">
+                        <p style="color:black;font-weight:bold;font-family: " Helvetica Neue";" class="apl_sta">APPLICATION STATUS : <span id="appStatus_track" style="color:Orange"></span></p>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <p style="text-align: right;color:black;font-weight:bold;">APPLICATION DATE : <span id="Span26"></span></p>
+                    </div>
+                </div>
+            </div>
+             <!--view state start-->
+            <div class="container" id="viewState">
+                <h6>NAME:<span id="Span0">Test</span></h6>
+                <h6>GENDER : <span id="Span1">Test</span></h6>
+                <h6>NRIC : <span id="Span2">Test</span></h6>
+                <h6>DATE OF BIRTH : <span id="Span3">Test</span></h6>
+                <h6>OCCUPATION : <span id="Span4">Test</span></h6>
+                <h6>CONTACT : <span id="Span5">Test</span></h6>
+                <h6>NOK NAME & RELATIONSHIP : <span id="Span6">Test</span></h6>
+                <h6>NOK CONTACT : <span id="Span7">Test</span></h6>
+                <h6>TYPE OF SHIELD PLAN (with or without rider) / PA PLAN & INFORCE DATE  : <span id="Span8">Test</span></h6>
+                <h6>EXCLUSION PLANS : <span id="Span9">Test</span></h6>
+                <h6>PRE-EXISTING CONDITIONS [medical condition & medicine / past operation done not mentioned in policy] : <span id="Span10">Test</span></h6>
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>HIGH BLOOD PRESSURE</th>
+                            <th>DIABETES</th>
+                            <th>HIGH CHOLESTEROL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span id="Span11">Test</span></td>
+                            <td><span id="Span12">Test</span></td>
+                            <td><span id="Span13">Test</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h6>PENDING CLAIM PLAN FOR THE CURRENT SHIELD PLAN : <span id="Span14">Test</span></h6>
+                <h6>ANY OTHER CASH PAYING ENTITLEMENT POLICIES [MC or daily hospitalization cash benefits] : <span id="Span15">Test</span></h6>
+                <h6>CAUSE OF COMPLIANT : <span id="Span19">Test</span></h6>
+                <h6>SIGNS AND SYMPTOMS : <span id="Span20">Test</span></h6>
+                <h6>DATE OF ADMISSION : <span id="Span21">Test</span></h6>
+                <h6>INSURANCE AGENT NAME : <span id="Span22">Test</span></h6>
+                <h6>INSURANCE AGENT CONTACT : <span id="Span23">Test</span></h6>
+                <h6>REMARK : <span id="adminRemark" style="color:#de5b1c">Test</span></h6>
+				<center>                
+					<button type='submit' id='btn_Edit' class='col s12 btn btn-large waves-effect' style="background-color: #40abdf;">Edit</button>
+				</center><br><br>
+            </div>
+            <!--view state end-->
+            <!------------------------------------------------------------------------------------------------------------------>
+			
+        </div>
+        <footer class="page-footer blue lighten-1">
+            <div class="container">
+                <p class="flow-text" style="text-align:center;color:white;">ZDO</p><br>
+            </div>
+        </footer>
+    </div>
+    <script>
+
+    </script>
+
+     
+     <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="index.js"></script>
+    <script src="session.js"></script>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#gifer").hide();
+
+            var user_id = localStorage.getItem('uid');
+            var admission_number = localStorage.getItem('admission_number');
+
+            $("#img5").hide();
+            $("#img6").hide();
+            $("#img7").hide();
+            $("#img8").hide();
+            $("#img9").hide();
+            $("#img10").hide();
+            $("#a4").click(function () {
+                $("#img5").show();
+                $("#a4").hide();
+            });
+
+            $("#a5").click(function () {
+                $("#img6").show();
+                $("#a5").hide();
+            });
+            $("#a6").click(function () {
+                $("#img7").show();
+                $("#a6").hide();
+            });
+            $("#a7").click(function () {
+                $("#img8").show();
+                $("#a7").hide();
+            });
+            $("#a8").click(function () {
+                $("#img9").show();
+                $("#a8").hide();
+            });
+            $("#a9").click(function () {
+                $("#img10").show();
+                $("#a9").hide();
+            });
+
+
+            $("#btn_Submit").hide();
+            $("#editState").hide();
+
+            getAmendApplication(admission_number);
+            //getStatEditValues(admission_number);
+            getSessionName(user_id);
+
+            $("#btn_Edit").click(function () {
+                var admission_number = localStorage.getItem('admission_number');
+                var subType = "normal";
+                localStorage.setItem('subType', subType);
+                window.location = "reApply.html";
+            });
+
+
+
+        });
+    </script>
+
+    <script>
+
+        function uploadDocNricBack() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var nricBack = $('#nricBT').val();
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_nricBack",
+                data: "{admission_number :'" + admission_number + "',nricBack :'" + nricBack + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile1();
+                }
+            });
+        }
+
+        function uploadDocFile1() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file1 = $('#f1T').val();
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file1",
+                data: "{admission_number :'" + admission_number + "',file1 :'" + file1 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile2();
+                }
+            });
+        }
+
+        function uploadDocFile2() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file2 = "";
+            if (file2 == "") {
+                file2 = "No file";
+            } else {
+                file2 = $('#f2T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file2",
+                data: "{admission_number :'" + admission_number + "',file2 :'" + file2 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile3();
+                }
+            });
+        }
+
+        function uploadDocFile3() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file3 = "";
+            if (file3 == "") {
+                file3 = "No file";
+            } else {
+                file3 = $('#f3T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file3",
+                data: "{admission_number :'" + admission_number + "',file3 :'" + file3 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile4();
+                }
+            });
+        }
+
+        function uploadDocFile4() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file4 = "";
+            if (file4 == "") {
+                file4 = "No file";
+            } else {
+                file4 = $('#f4T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file4",
+                data: "{admission_number :'" + admission_number + "',file4 :'" + file4 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile5();
+                }
+            });
+        }
+
+        function uploadDocFile5() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file5 = "";
+            if (file5 == "") {
+                file5 = "No file";
+            } else {
+                file5 = $('#f5T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file5",
+                data: "{admission_number :'" + admission_number + "',file5 :'" + file5 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile6();
+                }
+            });
+        }
+
+        function uploadDocFile6() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file6 = "";
+            if (file6 == "") {
+                file6 = "No file";
+            } else {
+                file6 = $('#f6T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file6",
+                data: "{admission_number :'" + admission_number + "',file6 :'" + file6 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile7();
+                }
+            });
+        }
+
+        function uploadDocFile7() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file7 = "";
+            if (file7 == "") {
+                file7 = "No file";
+            } else {
+                file5 = $('#f7T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file7",
+                data: "{admission_number :'" + admission_number + "',file7 :'" + file7 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile8();
+                }
+            });
+        }
+
+        function uploadDocFile8() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file8 = "";
+            if (file8 == "") {
+                file8 = "No file";
+            } else {
+                file8 = $('#f8T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file8",
+                data: "{admission_number :'" + admission_number + "',file8 :'" + file8 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile9();
+                }
+            });
+        }
+
+        function uploadDocFile9() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file9 = "";
+            if (file9 == "") {
+                file9 = "No file";
+            } else {
+                file9 = $('#f9T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file9",
+                data: "{admission_number :'" + admission_number + "',file9 :'" + file9 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile10();
+                }
+            });
+        }
+
+        function uploadDocFile10() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file10 = "";
+            if (file10 == "") {
+                file10 = "No file";
+            } else {
+                file10 = $('#f10T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var submissionType = "normal";
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file10",
+                data: "{admission_number :'" + admission_number + "',file10 :'" + file10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    alert("Successfully applied the application..!");
+                    window.location = "dashboad.html";
+                }
+            });
+        }
+
+
+        //*************************************Upload documents***********************************************
+        //nric front
+        function nricFront() {
+            var nricF = document.getElementById("nricF").files;
+            if (nricF.length > 0) {
+                var fileToLoadNF = nricF[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var nricFT = document.getElementById
+                    (
+                        "nricFT"
+                    );
+                    nricFT.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadNF);
+            }
+        }
+        //nric back
+        function nricBack() {
+            var nricB = document.getElementById("nricB").files;
+            if (nricB.length > 0) {
+                var fileToLoadNB = nricB[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var nricBT = document.getElementById
+                    (
+                        "nricBT"
+                    );
+                    nricBT.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadNB);
+            }
+        }
+        //File 1
+        function file1() {
+            var f1 = document.getElementById("f1").files;
+            if (f1.length > 0) {
+                var fileToLoadf1 = f1[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f1T = document.getElementById
+                    (
+                        "f1T"
+                    );
+                    f1T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf1);
+            }
+        }
+
+        //File 2
+        function file2() {
+            var f2 = document.getElementById("f2").files;
+            if (f2.length > 0) {
+                var fileToLoadf2 = f2[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f2T = document.getElementById
+                    (
+                        "f2T"
+                    );
+                    f2T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf2);
+            }
+        }
+
+        //File 3
+        function file3() {
+            var f3 = document.getElementById("f3").files;
+            if (f3.length > 0) {
+                var fileToLoadf3 = f3[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f3T = document.getElementById
+                    (
+                        "f3T"
+                    );
+                    f3T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf3);
+            }
+        }
+
+        //File 4
+        function file4() {
+            var f4 = document.getElementById("f4").files;
+            if (f4.length > 0) {
+                var fileToLoadf4 = f4[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f4T = document.getElementById
+                    (
+                        "f4T"
+                    );
+                    f4T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf4);
+            }
+        }
+
+        //File 5
+        function file5() {
+            var f5 = document.getElementById("f5").files;
+            if (f5.length > 0) {
+                var fileToLoadf5 = f5[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f5T = document.getElementById
+                    (
+                        "f5T"
+                    );
+                    f5T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf5);
+            }
+        }
+
+        //File 6
+        function file6() {
+            var f6 = document.getElementById("f6").files;
+            if (f6.length > 0) {
+                var fileToLoadf6 = f6[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f6T = document.getElementById
+                    (
+                        "f6T"
+                    );
+                    f6T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf6);
+            }
+        }
+
+        //File 7
+        function file7() {
+            var f7 = document.getElementById("f7").files;
+            if (f7.length > 0) {
+                var fileToLoadf7 = f7[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f7T = document.getElementById
+                    (
+                        "f7T"
+                    );
+                    f7T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf7);
+            }
+        }
+
+        //File 8
+        function file8() {
+            var f8 = document.getElementById("f8").files;
+            if (f8.length > 0) {
+                var fileToLoadf8 = f8[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f8T = document.getElementById
+                    (
+                        "f8T"
+                    );
+                    f8T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf8);
+            }
+        }
+
+        //File 9
+        function file9() {
+            var f9 = document.getElementById("f9").files;
+            if (f9.length > 0) {
+                var fileToLoadf9 = f9[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f9T = document.getElementById
+            (
+                "f9T"
+            );
+                    f9T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf9);
+            }
+        }
+
+        //File 4
+        function file10() {
+            var f10 = document.getElementById("f10").files;
+            if (f10.length > 0) {
+                var fileToLoadf10 = f10[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f10T = document.getElementById
+            (
+                "f10T"
+            );
+                    f10T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf10);
+            }
+        }
+        //*******************************************Upload documents*************************************************
+
+
+
+
+
+        function getStatEditValues(admission_number) {
+            //alert(admission_number)
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getEditState",
+                data: "{dadmission_number:'" + admission_number + "'}",
+                dataType: "json",
+                //async: false, 
+                success: function (data) {
+                    //alert("happy" + admission_number);
+                    localStorage.setItem('E_admission_number', data.d[0].admission_number);
+                    localStorage.setItem('E_admision_name', data.d[0].admision_name);
+                    localStorage.setItem('E_admision_gender', data.d[0].admision_gender);
+                    localStorage.setItem('E_admision_nric', data.d[0].admision_nric);
+                    localStorage.setItem('E_admision_dob', data.d[0].admision_dob);
+                    localStorage.setItem('E_admision_occupation', data.d[0].admision_occupation);
+                    localStorage.setItem('E_admision_contact', data.d[0].admision_contact);
+                    localStorage.setItem('E_admision_nok_name', data.d[0].admision_nok_name);
+                    localStorage.setItem('E_admision_nok_contact', data.d[0].admision_nok_contact);
+                    localStorage.setItem('E_admision_pa_plan', data.d[0].admision_pa_plan);
+                    localStorage.setItem('E_admision_exclusion_plan', data.d[0].admision_exclusion_plan);
+                    localStorage.setItem('E_admision_pre_existing_condition', data.d[0].admision_pre_existing_condition);
+                    localStorage.setItem('E_admision_hign_bp', data.d[0].admision_hign_bp);
+                    localStorage.setItem('E_admision_diabetes', data.d[0].admision_diabetes);
+                    localStorage.setItem('E_admision_high_cholesterol', data.d[0].admision_high_cholesterol);
+                    localStorage.setItem('E_admision_pending_claims', data.d[0].admision_pending_claims);
+                    localStorage.setItem('E_admision_cash_pay_mc', data.d[0].admision_cash_pay_mc);
+                    localStorage.setItem('E_admision_cause_complaint', data.d[0].admision_cause_complaint);
+                    localStorage.setItem('E_admision_sign_symptoms', data.d[0].admision_sign_symptoms);
+                    localStorage.setItem('E_admision_preferred_date_admission', data.d[0].admision_preferred_date_admission);
+                },
+                error: function (result) {
+                    //alert("Error......");
+                }
+            });
+        }
+
+        function getAmendApplication(admission_number) {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getAmendSingle",
+                data: "{dadmission_number:'" + admission_number + "'}",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //alert(booking_id);rmkView
+                    $("#Span0").empty();
+                    $("#Span1").empty();
+                    $("#Span2").empty();
+                    $("#Span3").empty();
+                    $("#Span4").empty();
+                    $("#Span5").empty();
+                    $("#Span6").empty();
+                    $("#Span7").empty();
+                    $("#Span8").empty();
+                    $("#Span9").empty();
+                    $("#Span10").empty();
+                    $("#Span11").empty();
+                    $("#Span12").empty();
+                    $("#Span13").empty();
+                    $("#Span14").empty();
+                    $("#Span15").empty();
+                    $("#Span19").empty();
+                    $("#Span20").empty();
+                    $("#Span21").empty();
+                    $("#Span22").empty();
+                    $("#Span23").empty();
+                    $("#Span25").empty();
+                    $("#Span26").empty();
+                    $("#adminRemark").empty(); 
+
+                    $("#appStatus_track").append(data.d[0].admision_status);
+                    $("#Span25").append(data.d[0].admission_number);
+                    $("#Span26").append(data.d[0].admision_application_date);
+                    $("#Span0").append(data.d[0].admision_name);
+                    $("#Span1").append(data.d[0].admision_gender);
+                    $("#Span2").append(data.d[0].admision_nric);
+                    $("#Span3").append(data.d[0].admision_dob);
+                    $("#Span4").append(data.d[0].admision_occupation);
+                    $("#Span5").append(data.d[0].admision_contact);
+                    $("#Span6").append(data.d[0].admision_nok_name);
+                    $("#Span7").append(data.d[0].admision_nok_contact);
+                    $("#Span8").append(data.d[0].admision_pa_plan);
+                    $("#Span9").append(data.d[0].admision_exclusion_plan);
+                    $("#Span10").append(data.d[0].admision_pre_existing_condition);
+                    $("#Span11").append(data.d[0].admision_hign_bp);
+                    $("#Span12").append(data.d[0].admision_diabetes);
+                    $("#Span13").append(data.d[0].admision_high_cholesterol);
+                    $("#Span14").append(data.d[0].admision_pending_claims);
+                    $("#Span15").append(data.d[0].admision_cash_pay_mc);
+                    $("#Span19").append(data.d[0].admision_cause_complaint);
+                    $("#Span20").append(data.d[0].admision_sign_symptoms);
+                    $("#Span21").append(data.d[0].admision_preferred_date_admission);
+                    $("#Span22").append(data.d[0].admision_insurance_agent_name);
+                    $("#Span23").append(data.d[0].admision_insurance_agent_contact);
+                    $("#adminRemark").append(data.d[0].admision_remarks_admin);
+                },
+                error: function (result) {
+                    //alert("fail......."); bindCustomerBookings
+                }
+            });
+        }
+    </script>
+
+
+</body>
+</html>

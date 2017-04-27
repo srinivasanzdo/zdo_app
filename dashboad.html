@@ -1,0 +1,711 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Dashboad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+  <style>
+	.colSpe{
+		    border-top: 0px solid #ddd;
+			border-right: 0px solid #ddd;
+			border-left: 0px solid #ddd;
+			margin: 0rem 0 0rem 0;
+			
+			    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0);
+	}
+	.colBod{
+		border-bottom: 0px solid #ddd;
+	}
+	.colHea{
+		    display: block;
+    cursor: pointer;
+    min-height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    background-color: #388e3c;
+    border-bottom: 0px solid #ddd;
+	}
+	
+	
+	@media screen and (max-width: 580px) and (min-width: 120px) {
+	.emaiSharelink{
+		width:120%;
+	    }
+    }
+
+
+    @media screen and (max-width: 1600px) and (min-width: 700px) {
+	.emaiSharelink{
+		width:300%;
+	    }
+    }
+
+  </style>
+
+</head>
+<body>
+    <!--<div id="head"></div>-->
+    <div id="gifer">
+        <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
+    </div>
+    
+
+    <div id="formApplication">
+
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="dashboad.html" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
+                        <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
+                            <li><a href="index.html">LOG OUT</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col m12 s12">
+                        <div class="green darken-2">
+                            <br>
+                            <!-- <p class="flow-text" style="text-align:center;color:white">NEW	APPLICATION</p> -->
+                            <ul class="collapsible colSpe" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header colHea"><p class="flow-text" style="text-align:center;color:white;">NEW APPLICATION</p></div>
+                                    <div class="collapsible-body colBod">
+                                        <span class="col m6 s12"><p class="flow-text" style="text-align:center;color:white;"><a href="application.html" style="color:white">FILL FORM</a></p></span>
+                                        <span class="col m6 s12">
+                                            <ul class="collapsible colSpe" data-collapsible="accordion">
+                                                <li>
+                                                    <div class="collapsible-header colHea"><p class="flow-text" style="text-align:center;color:white;">CLICK TO SHARE</p></div>
+                                                    <div class="collapsible-body colBod">
+                                                        <span class="col m6 s12">
+                                                            <!--<p class="flow-text" style="text-align:center;color:black;">
+                                                                <a id="aGmailShare1">
+                                                                    <img src="images/gmail.png" style="width:50px;" /><br>
+                                                                    GMAIL
+                                                                </a>
+                                                            </p>-->
+
+                                                            <ul class="collapsible colSpe" data-collapsible="accordion">
+                                                            <li>
+                                                                <div class="collapsible-header">
+                                                                    <p class="flow-text" style="text-align:center;color:black;">
+                                                                        <a id="aGmailShare1">
+                                                                            <img src="images/gmail.png" style="width:50px;" /><br>
+                                                                            GMAIL
+                                                                        </a>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="collapsible-body colBod">
+                                                                    <div class="emaiSharelink">
+                                                                        <input id="Text1" type="text" class="validate">
+                                                                        <button type='submit' id='btn_SendEmail' class='col s12 btn btn-large blue lighten-1'>Send</button>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+
+
+
+
+                                                        </span>
+                                                        <span class="col m6 s12">
+                                                            <p class="flow-text" style="text-align:center;color:black;">
+                                                                <a id="aWhatsAppShare" data-action="share/whatsapp/share" data-text="Test message...">
+                                                                    <img src="images/whatsapp.png" style="width:50px;" /><br>
+                                                                    WHATSAPP
+                                                                </a>
+                                                            </p>
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </span><br><br><br>
+
+                                    </div>
+                                </li>
+                            </ul>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+
+
+                <div class="row">
+                    <div class="col m12 s12">
+                        <div class="red accent-1" id="recivedApp">
+                            <br>
+                            <p class="flow-text" style="text-align:center;color:white">
+                                RECEIVED APPLICATION
+                                <span class="badge deep-orange accent-4" id="bndReci" style="color:white;"></span>
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col m4 s12">
+                        <div class="green darken-1" id="approApp">
+                            <br>
+                            <p class="flow-text" style="text-align:center;color:white">APPROVED <span class="badge pink accent-1" id="bndApprove" style="color:white;"></span></p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col m4 s12">
+                        <a href="#notify">
+                            <div class="cyan lighten-1" id="">
+                                <br>
+                                <p class="flow-text" style="text-align:center;color:white">NOTIFICATION <span class="new badge pink accent-1" id="bndNotify">14</span></p>
+                                <br>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col m4 s12">
+                        <div class="deep-orange lighten-1" id="draftApp">
+                            <br>
+                            <p class="flow-text" style="text-align:center;color:white">DRAFT <span class="badge pink accent-1" id="bndDraft" style="color:white;"></span></p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col m4 s12">
+                        <div class="amber accent-3" id="pendApp">
+                            <br>
+                            <p class="flow-text" style="text-align:center;color:white">PENDING <span class="badge pink accent-1" id="bndPend" style="color:white;"></span></p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col m4 s12">
+                        <div class="orange lighten-2" id="amendApp">
+                            <br>
+                            <p class="flow-text" style="text-align:center;color:white">AMEND <span class="badge pink accent-1" id="bndAmend" style="color:white;"></span></p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col m4 s12">
+                        <div class="deep-orange accent-4" id="rejectApp">
+                            <br>
+                            <p class="flow-text" style="text-align:center;color:white">REJECTED <span class="badge pink accent-1" id="bndRej" style="color:white;"></span></p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col m12 s12">
+                        <div class=" deep-purple lighten-1" id="curMonSub">
+                            <br>
+                            <p class="flow-text" style="text-align:center;color:white"> SUBMISSION THIS MONTH <span class="badge pink accent-1" id="bndSubmission" style="color: white;font-size: 25px;font-weight: bold;height: 40px;padding-top: 10px;"></span></p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col m12 s12">
+                    <h3 class="flow-text  blue lighten-1" id="H1" style="height: 45px;text-align: center;color: white;padding-top: 11px;font-size: 25px;">
+                        NOTIFICATION PANEL
+                    </h3>
+                    <a name="notify" />
+                    <div class="grey lighten-3" id="notiPan" style="height:300px;overflow-y: scroll;overflow-x: hidden;">
+                        <div class=" yellow lighten-5">
+                        </div>
+                        <div class="light-green lighten-4">
+                        </div>
+                    </div>
+                    </a>
+
+                </div>
+            </div><br>
+        </div>
+	
+
+
+
+        <footer class="page-footer blue lighten-1">
+            <div class="container">
+                <p class="flow-text" style="text-align:center;color:white;">ZDO</p><br>
+            </div>
+        </footer>
+
+    </div>
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script src="session.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready(function () {
+                var user_id = localStorage.getItem('uid');
+                $("#userId").append(user_id);
+
+                $("#gifer").hide();
+
+
+                getApplication(user_id);
+
+                getNotiCount(user_id);
+                getSessionName(user_id);
+
+                
+
+                var d = new Date();
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+
+                var output = d.getFullYear() + '-' +
+                    (month < 10 ? '0' : '') + month + '-' +
+                    (day < 10 ? '0' : '') + day;
+
+                var fdy = "01";
+                var tdy = "31";
+                var from_date = d.getFullYear() + '-' + (month < 10 ? '0' : '') + month + '-' + fdy;
+                var to_date = d.getFullYear() + '-' + (month < 10 ? '0' : '') + month + '-' + tdy;
+                getSubmissionMonth(user_id, from_date, to_date);
+
+               
+                // href="mailto:?Subject=ZDO&amp;Body=http://test.zerodotone.net/mobile_application.html?ZDO-2S"
+
+                $("#aGmailShare").click(function () {
+                    var userId = localStorage.getItem('uid');
+                    window.location = "mailto:?Subject=ZDO&amp;Body=http://test.zerodotone.net/mobile_application.html?'+userId+'";
+                });
+
+
+                
+              $("#btn_SendEmail").click(function () {
+                    var usersendEmail = $('#Text1').val();
+                    if (usersendEmail == ""){
+                        alert("Please enter the valid email");
+                    }else{                    
+                    var userId = localStorage.getItem('uid');
+                    var urlText = "";
+                    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                    for (var i = 0; i < 10; i++) {
+                        urlText += possible.charAt(Math.floor(Math.random() * possible.length));
+                    }
+                    var Base64 = { _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*", encode: function (e) { var t = ""; var n, r, i, s, o, u, a; var f = 0; e = Base64._utf8_encode(e); while (f < e.length) { n = e.charCodeAt(f++); r = e.charCodeAt(f++); i = e.charCodeAt(f++); s = n >> 2; o = (n & 3) << 4 | r >> 4; u = (r & 15) << 2 | i >> 6; a = i & 63; if (isNaN(r)) { u = a = 64 } else if (isNaN(i)) { a = 64 } t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a) } return t }, decode: function (e) { var t = ""; var n, r, i; var s, o, u, a; var f = 0; e = e.replace(/[^A-Za-z0-9+/=]/g, ""); while (f < e.length) { s = this._keyStr.indexOf(e.charAt(f++)); o = this._keyStr.indexOf(e.charAt(f++)); u = this._keyStr.indexOf(e.charAt(f++)); a = this._keyStr.indexOf(e.charAt(f++)); n = s << 2 | o >> 4; r = (o & 15) << 4 | u >> 2; i = (u & 3) << 6 | a; t = t + String.fromCharCode(n); if (u != 64) { t = t + String.fromCharCode(r) } if (a != 64) { t = t + String.fromCharCode(i) } } t = Base64._utf8_decode(t); return t }, _utf8_encode: function (e) { e = e.replace(/rn/g, "n"); var t = ""; for (var n = 0; n < e.length; n++) { var r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r) } else if (r > 127 && r < 2048) { t += String.fromCharCode(r >> 6 | 192); t += String.fromCharCode(r & 63 | 128) } else { t += String.fromCharCode(r >> 12 | 224); t += String.fromCharCode(r >> 6 & 63 | 128); t += String.fromCharCode(r & 63 | 128) } } return t }, _utf8_decode: function (e) { var t = ""; var n = 0; var r = c1 = c2 = 0; while (n < e.length) { r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r); n++ } else if (r > 191 && r < 224) { c2 = e.charCodeAt(n + 1); t += String.fromCharCode((r & 31) << 6 | c2 & 63); n += 2 } else { c2 = e.charCodeAt(n + 1); c3 = e.charCodeAt(n + 2); t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63); n += 3 } } return t } }
+                    var plainText = urlText + "_" + userId;
+                    var encodedString = Base64.encode(plainText);
+                    var status = "1";
+                    var admission_number = "nil";                                        
+                    var agentSessionName = $('#SesName').text();
+                    var agentPh = localStorage.getItem('agentPh');
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/saveURLdata",
+                        data: "{agent_id :'" + userId + "', url_id :'" + urlText + "', status :'" + status + "', admission_number :'" + admission_number + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.d === "true") {
+                                //alert("success...!");
+                                var url = "http://test.zerodotone.net/mobile_application.html?" + encodedString;
+                                sendEmail(url, agentSessionName, agentPh,usersendEmail );
+
+                            } else {
+                                //alert("Add Error...");
+                            }
+                        }
+                    });
+
+                  }
+             });
+
+                $("#aWhatsAppShare").click(function () {
+                    var userId = localStorage.getItem('uid');
+
+                    var urlText = "";
+                    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                    for (var i = 0; i < 10; i++) {
+                        urlText += possible.charAt(Math.floor(Math.random() * possible.length));
+                    }
+
+                    var Base64 = { _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*", encode: function (e) { var t = ""; var n, r, i, s, o, u, a; var f = 0; e = Base64._utf8_encode(e); while (f < e.length) { n = e.charCodeAt(f++); r = e.charCodeAt(f++); i = e.charCodeAt(f++); s = n >> 2; o = (n & 3) << 4 | r >> 4; u = (r & 15) << 2 | i >> 6; a = i & 63; if (isNaN(r)) { u = a = 64 } else if (isNaN(i)) { a = 64 } t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a) } return t }, decode: function (e) { var t = ""; var n, r, i; var s, o, u, a; var f = 0; e = e.replace(/[^A-Za-z0-9+/=]/g, ""); while (f < e.length) { s = this._keyStr.indexOf(e.charAt(f++)); o = this._keyStr.indexOf(e.charAt(f++)); u = this._keyStr.indexOf(e.charAt(f++)); a = this._keyStr.indexOf(e.charAt(f++)); n = s << 2 | o >> 4; r = (o & 15) << 4 | u >> 2; i = (u & 3) << 6 | a; t = t + String.fromCharCode(n); if (u != 64) { t = t + String.fromCharCode(r) } if (a != 64) { t = t + String.fromCharCode(i) } } t = Base64._utf8_decode(t); return t }, _utf8_encode: function (e) { e = e.replace(/rn/g, "n"); var t = ""; for (var n = 0; n < e.length; n++) { var r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r) } else if (r > 127 && r < 2048) { t += String.fromCharCode(r >> 6 | 192); t += String.fromCharCode(r & 63 | 128) } else { t += String.fromCharCode(r >> 12 | 224); t += String.fromCharCode(r >> 6 & 63 | 128); t += String.fromCharCode(r & 63 | 128) } } return t }, _utf8_decode: function (e) { var t = ""; var n = 0; var r = c1 = c2 = 0; while (n < e.length) { r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r); n++ } else if (r > 191 && r < 224) { c2 = e.charCodeAt(n + 1); t += String.fromCharCode((r & 31) << 6 | c2 & 63); n += 2 } else { c2 = e.charCodeAt(n + 1); c3 = e.charCodeAt(n + 2); t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63); n += 3 } } return t } }
+                    var plainText = urlText + "_" + userId;
+                    var encodedString = Base64.encode(plainText);
+
+                    //var urlData = encodedString1 + "_" + encodedString2;
+
+                    //alert(urlData);
+                    var status = "1";
+                    var admission_number = "nil";
+
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/saveURLdata",
+                        data: "{agent_id :'" + userId + "', url_id :'" + urlText + "', status :'" + status + "', admission_number :'" + admission_number + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.d === "true") {
+                                //alert("success...!");
+                                window.location = "whatsapp://send?text=http://test.zerodotone.net/mobile_application.html?" + encodedString;
+                            } else {
+                                //alert("Add Error...");
+                            }
+                        }
+                    });
+
+                    //window.location = "whatsapp://send?text=http://test.zerodotone.net/mobile_application.html?" + encodedString;
+                });
+
+
+                $("#recivedApp").click(function () {
+                    var Approved = "";
+                    localStorage.setItem('Approved_user_status', Approved);
+                    var Draft = "";
+                    localStorage.setItem('Draft_user_status', Draft);
+                    var Pending = "";
+                    localStorage.setItem('Pending_user_status', Pending);
+                    var Amend = "";
+                    localStorage.setItem('Amend_user_status', Amend);
+                    var Rejected = "";
+                    localStorage.setItem('Rejected_user_status', Rejected);
+                    var from_date = "";
+                    var to_date = "";
+                    localStorage.setItem('from_date', from_date);
+                    localStorage.setItem('to_date', to_date);
+
+                    var receivedStatus = "3";
+                    localStorage.setItem('receivedStatus', receivedStatus);
+                    window.location = "application_list.html";
+                });
+
+                $("#approApp").click(function () {
+                    var Draft = "";
+                    localStorage.setItem('Draft_user_status', Draft);
+                    var Pending = "";
+                    localStorage.setItem('Pending_user_status', Pending);
+                    var Amend = "";
+                    localStorage.setItem('Amend_user_status', Amend);
+                    var Rejected = "";
+                    localStorage.setItem('Rejected_user_status', Rejected);
+                    var from_date = "";
+                    var to_date = "";
+                    localStorage.setItem('from_date', from_date);
+                    localStorage.setItem('to_date', to_date);
+                    var receivedStatus = "";
+                    localStorage.setItem('receivedStatus', receivedStatus);
+
+                    var Approved = "Approve";
+                    localStorage.setItem('Approved_user_status', Approved);
+                    window.location = "application_list.html";
+                });
+                $("#draftApp").click(function () {
+                    var Approved = "";
+                    localStorage.setItem('Approved_user_status', Approved);
+                    var Pending = "";
+                    localStorage.setItem('Pending_user_status', Pending);
+                    var Amend = "";
+                    localStorage.setItem('Amend_user_status', Amend);
+                    var Rejected = "";
+                    localStorage.setItem('Rejected_user_status', Rejected);
+                    var from_date = "";
+                    var to_date = "";
+                    localStorage.setItem('from_date', from_date);
+                    localStorage.setItem('to_date', to_date);
+                    var receivedStatus = "";
+                    localStorage.setItem('receivedStatus', receivedStatus);
+
+                    var Draft = "Draft";
+                    localStorage.setItem('Draft_user_status', Draft);
+                    window.location = "application_list.html";
+                });
+                $("#pendApp").click(function () {
+                    var Approved = "";
+                    localStorage.setItem('Approved_user_status', Approved);
+                    var Draft = "";
+                    localStorage.setItem('Draft_user_status', Draft);
+                    var Amend = "";
+                    localStorage.setItem('Amend_user_status', Amend);
+                    var Rejected = "";
+                    localStorage.setItem('Rejected_user_status', Rejected);
+                    var from_date = "";
+                    var to_date = "";
+                    localStorage.setItem('from_date', from_date);
+                    localStorage.setItem('to_date', to_date);
+                    var receivedStatus = "";
+                    localStorage.setItem('receivedStatus', receivedStatus);
+
+                    var Pending = "Pending";
+                    localStorage.setItem('Pending_user_status', Pending);
+                    window.location = "application_list.html";
+                });
+                $("#amendApp").click(function () {
+                    var Approved = "";
+                    localStorage.setItem('Approved_user_status', Approved);
+                    var Draft = "";
+                    localStorage.setItem('Draft_user_status', Draft);
+                    var Pending = "";
+                    localStorage.setItem('Pending_user_status', Pending);
+                    var Rejected = "";
+                    localStorage.setItem('Rejected_user_status', Rejected);
+                    var from_date = "";
+                    var to_date = "";
+                    localStorage.setItem('from_date', from_date);
+                    localStorage.setItem('to_date', to_date);
+                    var receivedStatus = "";
+                    localStorage.setItem('receivedStatus', receivedStatus);
+
+                    var Amend = "Amend";
+                    localStorage.setItem('Amend_user_status', Amend);
+                    window.location = "application_list.html";
+                });
+                $("#rejectApp").click(function () {
+                    var Approved = "";
+                    localStorage.setItem('Approved_user_status', Approved);
+                    var Draft = "";
+                    localStorage.setItem('Draft_user_status', Draft);
+                    var Pending = "";
+                    localStorage.setItem('Pending_user_status', Pending);
+                    var Amend = "";
+                    localStorage.setItem('Amend_user_status', Amend);
+                    var from_date = "";
+                    var to_date = "";
+                    localStorage.setItem('from_date', from_date);
+                    localStorage.setItem('to_date', to_date);
+                    var receivedStatus = "";
+                    localStorage.setItem('receivedStatus', receivedStatus);
+
+                    var Rejected = "Rejected";
+                    localStorage.setItem('Rejected_user_status', Rejected);
+                    window.location = "application_list.html";
+                    // window.location = "admin/application_list.html";
+                });
+                $("#curMonSub").click(function () {
+                    /* var Approved = "";
+                     localStorage.setItem('Approved_user_status', Approved);
+                     var Draft = "";
+                     localStorage.setItem('Draft_user_status', Draft);
+                     var Pending = "";
+                     localStorage.setItem('Pending_user_status', Pending);
+                     var Amend = "";
+                     localStorage.setItem('Amend_user_status', Amend);
+                     var Rejected = "";
+                     localStorage.setItem('Rejected_user_status', Rejected);
+                     var receivedStatus = "";
+                     localStorage.setItem('receivedStatus', receivedStatus);
+
+                     localStorage.setItem('from_date', from_date);
+                     localStorage.setItem('to_date', to_date);
+                    window.location = "application_list.html";*/
+                });
+
+
+            });
+        </script>
+
+        <script>
+
+            function sendEmail(url, agentSessionName, agentPh,usersendEmail ) {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/sendURLmail",
+                    data: "{url :'" + url + "',agentSessionName :'" + agentSessionName + "',agentPh :'" + agentPh + "',usersendEmail :'" + usersendEmail + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        alert("URL successfully sent to client..!");
+                        window.location = "dashboad.html";
+                    }
+                });
+            }
+
+
+            function getApplication(user_id) {
+                //spinnerShow();
+
+                var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+                var day = currentDate.getDate()
+                var month = currentDate.getMonth() + 1
+                var year = currentDate.getFullYear()
+
+                if (day < 10) {
+                    var nday = "0" + day;
+                    //alert(nday);
+                }
+
+                if (month < 10) {
+                    var nmonth = "0" + month;
+                    //alert(nmonth);    yyy mm dd
+                }
+
+                var nexDa = year + "-" + nmonth + "-" + nday;
+                // alert(nexDa);
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/getApplicationStatus",
+                    data: "{dagent_id:'" + user_id + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        spinnerHide();
+                        $("#notiPan").empty();
+                        $("#bndNotify").empty();
+                        $("#bndReci").empty();
+                        var noti1 = 0;
+                        var noti2 = 0;
+                        var noti3 = 0;
+                        for (var i = 0; i < data.d.length; i++) {
+                            var col = ""
+                            if (data.d[i].admision_status == "Pending") {
+                                col = "orange";
+                            } else if (data.d[i].admision_status == "Approve") {
+                                col = "green";
+                            } else if (data.d[i].admision_status == "Amend") {
+                                col = "#ffb74d";
+                            } else if (data.d[i].admision_status == "Rejected") {
+                                col = "red";
+                            } else {
+                                //alert("Unknown");
+                            }
+
+                            var boolean1 = (data.d[i].admision_preferred_date_admission == nexDa);
+                            var boolean2 = (data.d[i].admision_status == "Approve");
+
+                            if (data.d[i].status == "2") {
+                                noti1++;
+                                $("#notiPan").append('<div class="yellow lighten-5">'
+                                    + '<p style="color:#424242;padding:20px;">'
+                                    + 'Your application submitted on <b>' + data.d[i].admision_application_date + '</b>'
+                                    + ' for <b>' + data.d[i].admision_name + '</b> for admission'
+                                    + ' for admission  <b>' + data.d[i].admision_preferred_date_admission + '</b> for admission'
+                                    + ' has been <b style ="color:' + col + ';">' + data.d[i].admision_status + '</b>'
+                                    + '</p></div>');
+                            } else if (data.d[i].admision_preferred_date_admission == nexDa) {
+                                noti2++;
+                                $("#notiPan").append('<div class="light-green lighten-4">'
+                                    + '<p style="color:#424242;padding:20px;">'
+                                    + 'Please be reminded to <b>' + data.d[i].admision_name + '</b>'
+                                    + ' will be admitted'
+                                    + '</p></div>');
+                            }
+                            if (data.d[i].status == "3") {
+                                noti3++;
+                            }
+                        }
+                        var noti = parseInt(noti1) + parseInt(noti2);
+                        $("#bndNotify").append(noti);
+                        $("#bndReci").append(noti3);
+                    },
+                    error: function (result) {
+                        //alert("Error......");
+                    }
+                });
+            }
+
+            function getSubmissionMonth(user_id, from_date, to_date) {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/getApplicationData",
+                    data: "{dagent_id:'" + user_id + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        $("#bndSubmission").empty();
+                        var count = 0;
+                        for (var i = 0; i < data.d.length; i++) {
+                            if (data.d[i].admision_application_date >= from_date && data.d[i].admision_application_date <= to_date) {
+                                count++;
+                            }
+                        }
+                        //alert(count);
+                        $("#bndSubmission").append(count);
+                    },
+                    error: function (result) {
+                        //alert("Error......");
+                    }
+                });
+            }
+
+            //getNotiCount
+            function getNotiCount(user_id) {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/getSalesPersonClientList",
+                    data: "{dagent_id:'" + user_id + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        $("#bndApprove").empty();
+                        $("#bndDraft").empty();
+                        $("#bndPend").empty();
+                        $("#bndAmend").empty();
+                        $("#bndRej").empty();
+
+                        var bndApprove = 0;
+                        var bndDraft = 0;
+                        var bndPend = 0;
+                        var bndAmend = 0;
+                        var bndRej = 0;
+
+                        for (var i = 0; i < data.d.length; i++) {
+                            if (data.d[i].appSave == "Draft") {
+                                bndDraft++;
+                                // alert(data.d[i].admision_slno + "----" + user_id);
+                            }
+                            if (data.d[i].admision_status == "Approve") {
+                                bndApprove++;
+                            }
+                            if (data.d[i].admision_status == "Pending") {
+                                bndPend++;
+                            }
+                            if (data.d[i].admision_status == "Amend") {
+                                bndAmend++;
+                            }
+                            if (data.d[i].admision_status == "Rejected") {
+                                bndRej++;
+                            }
+                        }
+                        //alert(bndApprove);
+                        $("#bndApprove").append(bndApprove);
+                        $("#bndDraft").append(bndDraft);
+                        $("#bndPend").append(bndPend);
+                        $("#bndAmend").append(bndAmend);
+                        $("#bndRej").append(bndRej);
+
+
+                    },
+                    error: function (result) {
+                        //alert("Error......");
+                    }
+                });
+            }
+
+        </script>
+
+</body>
+</html>

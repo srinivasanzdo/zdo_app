@@ -1,0 +1,20 @@
+
+	[
+		{
+			  "admision_insurance_agent_id": "asdfg",
+			  "admission_number": "qwerty",
+			  "admision_nric_front_screen":"No NRIC Front",
+			  "admision_nric_back_screen":"No NRIC Back",
+			  "admision_policy_file1":"No File 1",
+			  "admision_policy_file2":"No File 2",
+			  "admision_policy_file3":"No File 3",
+			  "admision_policy_file4":"No File 4",
+			  "admision_policy_file5":"No File 5",
+			  "admision_policy_file6":"No File 6",
+			  "admision_policy_file7":"No File 7",
+			  "admision_policy_file8":"No File 8",
+			  "admision_policy_file9":"No File 9",
+			  "admision_policy_file10":"No File 10",
+			  "status":"1"
+		}
+	]

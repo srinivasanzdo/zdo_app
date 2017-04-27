@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Dashboad</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!--dataTables_length-->
+    <style>
+        label {
+            font-size: 0.8rem;
+            color: #222222;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div id="gifer">
+        <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
+    </div>
+
+
+    <div id="formApplication">
+
+
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="#" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="index.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li><a href="sales.html">SALES AGENT</a></li>
+                    <!--<li><a href="report.html">REPORT</a></li>-->
+                    <li><a href="../index.html">LOGOUT</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="index.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li><a href="sales.html">SALES AGENT</a></li>
+                    <!--<li><a href="report.html">REPORT</a></li>-->
+                    <li><a href="../index.html">LOGOUT</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+
+
+        <div class="container" style="width:80%;">
+            <div class="row">
+                <div class="col m12 s12">
+                    <br />
+                    <!--<h3 class="flow-text  blue lighten-1" id="H1" style="height: 45px;text-align: center;color: white;padding-top: 11px;font-size: 25px;">
+                        SALES PERSON PROFILE
+                    </h3><br />-->
+
+
+                    <div class="col s12">
+                        <ul class="tabs">
+                            <li class="tab col s3"><a href="#test1">CREATE AGENT</a></li>
+                            <li class="tab col s3"><a href="#test2">VIEW AGENT</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="test1" class="col s12">
+                    <br /><br />
+                        <h2 style="font-size: 25px;text-align:center;">CREATE SALES PERSON PROFILE</h2><br />
+
+                        <div class="grey lighten-3">
+                        <br />
+                        <div class="row">
+                            <div class="input-field col m2">
+                            </div>
+                            <div class="input-field col m4 s12">
+                                <input id="name" type="text" class="validate">
+                                <label for='name' style="text-align: left;">Name *</label>
+                            </div>
+                            <div class="input-field col m4 s12">
+                                <input id="semail" type="email" class="validate">
+                                <label for='semail' style="text-align: left;">Email *</label>
+                            </div>
+                            <br /><br />
+                            <div id="semailstate"></div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+
+                            </div>
+                            <div class="input-field col s2">
+                                <h6>Gender*</h6>
+                            </div>
+                            <div class="input-field col m8 s12">
+                                <input id="Mal" type="radio" name="gender" value="Male">
+                                <label for="Mal">Male</label>
+                                <input id="Fem" type="radio" name="gender" value="FeMale">
+                                <label for="Fem">FeMale</label>
+                                <input id="dum1" type="radio" name="gender" value="summa" checked="checked">
+                                <label for="dum1" style="display:none;">summa</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                            </div>
+                            <div class="input-field col m4 s12">
+                                <input id="sphone" type="text" class="validate">
+                                <label for='sphone' style="text-align: left;">Phone*</label>
+                            </div>
+                            <div class="input-field col m4 s12">
+                                <input id="userID" type="text" class="validate" readonly placeholder="User Id">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                            </div>
+                            <div class="input-field col m4 s12">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field col m4 s12">
+                                <input id="confirm_password" type="password" class="validate">
+                                <label for="confirm_password">Confirm Password</label>
+                            </div><br /><br />
+                            <div id="pasState"></div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-field col s2">
+                            </div><div class="input-field col s2">
+                            </div>
+                            <input id="slno" type="text" class="validate" style="display:none">
+                            <center>
+                                <button type='submit' id="btnRegister" name='btn_login' class='col s4 btn btn-large waves-effect ' style="background-color: #40abdf;">Submit</button>
+                            </center><br>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div id="test2" class="col s12">
+                        <br /><br />
+                        <h2 style="font-size: 25px;text-align:center;">VIEW SALES PERSON PROFILE</h2>
+                        <br />
+
+                        <div class="grey lighten-3" style="height:500px;overflow-y: scroll;overflow-x: hidden;">
+                        <br /><br />
+                            <div class="container">
+                            <table id="data_bind" class="responsive-table bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>NAME</th>
+                                        <th>GENDER</th>
+                                        <th>EMAIL</th>
+                                        <th>PHONE</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody></tbody>
+                            </table>
+                            </div>
+                        </div><br /><br />
+
+                    </div>
+
+                </div>
+            </div><br>
+        </div>
+
+
+        <br />
+
+        <footer class="page-footer blue lighten-1">
+            <div class="container">
+                <p class="flow-text" style="text-align:center;color:white;">ZDO</p><br />
+            </div>
+        </footer>
+
+    </div>
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="../js/materialize.js"></script>
+        <script src="../js/init.js"></script>
+        <script src="../index.js" type="text/javascript"></script>
+
+        <script src="../js/jquery-3.1.1.js"></script>
+
+
+        <link href="../css/datatable/foundation.css" rel='stylesheet' type='text/css' />
+        <link href="https://cdn.datatables.net/1.10.13/css/dataTables.foundation.min.css" rel='stylesheet' type='text/css' />
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/dataTables.foundation.min.js"></script>
+
+
+        <script>
+            $(document).ready(function () {
+
+                $("#gifer").hide();
+
+
+                getNewApp();
+                getSerial();
+
+
+                $("#userID").click(function () {
+                    Materialize.toast('You cant edit ', 4000);
+                });
+
+                $("#btnRegister").click(function () {
+                    var agent_slno = $('#slno').val();
+                    var agent_id = $('#userID').val();
+                    var agent_name = $('#name').val();
+                    var agent_email = $('#semail').val();
+                    var agent_gender = $('input[name="gender"]:checked').val();
+                    var agent_phone = $('#sphone').val();
+                    var agent_username = $('#userID').val();
+                    var agent_password = $('#password').val();
+                    var confirm_password = $('#confirm_password').val();
+                    var agent_status = "Active";
+                    var status = "S";
+
+                   // alert(agent_gender);
+
+                    if (agent_name == "") {
+                        Materialize.toast('Please fill all mandatory fields', 4000);
+                        $("#name").focus();
+                    } else if (agent_email == "") {
+                        Materialize.toast('Please fill all mandatory fields', 4000);
+                        $("#semail").focus();
+                    } else if (agent_gender == "summa") {
+                        Materialize.toast('Please fill all mandatory fields', 4000);
+                    } else if (agent_phone == "") {
+                        Materialize.toast('Please fill all mandatory fields', 4000);
+                        $("#sphone").focus();
+                    } else if (agent_password == "") {
+                        Materialize.toast('Please fill all mandatory fields', 4000);
+                        $("#password").focus();
+                    } else if (confirm_password == "") {
+                        Materialize.toast('Please fill all mandatory fields', 4000);
+                        $("#confirm_password").focus();
+                    } else {
+
+                        $("#formApplication").hide();
+                        $("#gifer").show();
+
+
+                        $.ajax({
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            url: "../Functions.aspx/saveAgent",
+                            data: "{dagent_slno :'" + agent_slno + "', dagent_id :'" + agent_id + "', dagent_name :'" + agent_name + "', dagent_gender :'" + agent_gender + "', dagent_email :'" + agent_email + "', dagent_phone :'" + agent_phone + "', dagent_username :'" + agent_username + "', dagent_password :'" + agent_password + "', dagent_status:'" + agent_status + "', dstatus:'" + status + "'}",
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.d === "true") {
+
+                                    $("#gifer").hide();
+                                    $("#formApplication").show();
+
+                                    Materialize.toast('Successfully registered...!', 3000, '', function () { alert('Successfully registered...!') });
+                                    location.reload();
+                                } else {
+                                    //alert("Add Error...");
+                                }
+                            }
+                        });
+
+                    }
+
+                });
+
+                $('#confirm_password').focusout(function () {
+                    $("#pasState").empty();
+                    var pass = $('#password').val();
+                    var cpass = $('#confirm_password').val();
+                    if (pass == cpass) {
+                        $("#pasState").append('<label for="confirm_password" style="color:green;">Password match</label>');
+                    } else {
+                        $("#pasState").append('<label for="confirm_password" style="color:red;">Password miss match</label>');
+                    }
+                });
+
+                $('#semail').focusout(function () {
+                    var uname = $('#semail').val();
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "../Functions.aspx/checkUserName",
+                        data: "{duname:'" + uname + "'}",
+                        dataType: "json",
+                        async: false,
+                        success: function (data) {
+                            $("#semailstate").empty();
+                            if (data.d === "true") {
+                                $("#semailstate").append('<label for="emState" style="color:red;">Email Already Exist..!</label>');
+                            }
+                            else {
+                                $("#semailstate").append('<label for="emState" style="color:green;">Valid Email</label>');
+                                var getUserId = $("#semail").val().substring(0, 4);
+                                var slno = $('#slno').val();
+                                //alert("slno");
+                                var salesPersonId = getUserId + "_ZDO_" + slno;
+                                $("#userID").val(salesPersonId);
+                            }
+                        },
+                        error: function (e) {
+                            //alert(e);
+                        }
+                    });
+                });
+
+                $('#btnUpload1').click(function () {
+                    if ($('.flUpload').val() != '') {
+                        var file = $('.flUpload')[0].files[0];
+                        var fileName = file.name;
+                        var fileExt = '.' + fileName.split('.').pop();
+                    }
+                    else {
+                        alert('Please select a file.')
+                    }
+                });
+
+            });
+        </script>
+
+        <script>
+            function getNewApp() {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../Functions.aspx/getAgentData",
+                    data: "{}",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#data_bind').DataTable({
+                            "data": data.d,
+                            "columns": [
+                                { "data": "agent_id" },
+                                { "data": "agent_name" },
+                                { "data": "agent_gender" },
+                                { "data": "agent_email" },
+                                { "data": "agent_phone" }
+                            ]
+                        });
+                    },
+                    error: function (result) {
+                        alert("Shared server overload.....!");
+                    }
+                });
+            }
+
+
+            function getSerial() {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../Functions.aspx/getAgentData",
+                    data: "{}",
+                    dataType: "json",
+                    success: function (data) {
+                        $("#slno").empty();
+                        $("#userID").empty();
+                        for (var i = 0; i < data.d.length; i++) {
+                            //alert("Success");
+                        }
+                        var last = parseInt(data.d.length) + 1;
+                        var salesPersonId = "ZDO-" + last + "S";
+                        $("#slno").val(last);
+                        //$("#userID").val(salesPersonId);
+                        //alert(salesPersonId);
+                    },
+                    error: function (result) {
+                        //alert("Error......");
+                    }
+                });
+            }
+
+        </script>
+
+</body>
+</html>

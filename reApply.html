@@ -1,0 +1,1555 @@
+﻿<html>
+<head>
+<meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    
+
+<style>
+
+@media screen and (max-width: 580px) and (min-width: 120px) {
+	.pAppnum{
+		margin-top:-30px;
+	}
+	body h6{
+		font-size:15px;
+	}
+}
+
+    h6 {
+        font-size: 17px;
+        font-family: "arial";
+        color: #565656;
+        line-height: 1.8;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+margin: 0; 
+}
+</style>
+</head>
+<body>
+    <div id="gifer">
+        <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
+    </div>
+
+    <div id="formApplication">
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="dashboad.html" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
+                        <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
+                            <li><a href="index.html">LOG OUT</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+
+
+        <div class="container" id="">
+            <!--Application form--><br>
+            <h5 style="text-align:center">APPLICATION FORM</h5>
+            <div class="row">
+                <div class="row">
+                    <div class="input-field col l4 m12 s12">
+                        <p style="text-align:left;"><b>Date :<span id="appDate"></span></p>
+                    </div>
+                    <div class="input-field col l4 m12 s0">
+
+                    </div>
+                    <div class="input-field col l4 m12 s12">
+                        <p style="text-align:left;font-weight:bold" class="pAppnum">
+                            Application Number :<span id="appNum">ZDO_APP_125</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12">
+
+                            <ul class="tabs" id="dis">
+                                <li class="tab col s4"><a href="#test1">Step 1</a></li>
+                                <li class="tab col s4"><a href="#test2">Step 2</a></li>
+                            </ul>
+
+                        </div>
+                        <div id="test1" class="tab_content col s12" style="background-color:#e2e2e2">
+                            <div class="container" style="width: 65%;">
+                                <br />                          
+                                <div class="row">
+                                    <p>
+                                        <h6>Name*</h6>
+                                        <input id="txt_name" type="text" class="validate">
+                                        <input id="txt_user_id_bnd" type="text" class="validate" style="display:none;">
+                                    </p>
+
+                                    <p id="e_gender">
+
+                                    </p><br>
+                                    <p>
+                                        <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
+                                        <input id="txt_NRIC" type="text" class="validate" maxlength="9">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>
+                                        <input class="datepicker_dob" id="txt_dob">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_occup' style="text-align: left;">Occupation *</h6>
+                                        <input id="txt_occup" type="text" class="validate">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_cont' style="text-align: left;">Contact *</h6>
+                                        <input id="txt_cont" name="number" maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_knok' style="text-align: left;"> Next of Kin (NOK) name and relationship *</h6>
+                                        <input id="txt_knok" type="text" class="validate">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_nok' style="text-align: left;">Contact of NOK *</h6>
+                                        <input id="txt_nok" name="number" maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    </p>
+                                    <p>
+                                        <h6 style="" id="myMed">Type of shield plan (with or without rider) / PA plan & Inforce date *</h6>
+                                        <input id="txt_plan" type="text" class="validate1">
+                                    </p>
+                                    <p id="e_txt_AnyExc">
+
+                                    </p><br>
+                                    <p id="e_txt_condition">
+
+                                    </p><br>
+                                    <p id="e_txt_Pressure">
+
+                                    </p><br>
+                                    <p id="e_txt_Diabetes">
+
+                                    </p><br>
+                                    <p id="e_txt_highCol">
+
+                                    </p><br>
+                                    <p>
+                                    <h6>Any of the above is Yes, date of diagnosis</h6>
+                                    <input class="datepicker_dod" id="Text1">
+                               
+                               </p><br />
+                                    <p id="e_txt_Pending">
+
+                                    </p><br>
+                                    <p id="e_MC_pressure">
+
+                                    </p><br>
+                                    <p>
+                                        <h6 for='txt_compliant' style="text-align: left;">Cause of complaint *</h6>
+                                        <input id="txt_compliant" type="text" class="validate">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_signSymp' style="text-align: left;">Signs and Symptoms *</h6>
+                                        <input id="txt_signSymp" type="text" class="validate">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_DOA' style="text-align: left;">Preffered date of admission*</h6>
+                                        <input class="datepicker_pdate" id="txt_DOA" type="text">
+                                    </p>
+                                    <p>
+                                        <input id="insAgnetName" type="text" class="validate" readonly>
+                                    </p>
+                                    <p>
+                                        <input id="insAgnetContact" type="text" class="validate" readonly>
+                                    </p>
+                                    <p>
+                                        <h6 for='Span24' style="text-align: left;">Remarks *</h6>
+                                        <textarea id="Span24" class="materialize-textarea"></textarea>
+                                    </p>
+                                    <br><br>
+                                    <center>
+                                        <button type='submit' id='btn_Submit' class='col s12 btn btn-large blue lighten-1'>Next</button>
+                                    </center><br><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="test2" class="tab_content col s12">
+                <div class="container" style="background-color:#e2e2e2">
+                    <br />
+                    <center><h5>UPLOAD DOCUMENTS</h5></center>
+                    <br />
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col l12 m6 s12">
+                                <div class="row">
+                                    <div class="col m7 s12">
+                                        <div class="file-field input-field">
+                                            <label>NRIC FRONT</label><br>
+                                            <input type="file" id="nricF">
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col l12 m6 s12">
+                                <div class="row">
+                                    <div class="col m7 s12">
+                                        <div class="file-field input-field">
+                                            <label>NRIC BACK</label><br>
+                                            <input type="file" id="nricB">
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr style="border-color: #42a5f5;">
+
+                        <div class="row">
+                            <div class="col l12 m6 s12">
+                                <div class="row">
+                                    <div class="col m7 s12">
+                                        <div class="file-field input-field">
+                                            <label>Document 1</label><br>
+                                            <input type="file" id="f1">
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
+                                        </div>
+                                    </div><br />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col l12 m6 s12">
+                                <div class="row">
+                                    <div class="col m7 s12">
+                                        <div class="file-field input-field">
+                                            <label>Document 2</label><br>
+                                            <input type="file" id="f2">
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col l12 m6 s12">
+                                <div class="row">
+                                    <div class="col m7 s12">
+                                        <div class="file-field input-field">
+                                            <label>Document 3</label><br>
+                                            <input type="file" id="f3">
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col l12 m6 s12">
+                                <div class="row">
+                                    <div class="col m7 s12">
+                                        <div class="file-field input-field">
+                                            <label>Document 4</label><br>
+                                            <input type="file" id="f4">
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="col m5 s12">
+                                        <div class="row">
+                                            <a type='submit' id='a4' class='col m5 btn blue green darken-2'>Add</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="img5">
+                            <div class="col l12 m6 s12">
+                                <div class="row">
+                                    <div class="col m7 s12">
+                                        <div class="file-field input-field">
+                                            <label>Document 5</label><br>
+                                            <input type="file" id="f5">
+                                        <div class=" file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="col m5 s12">
+                                    <div class="row">
+                                        <a type='submit' id='a5' class='col m5 btn blue green darken-2'>Add</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="img6">
+                        <div class="col l12 m6 s12">
+                            <div class="row">
+                                <div class="col m7 s12">
+                                    <div class="file-field input-field">
+                                        <label>Document 6</label><br>
+                                        <input type="file" id="f6">
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="col m5 s12">
+                                    <div class="row">
+                                        <a type='submit' id='a6' class='col m5 btn blue green darken-2'>Add</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="img7">
+                        <div class="col l12 m6 s12">
+                            <div class="row">
+                                <div class="col m7 s12">
+                                    <div class="file-field input-field">
+                                        <label>Document 7</label><br>
+                                        <input type="file" id="f7">
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="col m5 s12">
+                                    <div class="row">
+                                        <a type='submit' id='a7' class='col m5 btn blue green darken-2'>Add</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="img8">
+                        <div class="col l12 m6 s12">
+                            <div class="row">
+                                <div class="col m7 s12">
+                                    <div class="file-field input-field">
+                                        <label>Document 8</label><br>
+                                        <input type="file" id="f8">
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="col m5 s12">
+                                    <div class="row">
+                                        <a type='submit' id='a8' class='col m5 btn blue green darken-2'>Add</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="img9">
+                        <div class="col l12 m6 s12">
+                            <div class="row">
+                                <div class="col m7 s12">
+                                    <div class="file-field input-field">
+                                        <label>Document 9</label><br>
+                                        <input type="file" id="f9">
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="col m5 s12">
+                                    <div class="row">
+                                        <a type='submit' id='a9' class='col m5 btn blue green darken-2'>Add</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="img10">
+                        <div class="col l12 m6 s12">
+                            <div class="row">
+                                <div class="col m7 s12">
+                                    <div class="file-field input-field">
+                                        <label>Document 10</label><br>
+                                        <input type="file" id="f10">
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                            <p id="nricFT" style="display:none">Nil</p>
+                            <p id="nricBT" style="display:none">Nil</p>
+                            <p id="f1T" style="display:none">Nil</p>
+                            <p id="f2T" style="display:none">Nil</p>
+                            <p id="f3T" style="display:none">Nil</p>
+                            <p id="f4T" style="display:none">Nil</p>
+                            <p id="f5T" style="display:none">Nil</p>
+                            <p id="f6T" style="display:none">Nil</p>
+                            <p id="f7T" style="display:none">Nil</p>
+                            <p id="f8T" style="display:none">Nil</p>
+                            <p id="f9T" style="display:none">Nil</p>
+                            <p id="f10T" style="display:none">Nil</p>
+
+
+                    <center><a type='submit' id='btn_compSave' class='col m8 btn blue lighten-1'>Submit</a></center>
+                    <br>
+
+                </div>
+            </div>
+            <br /><br />
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="index.js"></script>
+    <script src="session.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            var user_id = localStorage.getItem('uid');
+            $('ul.tabs').tabs();
+            getApplicationCount();
+            getSessionName(user_id)
+            getToday()
+
+            $("#gifer").hide();
+
+            $("#img5").hide();
+            $("#img6").hide();
+            $("#img7").hide();
+            $("#img8").hide();
+            $("#img9").hide();
+            $("#img10").hide();
+            $("#a4").click(function () {
+                $("#img5").show();
+                $("#a4").hide();
+            });
+
+            $("#a5").click(function () {
+                $("#img6").show();
+                $("#a5").hide();
+            });
+            $("#a6").click(function () {
+                $("#img7").show();
+                $("#a6").hide();
+            });
+            $("#a7").click(function () {
+                $("#img8").show();
+                $("#a7").hide();
+            });
+            $("#a8").click(function () {
+                $("#img9").show();
+                $("#a8").hide();
+            });
+            $("#a9").click(function () {
+                $("#img10").show();
+                $("#a9").hide();
+            });
+
+            getSessionName(user_id);
+
+            getDraftApplication();
+
+            $("#btn_compSave").click(function () {
+                var admision_slno = localStorage.getItem('totApp'); //no val
+                var user_id = localStorage.getItem('uid');
+
+                var admission_number = $('#appNum').text(); //no val
+                var admision_name = $('#txt_name').val();
+                var admision_gender = $('input[name="gender"]:checked').val();
+                var admision_nric = $("#txt_NRIC").val();
+                var admision_dob = $("#txt_dob").val();
+                var admision_application_date = $("#appDate").text();  //no val
+                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_occupation = $("#txt_occup").val();
+                var admision_contact = $("#txt_cont").val();
+                var admision_nok_name = $("#txt_knok").val();
+                var admision_nok_contact = $("#txt_nok").val();
+                var admision_pa_plan = $("#txt_plan").val();
+                var admision_exclusion_plan = $('input[name="txt_AnyExc"]:checked').val();
+                var admision_pre_existing_condition = $('input[name="txt_condition"]:checked').val();
+                var admision_hign_bp = $('input[name="txt_Pressure"]:checked').val();
+                var admision_diabetes = $('input[name="txt_Diabetes"]:checked').val();
+                var admision_high_cholesterol = $('input[name="txt_highCol"]:checked').val();
+                var admision_pending_claims = $('input[name="txt_Pending"]:checked').val();
+                var admision_cash_pay_mc = $('input[name="MC_pressure"]:checked').val();
+                var admision_cause_complaint = $("#txt_compliant").val();
+                var admision_sign_symptoms = $("#txt_signSymp").val();
+                var admision_preferred_date_admission = $("#txt_DOA").val();
+                var admision_insurance_agent_id = user_id; //no val
+                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
+                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
+                var admision_remarks_admin = "Nil"; //no val    
+                var admision_remarks_agent = $("#Span24").val();
+                //---------------previous-
+                var nricF = $('#nricF').val();
+                var nricB = $('#nricB').val();
+                var f1 = $('#f1').val();
+                var f2 = $('#f2').val();
+                var f3 = $('#f3').val();
+                var f4 = $('#f4').val();
+
+                if (admision_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_name").focus();
+                } else if (admision_gender == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_nric == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_NRIC").focus();
+                } else if (admision_dob == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_dob").focus();
+                } else if (admision_occupation == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_occup").focus();
+                } else if (admision_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_cont").focus();
+                } else if (admision_nok_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_knok").focus();
+                } else if (admision_nok_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_nok").focus();
+                } else if (admision_pa_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_plan").focus();
+                } else if (admision_exclusion_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_pre_existing_condition == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_hign_bp == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_diabetes == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_high_cholesterol == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_pending_claims == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_cash_pay_mc == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_cause_complaint == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_compliant").focus();
+                } else if (admision_sign_symptoms == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_signSymp").focus();
+                } else if (admision_preferred_date_admission == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_DOA").focus();
+                } else if (admision_remarks_agent == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#Span24").focus();
+                }
+
+                //----------------prev
+                else if (nricF == "") {
+                    Materialize.toast('Please upload NRIC files', 4000);
+                } else if (nricB == "") {
+                    Materialize.toast('Please upload NRIC files', 4000);
+                } else if (f1 == "") {
+                    Materialize.toast('Please upload files', 4000);
+                }
+                else {
+                    $("#formApplication").hide();
+                    $("#gifer").show();
+                    var admission_number = localStorage.getItem('admission_number');
+                    var nricF = $('#nricFT').text();
+                    var nricB = $('#nricBT').text();
+                    var f1 = $('#f1T').text();
+                    var f2 = $('#f2T').text();
+                    var f3 = $('#f3T').text();
+                    var f4 = $('#f4T').text();
+                    var f5 = $('#f5T').text();
+                    var f6 = $('#f6T').text();
+                    var f7 = $('#f7T').text();
+                    var f8 = $('#f8T').text();
+                    var f9 = $('#f9T').text();
+                    var f10 = $('#f10T').text();
+
+                    var admision_status = "Pending";
+                    var status = "1";
+                    var saveType = "web";
+                    var subType = localStorage.getItem('subType');
+                    var submissionType = subType;
+                    var appSave = "Complete";
+
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/update_ApplicationDocuments",
+                        data: "{admission_number :'" + admission_number + "',admision_nric_front_screen :'" + nricF + "', admision_nric_back_screen :'" + nricB + "' , admision_policy_file1 :'" + f1 + "', admision_policy_file2 :'" + f2 + "', admision_policy_file3 :'" + f3 + "', admision_policy_file4 :'" + f4 + "', admision_policy_file5 :'" + f5 + "', admision_policy_file6 :'" + f6 + "', admision_policy_file7 :'" + f7 + "', admision_policy_file8 :'" + f8 + "', admision_policy_file9 :'" + f9 + "', admision_policy_file10 :'" + f10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_remarks_admin :'" + admision_remarks_admin + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            $("#gifer").hide();
+                            $("#formApplication").show();
+
+                            alert("Successfully applied the application..!");
+                            window.location = "dashboad.html";
+                        }
+                    });
+                }
+
+            });
+
+
+
+            $("#btn_Submit").click(function () {
+                var admision_slno = localStorage.getItem('totApp'); //no val
+                var admission_number = $('#appNum').text(); //no val
+                var admision_name = $('#txt_name').val();
+                var admision_gender = $('input[name="gender"]:checked').val();
+                var admision_nric = $("#txt_NRIC").val();
+                var admision_dob = $("#txt_dob").val();
+                var admision_application_date = $("#appDate").text();  //no val                   
+                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_occupation = $("#txt_occup").val();
+                var admision_contact = $("#txt_cont").val();
+                var admision_nok_name = $("#txt_knok").val();
+                var admision_nok_contact = $("#txt_nok").val();
+                var admision_pa_plan = $("#txt_plan").val();
+                var admision_exclusion_plan = $('input[name="txt_AnyExc"]:checked').val();
+                var admision_pre_existing_condition = $('input[name="txt_condition"]:checked').val();
+                var admision_hign_bp = $('input[name="txt_Pressure"]:checked').val();
+                var admision_diabetes = $('input[name="txt_Diabetes"]:checked').val();
+                var admision_high_cholesterol = $('input[name="txt_highCol"]:checked').val();
+                var admision_pending_claims = $('input[name="txt_Pending"]:checked').val();
+                var admision_cash_pay_mc = $('input[name="MC_pressure"]:checked').val();
+                var admision_cause_complaint = $("#txt_compliant").val();
+                var admision_sign_symptoms = $("#txt_signSymp").val();
+                var admision_preferred_date_admission = $("#txt_DOA").val();
+                var admision_insurance_agent_id = user_id; //no val
+                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
+                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
+                var admision_remarks_admin = "Nil"; //no val
+                var admision_remarks_agent = $("#Span24").val();
+                var admision_status = "New"; //no val
+                var status = "1"; //no val
+                var saveType = "web";
+                var subType = localStorage.getItem('subType');
+                var submissionType = subType;
+                var appSave = "Draft";
+
+                if (admision_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_name").focus();
+                } else if (admision_gender == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_nric == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_NRIC").focus();
+                } else if (admision_dob == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_dob").focus();
+                } else if (admision_occupation == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_occup").focus();
+                } else if (admision_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_cont").focus();
+                } else if (admision_nok_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_knok").focus();
+                } else if (admision_nok_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_nok").focus();
+                } else if (admision_pa_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_plan").focus();
+                } else if (admision_exclusion_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_pre_existing_condition == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_hign_bp == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_diabetes == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_high_cholesterol == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_pending_claims == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_cash_pay_mc == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_cause_complaint == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_compliant").focus();
+                } else if (admision_sign_symptoms == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_signSymp").focus();
+                } else if (admision_preferred_date_admission == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_DOA").focus();
+                } else if (admision_remarks_agent == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#Span24").focus();
+                } else {
+
+                    $("#formApplication").hide();
+                    $("#gifer").show();
+
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/updateApplication",
+                        data: "{admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.d === "true") {
+                                $("#gifer").hide();
+                                $("#formApplication").show();
+                                $("#btn_DraftSave").hide();
+                                localStorage.setItem('admission_number', admission_number);
+                                $('ul.tabs').tabs('select_tab', 'test2');
+                            } else {
+                                //alert("Add Error...");
+                            }
+                        }
+                    });
+                }
+            });
+
+            $("#insAgnetName").click(function () {
+                Materialize.toast('You cannot edit the field..!', 4000);
+            });
+
+            $("#insAgnetContact").click(function () {
+                Materialize.toast('You cannot edit the field..!', 4000);
+            });
+
+        });
+    </script>
+
+    <script>
+        function uploadDocNricBack() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var nricBack = $('#nricBT').val();
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_nricBack",
+                data: "{admission_number :'" + admission_number + "',nricBack :'" + nricBack + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile1();
+                }
+            });
+        }
+
+        function uploadDocFile1() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file1 = $('#f1T').val();
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file1",
+                data: "{admission_number :'" + admission_number + "',file1 :'" + file1 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile2();
+                }
+            });
+        }
+
+        function uploadDocFile2() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file2 = "";
+            if (file2 == "") {
+                file2 = "No file";
+            } else {
+                file2 = $('#f2T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file2",
+                data: "{admission_number :'" + admission_number + "',file2 :'" + file2 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile3();
+                }
+            });
+        }
+
+        function uploadDocFile3() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file3 = "";
+            if (file3 == "") {
+                file3 = "No file";
+            } else {
+                file3 = $('#f3T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file3",
+                data: "{admission_number :'" + admission_number + "',file3 :'" + file3 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile4();
+                }
+            });
+        }
+
+        function uploadDocFile4() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file4 = "";
+            if (file4 == "") {
+                file4 = "No file";
+            } else {
+                file4 = $('#f4T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file4",
+                data: "{admission_number :'" + admission_number + "',file4 :'" + file4 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile5();
+                }
+            });
+        }
+
+        function uploadDocFile5() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file5 = "";
+            if (file5 == "") {
+                file5 = "No file";
+            } else {
+                file5 = $('#f5T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file5",
+                data: "{admission_number :'" + admission_number + "',file5 :'" + file5 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile6();
+                }
+            });
+        }
+
+        function uploadDocFile6() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file6 = "";
+            if (file6 == "") {
+                file6 = "No file";
+            } else {
+                file6 = $('#f6T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file6",
+                data: "{admission_number :'" + admission_number + "',file6 :'" + file6 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile7();
+                }
+            });
+        }
+
+        function uploadDocFile7() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file7 = "";
+            if (file7 == "") {
+                file7 = "No file";
+            } else {
+                file5 = $('#f7T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file7",
+                data: "{admission_number :'" + admission_number + "',file7 :'" + file7 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile8();
+                }
+            });
+        }
+
+        function uploadDocFile8() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file8 = "";
+            if (file8 == "") {
+                file8 = "No file";
+            } else {
+                file8 = $('#f8T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file8",
+                data: "{admission_number :'" + admission_number + "',file8 :'" + file8 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile9();
+                }
+            });
+        }
+
+        function uploadDocFile9() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file9 = "";
+            if (file9 == "") {
+                file9 = "No file";
+            } else {
+                file9 = $('#f9T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file9",
+                data: "{admission_number :'" + admission_number + "',file9 :'" + file9 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    uploadDocFile10();
+                }
+            });
+        }
+
+        function uploadDocFile10() {
+            var admission_number = localStorage.getItem('admission_number');
+
+            var file10 = "";
+            if (file10 == "") {
+                file10 = "No file";
+            } else {
+                file10 = $('#f10T').val();
+            }
+
+            var admision_status = "Pending";
+            var status = "1";
+            var saveType = "web";
+            var subType = localStorage.getItem('subType');
+            var submissionType = subType;
+            var appSave = "Complete";
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/update_ApplicationDocuments_file10",
+                data: "{admission_number :'" + admission_number + "',file10 :'" + file10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                dataType: "json",
+                success: function (data) {
+                    $("#gifer").hide();
+                    $("#formApplication").show();
+
+                    alert("Successfully applied the application..!");
+                    window.location = "dashboad.html";
+                }
+            });
+        }
+
+        //*************************************Upload documents***********************************************
+        //nric front
+        function nricFront() {
+            var nricF = document.getElementById("nricF").files;
+            if (nricF.length > 0) {
+                var fileToLoadNF = nricF[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var nricFT = document.getElementById
+                    (
+                        "nricFT"
+                    );
+                    nricFT.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadNF);
+            }
+        }
+        //nric back
+        function nricBack() {
+            var nricB = document.getElementById("nricB").files;
+            if (nricB.length > 0) {
+                var fileToLoadNB = nricB[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var nricBT = document.getElementById
+                    (
+                        "nricBT"
+                    );
+                    nricBT.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadNB);
+            }
+        }
+        //File 1
+        function file1() {
+            var f1 = document.getElementById("f1").files;
+            if (f1.length > 0) {
+                var fileToLoadf1 = f1[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f1T = document.getElementById
+                    (
+                        "f1T"
+                    );
+                    f1T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf1);
+            }
+        }
+
+        //File 2
+        function file2() {
+            var f2 = document.getElementById("f2").files;
+            if (f2.length > 0) {
+                var fileToLoadf2 = f2[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f2T = document.getElementById
+                    (
+                        "f2T"
+                    );
+                    f2T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf2);
+            }
+        }
+
+        //File 3
+        function file3() {
+            var f3 = document.getElementById("f3").files;
+            if (f3.length > 0) {
+                var fileToLoadf3 = f3[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f3T = document.getElementById
+                    (
+                        "f3T"
+                    );
+                    f3T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf3);
+            }
+        }
+
+        //File 4
+        function file4() {
+            var f4 = document.getElementById("f4").files;
+            if (f4.length > 0) {
+                var fileToLoadf4 = f4[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f4T = document.getElementById
+                    (
+                        "f4T"
+                    );
+                    f4T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf4);
+            }
+        }
+
+        //File 5
+        function file5() {
+            var f5 = document.getElementById("f5").files;
+            if (f5.length > 0) {
+                var fileToLoadf5 = f5[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f5T = document.getElementById
+                    (
+                        "f5T"
+                    );
+                    f5T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf5);
+            }
+        }
+
+        //File 6
+        function file6() {
+            var f6 = document.getElementById("f6").files;
+            if (f6.length > 0) {
+                var fileToLoadf6 = f6[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f6T = document.getElementById
+                    (
+                        "f6T"
+                    );
+                    f6T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf6);
+            }
+        }
+
+        //File 7
+        function file7() {
+            var f7 = document.getElementById("f7").files;
+            if (f7.length > 0) {
+                var fileToLoadf7 = f7[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f7T = document.getElementById
+                    (
+                        "f7T"
+                    );
+                    f7T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf7);
+            }
+        }
+
+        //File 8
+        function file8() {
+            var f8 = document.getElementById("f8").files;
+            if (f8.length > 0) {
+                var fileToLoadf8 = f8[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f8T = document.getElementById
+                    (
+                        "f8T"
+                    );
+                    f8T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf8);
+            }
+        }
+
+        //File 9
+        function file9() {
+            var f9 = document.getElementById("f9").files;
+            if (f9.length > 0) {
+                var fileToLoadf9 = f9[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f9T = document.getElementById
+            (
+                "f9T"
+            );
+                    f9T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf9);
+            }
+        }
+
+        //File 4
+        function file10() {
+            var f10 = document.getElementById("f10").files;
+            if (f10.length > 0) {
+                var fileToLoadf10 = f10[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent) {
+                    var f10T = document.getElementById
+            (
+                "f10T"
+            );
+                    f10T.innerHTML = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsDataURL(fileToLoadf10);
+            }
+        }
+        //*******************************************Upload documents*************************************************
+    </script>
+
+    <script>
+         function getDraftApplication() {
+             var admission_number = localStorage.getItem('admission_number');
+             $.ajax({
+                 type: "POST",
+                 contentType: "application/json; charset=utf-8",
+                 url: "Functions.aspx/getAmendSingle",
+                 data: "{dadmission_number:'" + admission_number + "'}",
+                 dataType: "json",
+                 async: false,
+                 success: function (data) {
+                     //alert(booking_id);
+                     //$("#appDate").empty();
+                     $("#appNum").empty();
+                     $("#txt_name").empty();
+                     $("#e_gender").empty();
+                     $("#txt_NRIC").empty();
+                     $("#txt_dob").empty();
+                     $("#txt_occup").empty();
+                     $("#txt_cont").empty();
+                     $("#txt_knok").empty();
+                     $("#txt_nok").empty();
+                     $("#txt_plan").empty();
+                     $("#e_txt_AnyExc").empty();
+                     $("#e_txt_condition").empty();
+                     $("#e_txt_Pressure").empty();
+                     $("#e_txt_Diabetes").empty();
+                     $("#e_txt_highCol").empty();
+                     $("#e_txt_Pending").empty();
+                     $("#e_MC_pressure").empty();
+                     $("#Span19").empty();
+                     $("#Span20").empty();
+                     $("#Span21").empty();
+                     $("#insAgnetName").empty();
+                     $("#insAgnetContact").empty();
+
+                     $("#appNum").append(data.d[0].admission_number);
+                     //$("#appDate").append(data.d[0].admision_application_date);
+                     $("#txt_name").val(data.d[0].admision_name);
+
+                     /*
+                     <input id="Mal" type="radio" name="gender" value="Male">
+                                    <label for="Mal">Male</label><br><br>
+                                    <input id="Fem" type="radio" name="gender" value="Female">
+                                    <label for="Fem">Female</label>
+                     */
+
+                     if (data.d[0].admision_gender == "Male") {
+                         $("#e_gender").append('<h6>Gender*</h6><br>' +
+                             '<input id="Mal" type="radio" name="gender" value="Male" checked="checked">' +
+                             '<label for="Mal">Male</label><br><br>' +
+                             '<input id="Fem" type="radio" name="gender" value="Female">' +
+                             '<label for="Fem">Female</label>');
+                     } else if (data.d[0].admision_gender == "Female") {
+                         $("#e_gender").append('<h6>Gender*</h6><br>' +
+                             '<input id="Mal" type="radio" name="gender" value="Male">' +
+                             '<label for="Mal">Male</label>' +
+                             '<br><br><input id="Fem" type="radio" name="gender" value="Female" checked="checked">' +
+                             '<label for="Fem">Female</label>');
+                     }
+                     $("#txt_NRIC").val(data.d[0].admision_nric);
+                     $("#txt_dob").val(data.d[0].admision_dob);
+                     $("#txt_occup").val(data.d[0].admision_occupation);
+                     $("#txt_cont").val(data.d[0].admision_contact);
+                     $("#txt_knok").val(data.d[0].admision_nok_name);
+                     $("#txt_nok").val(data.d[0].admision_nok_contact);
+                     $("#txt_plan").val(data.d[0].admision_pa_plan);
+                     if (data.d[0].admision_exclusion_plan == "Yes") {
+                         $("#e_txt_AnyExc").append('<h6>Any Exclusion in plans? *</h6><br>' +
+                             '<input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes" checked="checked">' +
+                             '<label for="txt_Exc">Yes</label><br><br>' +
+                             '<input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No">' +
+                             '<label for="txt_Excplan">No</label>');
+                     } else if (data.d[0].admision_exclusion_plan == "No") {
+                         $("#e_txt_AnyExc").append('<h6>Any Exclusion in plans? *</h6><br>' +
+                             '<input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes">' +
+                             '<label for="txt_Exc">Yes</label><br><br>' +
+                             '<input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No" checked="checked">' +
+                             '<label for="txt_Excplan">No</label>');
+                     }
+                     if (data.d[0].admision_pre_existing_condition == "Yes") {
+                         $("#e_txt_condition").append('<h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6><br>' +
+                             '<input id="txt_policy" type="radio" name="txt_condition" value="Yes" checked="checked">' +
+                             '<label for="txt_policy">Yes</label><br><br>' +
+                             '<input id="txt_medicine" type="radio" name="txt_condition" value="No">' +
+                             '<label for="txt_medicine">No</label>');
+                     } else if (data.d[0].admision_pre_existing_condition == "No") {
+                         $("#e_txt_condition").append('<h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6><br>' +
+                             '<input id="txt_policy" type="radio" name="txt_condition" value="Yes">' +
+                             '<label for="txt_policy">Yes</label><br><br>' +
+                             '<input id="txt_medicine" type="radio" name="txt_condition" value="No" checked="checked">' +
+                             '<label for="txt_medicine">No</label>');
+                     }
+                     if (data.d[0].admision_hign_bp == "Yes") {
+                         $("#e_txt_Pressure").append('<h6>High Blood Pressure : *</h6><br>' +
+                             '<input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes" checked="checked">' +
+                             '<label for="txt_Blood">Yes</label><br><br>' +
+                             '<input id="txt_Pressures" type="radio" name="txt_Pressure" value="No">' +
+                             '<label for="txt_Pressures">No</label>');
+                     } else if (data.d[0].admision_hign_bp == "No") {
+                         $("#e_txt_Pressure").append('<h6>High Blood Pressure : *</h6>' +
+                             '<input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes">' +
+                             '<label for="txt_Blood">Yes</label><br><br>' +
+                             '<input id="txt_Pressures" type="radio" name="txt_Pressure" value="No" checked="checked">' +
+                             '<label for="txt_Pressures">No</label>');
+                     }
+                     if (data.d[0].admision_diabetes == "Yes") {
+                         $("#e_txt_Diabetes").append('<h6>Diabetes : *<br></h6>' +
+                             '<input id="txt_DiabetesYes" type="radio" name="txt_Diabetes" value="Yes" checked="checked">' +
+                             '<label for="txt_DiabetesYes">Yes</label><br><br>' +
+                             '<input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No">' +
+                             '<label for="txt_DiabetesNo">No</label>');
+                     } else if (data.d[0].admision_diabetes == "No") {
+                         $("#e_txt_Diabetes").append('<h6>Diabetes : *<br></h6>' +
+                             '<input id="txt_DiabetesYes" type="radio" name="txt_Diabetes" value="Yes" >' +
+                             '<label for="txt_DiabetesYes">Yes</label><br><br>' +
+                             '<input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No" checked="checked">' +
+                             '<label for="txt_DiabetesNo">No</label>');
+                     }
+                     if (data.d[0].admision_high_cholesterol == "Yes") {
+                         $("#e_txt_highCol").append('<h6>High Cholesterol *<br></h6>' +
+                             '<input id="txt_High" type="radio" name="txt_highCol" value="Yes" checked="checked">' +
+                             '<label for="txt_High">Yes</label><br><br>' +
+                             '<input id="txt_Choles" type="radio" name="txt_highCol" value="No">' +
+                             '<label for="txt_Choles">No</label>');
+                     } else if (data.d[0].admision_high_cholesterol == "No") {
+                         $("#e_txt_highCol").append('<h6>High Cholesterol *</h6><br>' +
+                             '<input id="txt_High" type="radio" name="txt_highCol" value="Yes">' +
+                             '<label for="txt_High">Yes</label><br><br>' +
+                             '<input id="txt_Choles" type="radio" name="txt_highCol" value="No" checked="checked">' +
+                             '<label for="txt_Choles">No</label>');
+                     }
+                     if (data.d[0].admision_pending_claims == "Yes") {
+                         $("#e_txt_Pending").append('<h6>Any Pending Claims for the current shield plan? *<br></h6>' +
+                             '<input id="txt_PendingYes" type="radio" name="txt_Pending" value="Yes" checked="checked">' +
+                             '<label for="txt_PendingYes">Yes</label><br><br>' +
+                             '<input id="txt_PendingNo" type="radio" name="txt_Pending" value="No">' +
+                             '<label for="txt_PendingNo">No</label>');
+                     } else if (data.d[0].admision_pending_claims == "No") {
+                         $("#e_txt_Pending").append('<h6>Any Pending Claims for the current shield plan? *<br></h6>' +
+                             '<input id="txt_PendingYes" type="radio" name="txt_Pending" value="Yes">' +
+                             '<label for="txt_PendingYes">Yes</label><br><br>' +
+                             '<input id="txt_PendingNo" type="radio" name="txt_Pending" value="No" checked="checked">' +
+                             '<label for="txt_PendingNo">No</label>');
+                     }
+                     if (data.d[0].admision_exclusion_plan == "Yes") {
+                         $("#e_MC_pressure").append('<h6>Any other cash paying entitlement policies(MC or daily hospitalization cash benefits) *</h6><br>' +
+                             '<input id="txt_paying" type="radio" name="MC_pressure" value="Yes" checked="checked">' +
+                             '<label for="txt_paying">Yes</label><br><br>' +
+                             '<input id="txt_Policies" type="radio" name="MC_pressure" value="No">' +
+                             '<label for="txt_Policies">No</label>');
+                     } else if (data.d[0].admision_exclusion_plan == "No") {
+                         $("#e_MC_pressure").append('<h6>Any other cash paying entitlement policies(MC or daily hospitalization cash benefits) *</h6><br>' +
+                             '<input id="txt_paying" type="radio" name="MC_pressure" value="Yes">' +
+                             '<label for="txt_paying">Yes</label><br><br>' +
+                             '<input id="txt_Policies" type="radio" name="MC_pressure" value="No" checked="checked">' +
+                             '<label for="txt_Policies">No</label>');
+                     }
+                     $("#txt_compliant").val(data.d[0].admision_cause_complaint);
+                     $("#txt_signSymp").val(data.d[0].admision_sign_symptoms);
+                     $("#txt_DOA").val(data.d[0].admision_preferred_date_admission);
+                     $("#insAgnetName").val(data.d[0].admision_insurance_agent_name);
+                     $("#insAgnetContact").val(data.d[0].admision_insurance_agent_contact);
+                 },
+                 error: function (result) {
+                     //alert("fail......."); bindCustomerBookings
+                 }
+             });
+         }
+
+
+         function getApplicationCount() {
+             $.ajax({
+                 type: "POST",
+                 contentType: "application/json; charset=utf-8",
+                 url: "Functions.aspx/getApplicationData",
+                 data: "{}",
+                 dataType: "json",
+                 success: function (data) {
+                     for (var i = 0; i < data.d.length; i++) {
+                         //alert("success");
+                     }
+                     //alert("Application count : " + data.d.length);
+                     var totApp = parseInt(data.d.length) + 1;
+                     localStorage.setItem('totApp', totApp);
+                 },
+                 error: function (result) {
+                     //alert("Error......");
+                 }
+             });
+         }
+
+         function getSessionName(user_id) {
+             $.ajax({
+                 type: "POST",
+                 contentType: "application/json; charset=utf-8",
+                 url: "Functions.aspx/GetSessionAgent",
+                 data: "{dagent_id:'" + user_id + "'}",
+                 dataType: "json",
+                 //async: false,
+                 success: function (data) {
+                     $("#SesName").empty();
+                     $("#SesName").append(data.d[0].agent_name);
+                     $("#insAgnetName").val(data.d[0].agent_name);
+                     $("#insAgnetContact").val(data.d[0].agent_phone);
+                 },
+                 error: function (result) {
+                     //alert("Error......"); insAgnetName    insAgnetContact
+                 }
+             });
+         }
+
+         function getToday() {
+             var today = new Date();
+             var dd = today.getDate();
+             var mm = today.getMonth() + 1; //January is 0!
+             var yyyy = today.getFullYear();
+
+             if (dd < 10) {
+                 dd = '0' + dd
+             }
+
+             if (mm < 10) {
+                 mm = '0' + mm
+             }
+
+             today = mm + '-' + dd + '-' + yyyy;
+             $("#appDate").empty();
+             $("#appDate").append(today);
+         }
+
+    </script>
+
+
+         <script src="/js/materialize.js?1447605082"></script>
+    <script src="/js/init.js?1449588580"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js'></script>
+    <script src="index.js"></script>
+    
+</body>
+
+</html> 

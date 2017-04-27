@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Dashboad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!--dataTables_length-->
+<style>
+    label {
+        font-size: 0.8rem;
+        color: #222222;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+<body>
+    <div id="gifer">
+        <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
+    </div>
+
+    <div id="formApplication">
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="#" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="index.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li><a href="sales.html">SALES AGENT</a></li>
+                    <!--<li><a href="report.html">REPORT</a></li>-->
+                    <li><a href="../index.html">LOGOUT</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="index.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li><a href="sales.html">SALES AGENT</a></li>
+                    <!--<li><a href="report.html">REPORT</a></li>-->
+                    <li><a href="../index.html">LOGOUT</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+        <div class="container" style="width:80%;">
+            <div class="row">
+                <div class="col m12 s12">
+                    <br />
+                    <h3 class="flow-text  blue lighten-1" id="H1" style="height: 45px;text-align: center;color: white;padding-top: 11px;font-size: 25px;">
+                        APPLICATIONS
+                    </h3><br />
+
+                    <div class="grey lighten-3" style="height:500px;overflow-y: scroll;overflow-x: hidden;">
+
+                        <table id="data_bind" class="responsive-table bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>CLIENT ID</th>
+                                    <th>NAME</th>
+                                    <th>GENDER</th>
+                                    <th>NRIC</th>
+                                    <th>DATE</th>
+                                    <th>CONTACT</th>
+                                    <th>STATUS</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div><br>
+        </div>
+
+
+
+
+        <footer class="page-footer blue lighten-1">
+            <div class="container">
+                <p class="flow-text" style="text-align:center;color:white;">ZDO</p><br>
+            </div>
+        </footer>
+
+    </div>
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="../js/materialize.js"></script>
+        <script src="../js/init.js"></script>
+
+        <script src="../js/jquery-3.1.1.js"></script>
+
+
+        <link href="../css/datatable/foundation.css" rel='stylesheet' type='text/css' />
+        <link href="https://cdn.datatables.net/1.10.13/css/dataTables.foundation.min.css" rel='stylesheet' type='text/css' />
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/dataTables.foundation.min.js"></script>
+
+
+        <!--<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>-->
+
+
+        <script>
+            $(document).ready(function () {
+
+                $("#gifer").hide();
+
+                var AppStatus = localStorage.getItem('AppStatus');
+                var sessionState = "";
+                var rej = "";
+                if (AppStatus == "1") {
+                    sessionState = AppStatus;
+                    getNewApp(sessionState);
+                } else if (AppStatus == "Amend") {
+                    rej = AppStatus;
+                    getAmendResult(rej);
+                } else if (AppStatus == "Rejected") {
+                    rej = AppStatus;
+                    getResult(rej);
+                } else if (AppStatus == "Pending") {
+                    rej = AppStatus;
+                    getPendingResult(rej);
+                } else if (AppStatus == "resubmit") {
+                    sessionState = AppStatus;
+                    resubmitApplication(sessionState);
+                }
+            });
+        </script>
+
+        <script>
+            function getNewApp(sessionState) {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../Functions.aspx/getnewApplication",
+                    data: "{dstatus:'" + sessionState + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#data_bind').DataTable({
+                            "data": data.d,
+                            "columns": [
+                                { "data": "admission_number" },
+                                { "data": "admision_name" },
+                                { "data": "admision_gender" },
+                                { "data": "admision_nric" },
+                                { "data": "admision_application_date" },
+                                { "data": "admision_contact" },
+                                { "data": "admision_status" },
+                                {
+                                    "data": "admission_number",
+                                    render: function (data, type, obj) {
+                                        return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="view(this);"><i class="material-icons">visibility</i></a>';
+                                    }
+                                }
+                            ]
+                        });
+                    },
+                    error: function (result) {
+                        alert("Shared server overload.....!");
+                    }
+                });
+            }
+
+            function resubmitApplication(sessionState) {
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../Functions.aspx/reSubmitApplication",
+                    data: "{submissionType:'" + sessionState + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#data_bind').DataTable({
+                            "data": data.d,
+                            "columns": [
+                                { "data": "admission_number" },
+                                { "data": "admision_name" },
+                                { "data": "admision_gender" },
+                                { "data": "admision_nric" },
+                                { "data": "admision_application_date" },
+                                { "data": "admision_contact" },
+                                { "data": "admision_status" },
+                                {
+                                    "data": "admission_number",
+                                    render: function (data, type, obj) {
+                                        return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="viewRejectApplication(this);"><i class="material-icons">visibility</i></a>';
+                                    }
+                                }
+                            ]
+                        });
+                    },
+                    error: function (result) {
+                        alert("Shared server overload.....!");
+                    }
+                });
+            }
+
+            function getPendingResult(rej) {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../Functions.aspx/getStatusApplication",
+                    data: "{admision_status:'" + rej + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#data_bind').DataTable({
+                            "data": data.d,
+                            "columns": [
+                                { "data": "admission_number" },
+                                { "data": "admision_name" },
+                                { "data": "admision_gender" },
+                                { "data": "admision_nric" },
+                                { "data": "admision_application_date" },
+                                { "data": "admision_contact" },
+                                { "data": "admision_status" },
+                                {
+                                    "data": "admission_number",
+                                    render: function (data, type, obj) {
+                                        return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="view(this);"><i class="material-icons">visibility</i></a>';
+                                    }
+                                }
+                            ]
+                        });
+                    },
+                    error: function (result) {
+                        alert("Shared server overload.....!");
+                    }
+                });
+            }
+
+            function getResult(rej) {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../Functions.aspx/getStatusApplication",
+                    data: "{admision_status:'" + rej + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#data_bind').DataTable({
+                            "data": data.d,
+                            "columns": [
+                                { "data": "admission_number" },
+                                { "data": "admision_name" },
+                                { "data": "admision_gender" },
+                                { "data": "admision_nric" },
+                                { "data": "admision_application_date" },
+                                { "data": "admision_contact" },
+                                { "data": "admision_status" },
+                                {
+                                    "data": "admission_number",
+                                    render: function (data, type, obj) {
+                                        return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="viewRejectApplication(this);"><i class="material-icons">visibility</i></a>';
+                                    }
+                                }
+                            ]
+                        });
+                    },
+                    error: function (result) {
+                        alert("Shared server overload.....!");
+                    }
+                });
+            }
+
+
+            function view(adm_num) {
+                var admission_number = $(adm_num).data('ids');
+                localStorage.setItem('admission_number', admission_number);
+                //alert(admission_number);
+                window.location = "viewApplication.html";
+            }
+
+
+            function viewRejectApplication(adm_num) {
+                var admission_number = $(adm_num).data('ids');
+                localStorage.setItem('admission_number', admission_number);
+                window.location = "viewApplicationReject.html";
+            }
+
+            function viewAmendApplication(adm_num) {
+                var admission_number = $(adm_num).data('ids');
+                //alert(admission_number);
+                localStorage.setItem('admission_number', admission_number);
+                window.location = "amend_application.html";
+            }
+
+
+            function getAmendResult(rej) {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../Functions.aspx/getStatusApplication",
+                    data: "{admision_status:'" + rej + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#data_bind').DataTable({
+                            "data": data.d,
+                            "columns": [
+                                { "data": "admission_number" },
+                                { "data": "admision_name" },
+                                { "data": "admision_gender" },
+                                { "data": "admision_nric" },
+                                { "data": "admision_application_date" },
+                                { "data": "admision_contact" },
+                                { "data": "admision_status" },
+                                {
+                                    "data": "admission_number",
+                                    render: function (data, type, obj) {
+                                        return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="viewAmendApplication(this);"><i class="material-icons">visibility</i></a>';
+                                    }
+                                }
+                            ]
+                        });
+                    },
+                    error: function (result) {
+                        alert("Shared server overload.....!");
+                    }
+                });
+            }
+
+        </script>
+
+</body>
+</html>

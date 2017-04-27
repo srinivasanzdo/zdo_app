@@ -1,0 +1,37 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>404</title>
+    <link href="css/materialize.css" rel="stylesheet" />
+    <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <div class="blue lighten-1">
+        <br>
+    </div>
+    <br><br>
+	
+<div class="container">
+    <p class="flow-text" style="text-align:center;color:#0094ff;font-size:30px;">Thank you for submiting your application...!</p>
+	<br>
+	
+	<center>
+		<!--<button id='btn_close' class='col m8 btn blue lighten-1'>Close</button>-->
+	</center>
+	
+</div>
+
+    <script>
+        $(document).ready(function () {
+            var admission_number = localStorage.getItem('admission_number');
+            //alert(admission_number);
+
+            $("#btn_close").click(function () {
+                alert("Successfully completed your application for more details contact your agent....!");
+                window.close();
+            });
+        });
+    </script>
+</body >
+</html >

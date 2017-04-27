@@ -1,0 +1,80 @@
+[  
+   {  
+      "agent_slno":"1",
+      "agent_id":"ZDO-1S",
+      "agent_name":"Srini",
+      "agent_gender":"Male",
+      "agent_email":"chandru@gmail.com",
+      "agent_phone":"7412589633",
+      "agent_username":"admin",
+      "agent_password":"admin",
+      "agent_photo":"test",
+      "agent_status":"Active",
+      "status":"A"
+   },
+   {  
+      "agent_slno":"2",
+      "agent_id":"ZDO-2S",
+      "agent_name":"Srether",
+      "agent_gender":"Male",
+      "agent_email":"sre@gmail.com",
+      "agent_phone":"9500258548",
+      "agent_username":"sre",
+      "agent_password":"sre",
+      "agent_photo":"no file upload",
+      "agent_status":"Active",
+      "status":"S"
+   },
+   {  
+      "agent_slno":"3",
+      "agent_id":"ZDO-3S",
+      "agent_name":"Test User 1",
+      "agent_gender":"Male",
+      "agent_email":"test@gmail.com",
+      "agent_phone":"9500258548",
+      "agent_username":"test1",
+      "agent_password":"test1",
+      "agent_photo":"no file upload",
+      "agent_status":"Active",
+      "status":"S"
+   },
+   {  
+      "agent_slno":"4",
+      "agent_id":"ZDO-4S",
+      "agent_name":"Test User 2",
+      "agent_gender":"Male",
+      "agent_email":"test@gmail.com",
+      "agent_phone":"9500258548",
+      "agent_username":"test2",
+      "agent_password":"test2",
+      "agent_photo":"no file upload",
+      "agent_status":"Active",
+      "status":"S"
+   },
+   {  
+      "agent_slno":"5",
+      "agent_id":"ZDO-5S",
+      "agent_name":"Test User 3",
+      "agent_gender":"Male",
+      "agent_email":"test@gmail.com",
+      "agent_phone":"9500258548",
+      "agent_username":"test3",
+      "agent_password":"test3",
+      "agent_photo":"no file upload",
+      "agent_status":"Active",
+      "status":"S"
+   },
+   {  
+      "agent_slno":"6",
+      "agent_id":"ZDO-6S",
+      "agent_name":"Test User 4",
+      "agent_gender":"Male",
+      "agent_email":"test@gmail.com",
+      "agent_phone":"9500258548",
+      "agent_username":"test4",
+      "agent_password":"test4",
+      "agent_photo":"no file upload",
+      "agent_status":"Active",
+      "status":"S"
+   }
+,{"agent_slno":"7","agent_id":"sret_ZDO_7","agent_name":"makua","agent_gender":"Male","agent_email":"sretherkrish@gmail.com","agent_phone":"94677110","agent_username":"sret_ZDO_7","agent_password":"123","agent_photo":"no file upload","agent_status":"Active","status":"S"},{"agent_slno":"8","agent_id":"vidh_ZDO_8","agent_name":"Vidhya","agent_gender":"FeMale","agent_email":"vidhya@gmail.com","agent_phone":"123456789000985654654645646","agent_username":"vidh_ZDO_8","agent_password":"welcome","agent_photo":"no file upload","agent_status":"Active","status":"S"},{"agent_slno":"9","agent_id":"vidh_ZDO_9","agent_name":"vidhya","agent_gender":"FeMale","agent_email":"vidhyagmail","agent_phone":"522222","agent_username":"vidh_ZDO_9","agent_password":"111","agent_photo":"no file upload","agent_status":"Active","status":"S"},{"agent_slno":"10","agent_id":"sure_ZDO_10","agent_name":"dsafsd","agent_gender":"Male","agent_email":"suresh@gmail.com","agent_phone":"452345","agent_username":"sure_ZDO_10","agent_password":"3453554","agent_photo":"no file upload","agent_status":"Active","status":"S"},{"agent_slno":"11","agent_id":"dfds_ZDO_11","agent_name":"cxfgvxcv","agent_gender":"Male","agent_email":"dfds@fdgfd","agent_phone":"hfg","agent_username":"dfds_ZDO_11","agent_password":"gfhgf","agent_photo":"no file upload","agent_status":"Active","status":"S"},{"agent_slno":"12","agent_id":"fdd@_ZDO_12","agent_name":"Suresh","agent_gender":"FeMale","agent_email":"fdd@df","agent_phone":"dd","agent_username":"fdd@_ZDO_12","agent_password":"1234","agent_photo":"no file upload","agent_status":"Active","status":"S"},{"agent_slno":"13","agent_id":"test_ZDO_13","agent_name":"test","agent_gender":"Male","agent_email":"test1@gmail.com","agent_phone":"9790214417","agent_username":"test_ZDO_13","agent_password":"9790214417","agent_photo":"no file upload","agent_status":"Active","status":"S"}]

@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Dashboad</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!--dataTables_length-->
+<style>
+    label {
+        font-size: 0.8rem;
+        color: #222222;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+<body>
+    <div id="gifer">
+        <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
+    </div>
+
+    <div id="formApplication">
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="dashboad.html" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
+                        <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
+                            <li><a href="index.html">LOG OUT</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+        <div class="container" style="width:80%;">
+            <div class="row">
+                <div class="col m12 s12">
+                    <br />
+                    <h3 class="flow-text  blue lighten-1" id="H1" style="height: 45px;text-align: center;color: white;padding-top: 11px;font-size: 25px;">
+                        APPLICATIONS
+                    </h3><br />
+
+                    <div class="grey lighten-3" style="height:500px;overflow-y: scroll;overflow-x: hidden;">
+
+                        <table id="data_bind" class="responsive-table bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>CLIENT ID</th>
+                                    <th>NAME</th>
+                                    <th>GENDER</th>
+                                    <th>NRIC</th>
+                                    <th>DATE</th>
+                                    <th>CONTACT</th>
+                                    <th>STATUS</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div><br>
+        </div>
+
+
+
+
+        <footer class="page-footer blue lighten-1">
+            <div class="container">
+                <p class="flow-text" style="text-align:center;color:white;">ZDO</p><br>
+            </div>
+        </footer>
+    </div>
+<script>
+	
+</script>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script src="js/jquery-3.1.1.js"></script>
+
+
+    <link href="css/datatable/foundation.css" rel='stylesheet' type='text/css' />
+    <link href="https://cdn.datatables.net/1.10.13/css/dataTables.foundation.min.css" rel='stylesheet' type='text/css' />
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/dataTables.foundation.min.js"></script>
+
+
+    <!--<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>-->
+    
+    <script src="session.js"></script>
+  <script>
+	$(document).ready(function(){
+        var user_id = localStorage.getItem('uid');
+        
+        $("#gifer").hide();
+
+        var Approved_user_status = localStorage.getItem('Approved_user_status');
+        var Draft_user_status = localStorage.getItem('Draft_user_status');
+        var Pending_user_status = localStorage.getItem('Pending_user_status');
+        var Amend_user_status = localStorage.getItem('Amend_user_status');
+        var Rejected_user_status = localStorage.getItem('Rejected_user_status');
+
+        var receivedStatus = localStorage.getItem('receivedStatus'); // whats app application
+
+        getSessionName(user_id);
+
+
+        //submit by month
+        var from_date = localStorage.getItem('from_date');
+        var to_date = localStorage.getItem('to_date');
+
+        if (Approved_user_status == "Approve") {
+            getApproved(user_id);
+
+        } else if (Draft_user_status == "Draft") {
+            getDraft(user_id);
+
+        } else if (Pending_user_status == "Pending") {
+            getPending(user_id);
+
+        } else if (Amend_user_status == "Amend") {
+            getAmend(user_id);
+
+        } else if (Rejected_user_status == "Rejected") {
+            getRejected(user_id);
+
+        } else if (receivedStatus == "3") {
+            getReceived(user_id);
+
+        } else if (from_date !== null) {
+            //alert(from_date + "Not empty" + to_date);
+            getSubmissions(user_id, from_date, to_date);
+        }
+        
+    });
+  </script>
+  
+    <script>
+        function getApproved(user_id) {
+
+            var statusApp = "Approve";
+            //alert(user_id + "---" + statusApp);
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getSalesPersonStatus",
+                data: "{dstatusApp:'" + statusApp + "', dagent_id:'" + user_id + "'}",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    $('#data_bind').DataTable({
+                            "data": data.d,
+                            "columns": [
+                                { "data": "admission_number" },
+                                { "data": "admision_name" },
+                                { "data": "admision_gender" },
+                                { "data": "admision_nric" },
+                                { "data": "admision_application_date" },
+                                { "data": "admision_contact" },
+                                { "data": "admision_status" },
+                                {
+                                    "data": "admission_number",
+                                    render: function (data, type, obj) {
+                                        return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="view(this);"><i class="material-icons">visibility</i></a>';
+                                    }
+                                }
+                            ]
+                        });
+                },
+                error: function (result) {
+                    //alert("Shared server overload.....!");
+                }
+            });
+        }
+
+        function getDraft(user_id) {
+            var statusApp = "Draft";
+            //alert(user_id+"Draft");
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getSalesPersonDraft",
+                data: "{appSave:'" + statusApp + "', dagent_id:'" + user_id + "'}",
+                dataType: "json",
+                success: function (data) {
+
+                    $('#data_bind').DataTable({
+                        "data": data.d,
+                        "columns": [
+                            { "data": "admission_number" },
+                            { "data": "admision_name" },
+                            { "data": "admision_gender" },
+                            { "data": "admision_nric" },
+                            { "data": "admision_application_date" },
+                            { "data": "admision_contact" },
+                            { "data": "admision_status" },
+                            //{ "data": "admision_status" }
+                            {
+                                "data": "admission_number",
+                                render: function (data, type, obj) {
+                                    return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="viewDraftApplication(this);"><i class="material-icons">visibility</i></a>';
+                                }
+                            }
+                        ]
+                    });
+                },
+                error: function (result) {
+                    //alert("Shared server overload.....!");
+                }
+            });
+        }
+
+        function viewDraftApplication(adm_num) {
+           // alert("Draft");
+            var admission_number = $(adm_num).data('ids');
+            localStorage.setItem('admission_numberDraft', admission_number);
+            window.location = "draft_application.html";
+        }
+
+
+        function getPending(user_id) {
+            var statusApp = "Pending";
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getSalesPersonStatus",
+                data: "{dstatusApp:'" + statusApp + "', dagent_id:'" + user_id + "'}",
+                dataType: "json",
+                success: function (data) {
+
+                    $('#data_bind').DataTable({
+                        "data": data.d,
+                        "columns": [
+                            { "data": "admission_number" },
+                            { "data": "admision_name" },
+                            { "data": "admision_gender" },
+                            { "data": "admision_nric" },
+                            { "data": "admision_application_date" },
+                            { "data": "admision_contact" },
+                            { "data": "admision_status" },
+                            {
+                                "data": "admission_number",
+                                render: function (data, type, obj) {
+                                    return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="view(this);"><i class="material-icons">visibility</i></a>';
+                                }
+                            }
+                        ]
+                    });
+                },
+                error: function (result) {
+                    //alert("Shared server overload.....!");
+                }
+            });
+        }
+        function getAmend(user_id) {
+            var statusApp = "Amend";
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getSalesPersonStatus",
+                data: "{dstatusApp:'" + statusApp + "', dagent_id:'" + user_id + "'}",
+                dataType: "json",
+                success: function (data) {
+
+                    $('#data_bind').DataTable({
+                        "data": data.d,
+                        "columns": [
+                            { "data": "admission_number" },
+                            { "data": "admision_name" },
+                            { "data": "admision_gender" },
+                            { "data": "admision_nric" },
+                            { "data": "admision_application_date" },
+                            { "data": "admision_contact" },
+                            { "data": "admision_status" },
+                            {
+                                "data": "admission_number",
+                                render: function (data, type, obj) {
+                                    return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="viewAmend(this);"><i class="material-icons">visibility</i></a>';
+                                }
+                            }
+                        ]
+                    });
+                },
+                error: function (result) {
+                    //alert("Shared server overload.....!");
+                }
+            });
+        }
+        function getRejected(user_id) {
+            var statusApp = "Rejected";
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getSalesPersonStatus",
+                data: "{dstatusApp:'" + statusApp + "', dagent_id:'" + user_id + "'}",
+                dataType: "json",
+                success: function (data) {
+                    $('#data_bind').DataTable({
+                        "data": data.d,
+                        "columns": [
+                            { "data": "admission_number" },
+                            { "data": "admision_name" },
+                            { "data": "admision_gender" },
+                            { "data": "admision_nric" },
+                            { "data": "admision_application_date" },
+                            { "data": "admision_contact" },
+                            { "data": "admision_status" },
+                            {
+                                "data": "admission_number",
+                                render: function (data, type, obj) {
+                                    return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="viewRejectApp(this);"><i class="material-icons">visibility</i></a>';
+                                }
+                            }
+                        ]
+                    });
+                },
+                error: function (result) {
+                    //alert("Shared server overload.....!");
+                }
+            });
+        }
+        function getReceived(user_id) {
+            var status = "3";
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getReceivedStatus",
+                data: "{dstatus:'" + status + "', dagent_id:'" + user_id + "'}",
+                dataType: "json",
+                success: function (data) {
+                    $('#data_bind').DataTable({
+                        "data": data.d,
+                        "columns": [
+                            { "data": "admission_number" },
+                            { "data": "admision_name" },
+                            { "data": "admision_gender" },
+                            { "data": "admision_nric" },
+                            { "data": "admision_application_date" },
+                            { "data": "admision_contact" },
+                            { "data": "admision_status" },
+                            {
+                                "data": "admission_number",
+                                render: function (data, type, obj) {
+                                    return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="viewMobileAppSingle(this);"><i class="material-icons">visibility</i></a>';
+                                }
+                            }
+                        ]
+                    });
+                },
+                error: function (result) {
+                    //alert("Shared server overload.....!");
+                }
+            });
+        }
+        function getSubmissions(user_id, from_date, to_date) {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getApplicationStatus",
+                data: "{dagent_id:'" + user_id + "'}",
+                dataType: "json",
+                success: function (data) {
+                    $('#data_bind').DataTable({
+                        "data": data.d,
+                        "columns": [
+                            { "data": "admission_number" },
+                            { "data": "admision_name" },
+                            { "data": "admision_gender" },
+                            { "data": "admision_nric" },
+                            { "data": "admision_application_date" },
+                            { "data": "admision_contact" },
+                            { "data": "admision_status" },
+                            {
+                                "data": "admission_number",
+                                render: function (data, type, obj) {
+                                    return '<a class="btn-floating btn-small waves-effect waves-light blue" data-ids = "' + data + '" onclick="view(this);"><i class="material-icons">visibility</i></a>';
+                                }
+                            }
+                        ]
+                    });
+                },
+                error: function (result) {
+                   // alert("Shared server overload.....!");    
+                }
+            });
+        }
+
+        function viewMobileAppSingle(adm_num) {
+            var admission_number = $(adm_num).data('ids');
+            localStorage.setItem('admission_number', admission_number);
+            //alert(admission_number);  
+            window.location = "mobileApplicationSingle.html";
+        }
+
+        function view(adm_num) {
+            var admission_number = $(adm_num).data('ids');
+            localStorage.setItem('admission_number', admission_number);
+            //alert(admission_number);  
+            window.location = "viewApplication.html";
+        }
+
+        function viewAmend(adm_num) {
+            var admission_number = $(adm_num).data('ids');
+            localStorage.setItem('admission_number', admission_number);
+            window.location = "amend_application.html";
+        }
+
+        function viewDraft(adm_num) {
+            var admission_number = $(adm_num).data('ids');
+            localStorage.setItem('admission_number', admission_number);
+            window.location = "amend_application.html";
+        }
+        
+        function viewRejectApp(adm_num) {
+            var admission_number = $(adm_num).data('ids');
+            localStorage.setItem('admission_number', admission_number);
+            window.location = "viewApplication_reapply.html";
+        }
+    </script>
+
+  </body>
+</html>

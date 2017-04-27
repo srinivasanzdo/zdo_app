@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>test enc and dec</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+
+</head>
+<body>
+  <center>
+  <br /><br /><br />
+
+
+
+  <input type="file" id="f1" class="fi1"><br /><br /><br />
+  <button type='submit' id='btn_DraftSave' class='col s12 btn btn-large blue lighten-1'>Next</button>
+
+
+  </center>
+
+  <script src="js/jquery-3.1.1.js"></script>
+  <script>
+      $(document).ready(function () {
+          $("#btn_DraftSave").click(function () {
+              //Get Extension
+              if ($('.fi1').val() != '') {
+                  var file = $('.fi1')[0].files[0];
+                  var fileName = file.name;
+                  var fileExt = '.' + fileName.split('.').pop();
+                  alert(fileExt + "----" + fileName);
+              }
+              else {
+                  alert('Please select a file.')
+              } //Extension end
+
+              var filename = "chandru";
+              var data = new FormData();
+              data.append("UploadedImage", $("#f1").get(0).files[0]);
+                    
+              $.ajax({
+                  type: "POST",
+                  url: "test.aspx/saveData",
+                  processData: false,
+                  contentType: false,
+                  data: data,
+                  async: false,
+                  success: function (data) {
+                      alert("Upload Success...!");
+                  }
+              });
+          });
+      });
+  </script>
+  
+  </body>
+
+</html>

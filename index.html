@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Login</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+
+</head>
+<body>
+  <div class="blue lighten-1">
+	<br>
+  </div>
+  <br><br>
+  
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container"  style="width:50%">
+		
+		
+		<div class="row">			
+			<div class="col m12 s12">
+				<div class="cyan lighten-1">
+					<p class="flow-text" style="text-align:center;color:white;    padding: 15px;">PLEASE LOGIN INTO YOUR ACCOUNT</p>					
+				</div>
+			</div>
+		</div>
+
+  
+	<div class="row">
+		
+		<div class="col m12 s12">
+			<br><br>
+			
+			<div class="row">
+                <label for="user_name" style="font-size:15px;">User name</label>
+				<div class="input-field col s12">
+				  <input id="user_name" type="text" class="validate">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+                <label for="user_password" style="font-size:15px;">Password</label>
+				<div class="input-field col s12">
+				  <input id="user_password" type="password" class="validate">
+				</div>
+			 </div>
+			<br>
+			
+			<div class="row">
+				<div class="col m4 s0">				  
+				</div>
+				<div class="col m4 s12">
+					<button id="btn_login" class="waves-effect waves-light btn btn-large col s12 cyan lighten-1">LOGIN</button>
+				</div>
+				<div class="col m4 s0">				  
+				</div>
+			 </div>
+			<br>
+		</div>
+		
+	</div><br>
+	
+        
+
+
+  </div>
+</div>
+
+
+<script>
+	
+</script>
+
+  <!--  Scripts-->
+
+
+  <script src="js/jquery-3.1.1.js"></script>
+  <script>
+    $(document).ready(function () {
+        $("#btn_login").click(function () {
+            var uname = $('#user_name').val();
+            var password = $('#user_password').val();
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/user_login",
+                data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d === "false") {
+                        alert("Please enter valid login information");
+                    }
+                    else {
+                        var ttt = data.d;
+                        var res = ttt;
+                        var param = res.split("%");
+                        var uid = param[0];
+                        var ustatus = param[1];
+                        localStorage.setItem('uid', uid);
+                        if (ustatus == "S") {
+                            alert("Sales Person Logged in...!");
+                            window.location = "dashboad.html";
+                        } else {
+                            alert("Admin Logged in..!");
+                            window.location = "admin/";
+                        }
+                    }
+                },
+                error: function (result) {
+                    //alert("fail.......");
+                }
+            });
+        });
+        $('#user_name').keypress(function (e) {
+            if (e.which == 13) {
+                //alert("hello");
+                var uname = $('#user_name').val();
+                var password = $('#user_password').val();
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/user_login",
+                    data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.d === "false") {
+                            alert("Please enter valid login information");
+                        }
+                        else {
+                            var ttt = data.d;
+                            var res = ttt;
+                            var param = res.split("%");
+                            var uid = param[0];
+                            var ustatus = param[1];
+                            localStorage.setItem('uid', uid);
+                            if (ustatus == "S") {
+                                alert("Sales Person Logged in...!");
+                                window.location = "dashboad.html";
+                            } else {
+                                alert("Admin Logged in..!");
+                                window.location = "admin/";
+                            }
+                        }
+                    },
+                    error: function (result) {
+                        //alert("fail.......");
+                    }
+                });
+            }
+        });
+
+        $('#user_password').keypress(function (e) {
+            if (e.which == 13) {
+                // alert("hello");
+                var uname = $('#user_name').val();
+                var password = $('#user_password').val();
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/user_login",
+                    data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.d === "false") {
+                            alert("Please enter valid login information");
+                        }
+                        else {
+                            var ttt = data.d;
+                            var res = ttt;
+                            var param = res.split("%");
+                            var uid = param[0];
+                            var ustatus = param[1];
+                            localStorage.setItem('uid', uid);
+                            if (ustatus == "S") {
+                                alert("Sales Person Logged in...!");
+                                window.location = "dashboad.html";
+                            } else {
+                                alert("Admin Logged in..!");
+                                window.location = "admin/";
+                            }
+                        }
+                    },
+                    error: function (result) {
+                        //alert("fail.......");
+                    }
+                });
+            }
+        });	
+	});
+  </script>
+  
+  </body>
+
+</html>

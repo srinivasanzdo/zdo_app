@@ -1,0 +1,1178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Dashboad</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <style>
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+
+        h6 {
+            font-size: 17px;
+            font-family: "Helvetica Neue";
+            color: #777474;
+            line-height: 50px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="gifer">
+        <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
+    </div>
+    <div id="formApplication">
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="dashboad.html" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
+                        <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
+                            <li><a href="index.html">LOG OUT</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <div class="row">
+                    <br>
+                    <h5 style="text-align:center;">APPLICATION</h5>	<br />
+                </div>
+                <div class="row">
+                    <div class="input-field col m4 s12">
+                        <p style="text-align: left;color:black;font-weight:bold;">APPLICATION NUMBER : <span id="Span25"></span></p>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <p style="color:black;font-weight:bold;font-family: " Helvetica Neue";" class="apl_sta">APPLICATION STATUS : <span id="appStatus_track"></span></p>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <p style="text-align: right;color:black;font-weight:bold;">APPLICATION DATE : <span id="Span26"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" id="viewState">
+                <h6>NAME:<span id="Span0">Test</span></h6>
+                <h6>GENDER : <span id="Span1">Test</span></h6>
+                <h6>NRIC : <span id="Span2">Test</span></h6>
+                <h6>DATE OF BIRTH : <span id="Span3">Test</span></h6>
+                <h6>OCCUPATION : <span id="Span4">Test</span></h6>
+                <h6>CONTACT : <span id="Span5">Test</span></h6>
+                <h6>NOK NAME & RELATIONSHIP : <span id="Span6">Test</span></h6>
+                <h6>NOK CONTACT : <span id="Span7">Test</span></h6>
+                <h6>TYPE OF SHIELD PLAN (with or without rider) / PA PLAN & INFORCE DATE  : <span id="Span8">Test</span></h6>
+                <h6>EXCLUSION PLANS : <span id="Span9">Test</span></h6>
+                <h6>PRE-EXISTING CONDITIONS [medical condition & medicine / past operation done not mentioned in policy] : <span id="Span10">Test</span></h6>
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>HIGH BLOOD PRESSURE</th>
+                            <th>DIABETES</th>
+                            <th>HIGH CHOLESTEROL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span id="Span11">Test</span></td>
+                            <td><span id="Span12">Test</span></td>
+                            <td><span id="Span13">Test</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6>PENDING CLAIM PLAN FOR THE CURRENT SHIELD PLAN : <span id="Span14">Test</span></h6>
+                <h6>ANY OTHER CASH PAYING ENTITLEMENT POLICIES [MC or daily hospitalization cash benefits] : <span id="Span15">Test</span></h6>
+                <h6>CAUSE OF COMPLIANT : <span id="Span19">Test</span></h6>
+                <h6>SIGNS AND SYMPTOMS : <span id="Span20">Test</span></h6>
+                <h6>DATE OF ADMISSION : <span id="Span21">Test</span></h6>
+                <h6>INSURANCE AGENT NAME : <span id="Span22">Test</span></h6>
+                <h6>INSURANCE AGENT CONTACT : <span id="Span23">Test</span></h6>
+
+                                        <h6 for='Span24' style="text-align: left;">Remarks *</h6>
+                                        <textarea id="Textarea1" class="materialize-textarea"></textarea>
+                                   
+
+
+            </div>
+
+
+            <!------------------------------------------------------------------------------------------------------------------>
+
+            <div id="editState">
+                <div class="container" style="width:65%;">
+                    <div class="row">
+                        <div class="col s12">
+
+                            <ul class="tabs" id="dis">
+                                <li class="tab col s4"><a href="#test1">Step 1</a></li>
+                                <li class="tab col s4"><a href="#test2">Step 2</a></li>
+                            </ul>
+
+                        </div>
+                        <div id="test1" class="tab_content col s12" style="background-color:#e2e2e2">
+                            <div class="container" style="width: 65%;">
+                                <br />
+                                <div class="row">
+                                    <p>
+                                        <h6>Name*</h6>
+                                        <input id="txt_name" type="text" class="validate">
+                                        <input id="txt_user_id_bnd" type="text" class="validate" style="display:none;">
+                                    </p>
+
+                                    <p id="e_gender">
+
+                                    </p><br>
+                                    <p>
+                                        <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
+                                        <input id="txt_NRIC" type="text" class="validate" maxlength="9">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>
+                                        <input class="datepicker_dob" id="txt_dob">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_occup' style="text-align: left;">Occupation *</h6>
+                                        <input id="txt_occup" type="text" class="validate">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_cont' style="text-align: left;">Contact *</h6>
+                                        <input id="txt_cont" type="number" class="validate" onkeypress="return validate1(event)">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_knok' style="text-align: left;"> Next of Kin (NOK) name and relationship *</h6>
+                                        <input id="txt_knok" type="text" class="validate">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_nok' style="text-align: left;">Contact of NOK *</h6>
+                                        <input id="txt_nok" type="number" class="validate" onkeypress="return validate(event)">
+                                    </p>
+                                    <p>
+                                        <h6 style="" id="myMed">Type of shield plan (with or without rider) / PA plan & Inforce date *</h6>
+                                        <input id="txt_plan" type="text" class="validate1">
+                                    </p>
+                                    <p id="e_txt_AnyExc">
+
+                                    </p><br>
+                                    <p id="e_txt_condition">
+
+                                    </p><br>
+                                    <p id="e_txt_Pressure">
+
+                                    </p><br>
+                                    <p id="e_txt_Diabetes">
+
+                                    </p><br>
+                                    <p id="e_txt_highCol">
+
+                                    </p><br>
+                                    <p id="e_txt_Pending">
+
+                                    </p><br>
+                                    <p id="e_MC_pressure">
+
+                                    </p><br>
+                                    <p>
+                                        <h6 for='txt_compliant' style="text-align: left;">Cause of complaint *</h6>
+                                        <input id="txt_compliant" type="text" class="validate">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_signSymp' style="text-align: left;">Signs and Symptoms *</h6>
+                                        <input id="txt_signSymp" type="text" class="validate">
+                                    </p>
+                                    <p>
+                                        <h6 for='txt_DOA' style="text-align: left;">Preffered date of admission*</h6>
+                                        <input class="datepicker_pdate" id="txt_DOA" type="text">
+                                    </p>
+                                    <p>
+                                        <input id="insAgnetName" type="text" class="validate" readonly>
+                                    </p>
+                                    <p>
+                                        <input id="insAgnetContact" type="text" class="validate" readonly>
+                                    </p>
+                                    <p>
+                                        <h6 for='Span24' style="text-align: left;">Remarks *</h6>
+                                        <textarea id="Span24" class="materialize-textarea"></textarea>
+                                    </p>
+                                    <br><br>
+                                    <center>
+                                        <button type='submit' id='btn_Submit' class='col s12 btn btn-large blue lighten-1'>Next</button>
+                                    </center><br><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="test2" class="tab_content col s12">
+                    <div class="container" style="background-color:#e2e2e2">
+                        <br />
+                        <center><h5>UPLOAD DOCUMENTS</h5></center>
+                        <br />
+
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>NRIC FRONT</label><br>
+                                                <input type="file" id="nricF">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>NRIC BACK</label><br>
+                                                <input type="file" id="nricB">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr style="border-color: #42a5f5;">
+
+                            <div class="row">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 1</label><br>
+                                                <input type="file" id="f1">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 2</label><br>
+                                                <input type="file" id="f2">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 3</label><br>
+                                                <input type="file" id="f3">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 4</label><br>
+                                                <input type="file" id="f4">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <div class="col m4 s12">
+                                            <div class="row">
+                                                <a type='submit' id='a4' class='col m5 btn blue green darken-2'>Add</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="img5">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 5</label><br>
+                                                <input type="file" id="f5">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <div class="col m4 s12">
+                                            <div class="row">
+                                                <a type='submit' id='a5' class='col m5 btn blue green darken-2'>Add</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="img6">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 6</label><br>
+                                                <input type="file" id="f6">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <div class="col m5 s12">
+                                            <div class="row">
+                                                <a type='submit' id='a6' class='col m5 btn blue green darken-2'>Add</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="img7">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 7</label><br>
+                                                <input type="file" id="f7">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <div class="col m5 s12">
+                                            <div class="row">
+                                                <a type='submit' id='a7' class='col m5 btn blue green darken-2'>Add</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="img8">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 8</label><br>
+                                                <input type="file" id="f8">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <div class="col m5 s12">
+                                            <div class="row">
+                                                <a type='submit' id='a8' class='col m5 btn blue green darken-2'>Add</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="img9">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 9</label><br>
+                                                <input type="file" id="f9">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <div class="col m5 s12">
+                                            <div class="row">
+                                                <a type='submit' id='a9' class='col m5 btn blue green darken-2'>Add</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="img10">
+                                <div class="col l12 m6 s12">
+                                    <div class="row">
+                                        <div class="col m7 s12">
+                                            <div class="file-field input-field">
+                                                <label>Document 10</label><br>
+                                                <input type="file" id="f10">
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <center><a type='submit' id='btn_compSave' class='col m8 btn blue lighten-1'>Submit</a></center>
+                        <br>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+           
+            <center>
+                <button type='submit' id='btn_resend' class='col s12 btn btn-large waves-effect' style="background-color: #40abdf;">RESEND</button>
+                <button type='submit' id='btn_Edit' class='col s12 btn btn-large waves-effect' style="background-color: #40abdf;">Edit</button>
+            </center><br><br>
+
+        </div>
+
+
+
+
+        <footer class="page-footer blue lighten-1">
+            <div class="container">
+                <p class="flow-text" style="text-align:center;color:white;">ZDO</p><br>
+            </div>
+        </footer>
+    </div>
+    <script>
+
+    </script>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="index.js"></script>
+    <script src="session.js"></script>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var user_id = localStorage.getItem('uid');
+            var admission_number = localStorage.getItem('admission_number');
+
+            $("#gifer").hide();
+
+            $("#img5").hide();
+            $("#img6").hide();
+            $("#img7").hide();
+            $("#img8").hide();
+            $("#img9").hide();
+            $("#img10").hide();
+            $("#a4").click(function () {
+                $("#img5").show();
+                $("#a4").hide();
+            });
+
+            $("#a5").click(function () {
+                $("#img6").show();
+                $("#a5").hide();
+            });
+            $("#a6").click(function () {
+                $("#img7").show();
+                $("#a6").hide();
+            });
+            $("#a7").click(function () {
+                $("#img8").show();
+                $("#a7").hide();
+            });
+            $("#a8").click(function () {
+                $("#img9").show();
+                $("#a8").hide();
+            });
+            $("#a9").click(function () {
+                $("#img10").show();
+                $("#a9").hide();
+            });
+
+            $("#btn_Submit").hide();
+            $("#editState").hide();
+
+            getAmendApplication(admission_number);
+            getStatEditValues(admission_number);
+            getSessionName(user_id);
+
+
+
+            $("#btn_resend").click(function () {
+                var admission_number = localStorage.getItem('admission_number');
+                //alert(admission_number);
+                var client_status = $("#Textarea1").val();
+                var status = "R";
+
+                if (client_status == "") {
+                    Materialize.toast('Please fill application remarks', 4000);
+                    $("#Textarea1").focus();
+                } else {
+                    $("#formApplication").hide();
+                    $("#gifer").show();
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/mobile_App_Ret_Client",
+                        data: "{dadmission_number :'" + admission_number + "',dadmision_remarks_client :'" + client_status + "',status :'" + status + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.d === "true") {
+                                //alert("Client application is resent...");
+                                //window.location = "dashboad.html";
+                                var admission_number = localStorage.getItem('admission_number');
+                                activeURL(admission_number);
+                            }
+                            else {
+                                //alert("Error");
+                            }
+                        }
+                    });
+                }
+            });
+
+
+
+            $("#btn_Edit").click(function () {
+
+                $("#formApplication").hide();
+                $("#gifer").show();
+
+                $("#btn_Submit").show();
+                $("#btn_Edit").hide(); //btn_Edit
+                $("#btn_resend").hide(); //btn_resend
+                $("#viewState").hide();
+                $("#editState").show();
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/getAmendSingle",
+                    data: "{dadmission_number:'" + admission_number + "'}",
+                    dataType: "json",
+                    async: false,
+                    success: function (data) {
+                        //alert(booking_id);
+                        $("#txt_name").empty();
+                        $("#e_gender").empty();
+                        $("#txt_NRIC").empty();
+                        $("#txt_dob").empty();
+                        $("#txt_occup").empty();
+                        $("#txt_cont").empty();
+                        $("#txt_knok").empty();
+                        $("#txt_nok").empty();
+                        $("#txt_plan").empty();
+                        $("#e_txt_AnyExc").empty();
+                        $("#e_txt_condition").empty();
+                        $("#e_txt_Pressure").empty();
+                        $("#e_txt_Diabetes").empty();
+                        $("#e_txt_highCol").empty();
+                        $("#e_txt_Pending").empty();
+                        $("#e_MC_pressure").empty();
+                        $("#Span19").empty();
+                        $("#Span20").empty();
+                        $("#Span21").empty();
+                        $("#insAgnetName").empty();
+                        $("#insAgnetContact").empty();
+
+                        var E_admission_number = localStorage.getItem('E_admission_number');
+                        var E_admision_name = localStorage.getItem('E_admision_name');
+                        var E_admision_gender = localStorage.getItem('E_admision_gender');
+                        var E_admision_nric = localStorage.getItem('E_admision_nric');
+                        var E_admision_dob = localStorage.getItem('E_admision_dob');
+                        var E_admision_occupation = localStorage.getItem('E_admision_occupation');
+                        var E_admision_contact = localStorage.getItem('E_admision_contact');
+                        var E_admision_nok_name = localStorage.getItem('E_admision_nok_name');
+                        var E_admision_nok_contact = localStorage.getItem('E_admision_nok_contact');
+                        var E_admision_pa_plan = localStorage.getItem('E_admision_pa_plan');
+                        var E_admision_exclusion_plan = localStorage.getItem('E_admision_exclusion_plan');
+                        var E_admision_pre_existing_condition = localStorage.getItem('E_admision_pre_existing_condition');
+                        var E_admision_hign_bp = localStorage.getItem('E_admision_hign_bp');
+                        var E_admision_diabetes = localStorage.getItem('E_admision_diabetes');
+                        var E_admision_high_cholesterol = localStorage.getItem('E_admision_high_cholesterol');
+                        var E_admision_pending_claims = localStorage.getItem('E_admision_pending_claims');
+                        var E_admision_cash_pay_mc = localStorage.getItem('E_admision_cash_pay_mc');
+                        var E_admision_cause_complaint = localStorage.getItem('E_admision_cause_complaint');
+                        var E_admision_sign_symptoms = localStorage.getItem('E_admision_sign_symptoms');
+                        var E_admision_preferred_date_admission = localStorage.getItem('E_admision_preferred_date_admission');
+
+                        $("#txt_name").val(data.d[0].admision_name);
+
+                        if (data.d[0].admision_gender == "Male") {
+                            $("#e_gender").append('<h6>Gender*</h6>' +
+                                '<input id="Mal" type="radio" name="gender" value="Male" checked="checked">' +
+                                '<label for="Mal">Male</label>' +
+                                '<br><br><input id="Fem" type="radio" name="gender" value="Female">' +
+                                '<label for="Fem">Female</label>');
+                        } else if (data.d[0].admision_gender == "Female") {
+                            $("#e_gender").append('<h6>Gender*</h6>' +
+                                '<input id="Mal" type="radio" name="gender" value="Male">' +
+                                '<label for="Mal">Male</label>' +
+                                '<br><br><input id="Fem" type="radio" name="gender" value="Female" checked="checked">' +
+                                '<label for="Fem">Female</label>');
+                        }
+                        $("#txt_NRIC").val(data.d[0].admision_nric);
+                        $("#txt_dob").val(data.d[0].admision_dob);
+                        $("#txt_occup").val(data.d[0].admision_occupation);
+                        $("#txt_cont").val(data.d[0].admision_contact);
+                        $("#txt_knok").val(data.d[0].admision_nok_name);
+                        $("#txt_nok").val(data.d[0].admision_nok_contact);
+                        $("#txt_plan").val(data.d[0].admision_pa_plan);
+                        if (data.d[0].admision_exclusion_plan == "Yes") {
+                            $("#e_txt_AnyExc").append('<h6>Any Exclusion in plans? *</h6>' +
+                                '<input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes" checked="checked">' +
+                                '<label for="txt_Exc">Yes</label>' +
+                                '<br><br><input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No">' +
+                                '<label for="txt_Excplan">No</label>');
+                        } else if (data.d[0].admision_exclusion_plan == "No") {
+                            $("#e_txt_AnyExc").append('<h6>Any Exclusion in plans? *</h6>' +
+                                '<input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes">' +
+                                '<label for="txt_Exc">Yes</label>' +
+                                '<br><br><input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No" checked="checked">' +
+                                '<label for="txt_Excplan">No</label>');
+                        }
+                        if (data.d[0].admision_pre_existing_condition == "Yes") {
+                            $("#e_txt_condition").append('<h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6>' +
+                                '<input id="txt_policy" type="radio" name="txt_condition" value="Yes" checked="checked">' +
+                                '<label for="txt_policy">Yes</label>' +
+                                '<br><br><input id="txt_medicine" type="radio" name="txt_condition" value="No">' +
+                                '<label for="txt_medicine">No</label>');
+                        } else if (data.d[0].admision_pre_existing_condition == "No") {
+                            $("#e_txt_condition").append('<h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6>' +
+                                '<input id="txt_policy" type="radio" name="txt_condition" value="Yes">' +
+                                '<label for="txt_policy">Yes</label>' +
+                                '<br><br><input id="txt_medicine" type="radio" name="txt_condition" value="No" checked="checked">' +
+                                '<label for="txt_medicine">No</label>');
+                        }
+                        if (data.d[0].admision_hign_bp == "Yes") {
+                            $("#e_txt_Pressure").append('<h6>Any of the above is Yes, date of diagnosis</h6><h6>High Blood Pressure : *</h6>' +
+                                '<input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes" checked="checked">' +
+                                '<label for="txt_Blood">Yes</label>' +
+                                '<br><br><input id="txt_Pressures" type="radio" name="txt_Pressure" value="No">' +
+                                '<label for="txt_Pressures">No</label>');
+                        } else if (data.d[0].admision_hign_bp == "No") {
+                            $("#e_txt_Pressure").append('<h6>Any of the above is Yes, date of diagnosis</h6><h6>High Blood Pressure : *</h6>' +
+                                '<input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes">' +
+                                '<label for="txt_Blood">Yes</label>' +
+                                '<br><br><input id="txt_Pressures" type="radio" name="txt_Pressure" value="No" checked="checked">' +
+                                '<label for="txt_Pressures">No</label>');
+                        }
+                        if (data.d[0].admision_diabetes == "Yes") {
+                            $("#e_txt_Diabetes").append('<h6>Diabetes : *</h6>' +
+                                '<input id="txt_DiabetesYes" type="radio" name="txt_Diabetes" value="Yes" checked="checked">' +
+                                '<label for="txt_DiabetesYes">Yes</label>' +
+                                '<br><br><input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No">' +
+                                '<label for="txt_DiabetesNo">No</label>');
+                        } else if (data.d[0].admision_diabetes == "No") {
+                            $("#e_txt_Diabetes").append('<h6>Diabetes : *</h6>' +
+                                '<input id="txt_DiabetesYes" type="radio" name="txt_Diabetes" value="Yes" >' +
+                                '<label for="txt_DiabetesYes">Yes</label>' +
+                                '<br><br><input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No" checked="checked">' +
+                                '<label for="txt_DiabetesNo">No</label>');
+                        }
+                        if (data.d[0].admision_high_cholesterol == "Yes") {
+                            $("#e_txt_highCol").append('<h6>High Cholesterol *</h6>' +
+                                '<input id="txt_High" type="radio" name="txt_highCol" value="Yes" checked="checked">' +
+                                '<label for="txt_High">Yes</label>' +
+                                '<br><br><input id="txt_Choles" type="radio" name="txt_highCol" value="No">' +
+                                '<label for="txt_Choles">No</label>');
+                        } else if (data.d[0].admision_high_cholesterol == "No") {
+                            $("#e_txt_highCol").append('<h6>High Cholesterol *</h6>' +
+                                '<input id="txt_High" type="radio" name="txt_highCol" value="Yes">' +
+                                '<label for="txt_High">Yes</label>' +
+                                '<br><br><input id="txt_Choles" type="radio" name="txt_highCol" value="No" checked="checked">' +
+                                '<label for="txt_Choles">No</label>');
+                        }
+                        if (data.d[0].admision_pending_claims == "Yes") {
+                            $("#e_txt_Pending").append('<h6>Any Pending Claims for the current shield plan? *</h6>' +
+                                '<input id="txt_PendingYes" type="radio" name="txt_Pending" value="Yes" checked="checked">' +
+                                '<label for="txt_PendingYes">Yes</label>' +
+                                '<br><br><input id="txt_PendingNo" type="radio" name="txt_Pending" value="No">' +
+                                '<label for="txt_PendingNo">No</label>');
+                        } else if (data.d[0].admision_pending_claims == "No") {
+                            $("#e_txt_Pending").append('<h6>Any Pending Claims for the current shield plan? *</h6>' +
+                                '<input id="txt_PendingYes" type="radio" name="txt_Pending" value="Yes">' +
+                                '<label for="txt_PendingYes">Yes</label>' +
+                                '<br><br><input id="txt_PendingNo" type="radio" name="txt_Pending" value="No" checked="checked">' +
+                                '<label for="txt_PendingNo">No</label>');
+                        }
+                        if (data.d[0].admision_exclusion_plan == "Yes") {
+                            $("#e_MC_pressure").append('<h6>Any other cash paying entitlement policies(MC or daily hospitalization cash benefits) *</h6>' +
+                                '<input id="txt_paying" type="radio" name="MC_pressure" value="Yes" checked="checked">' +
+                                '<label for="txt_paying">Yes</label>' +
+                                '<br><br><input id="txt_Policies" type="radio" name="MC_pressure" value="No">' +
+                                '<label for="txt_Policies">No</label>');
+                        } else if (data.d[0].admision_exclusion_plan == "No") {
+                            $("#e_MC_pressure").append('<h6>Any other cash paying entitlement policies(MC or daily hospitalization cash benefits) *</h6>' +
+                                '<input id="txt_paying" type="radio" name="MC_pressure" value="Yes">' +
+                                '<label for="txt_paying">Yes</label>' +
+                                '<br><br><input id="txt_Policies" type="radio" name="MC_pressure" value="No" checked="checked">' +
+                                '<label for="txt_Policies">No</label>');
+                        }
+                        $("#txt_compliant").val(data.d[0].admision_cause_complaint);
+                        $("#txt_signSymp").val(data.d[0].admision_sign_symptoms);
+                        $("#txt_DOA").val(data.d[0].admision_preferred_date_admission);
+                        $("#insAgnetName").val(data.d[0].admision_insurance_agent_name);
+                        $("#insAgnetContact").val(data.d[0].admision_insurance_agent_contact);
+
+                        $("#gifer").hide();
+                        $("#formApplication").show();
+                    },
+                    error: function (result) {
+                        //alert("fail......."); bindCustomerBookings
+                    }
+                });
+
+            });
+
+
+
+            $("#btn_compSave").click(function () {
+                var admision_slno = localStorage.getItem('totApp'); //no val
+                var user_id = localStorage.getItem('uid');
+
+                //alert(user_id);
+
+                var admission_number = $('#appNum').text(); //no val
+                var admision_name = $('#txt_name').val();
+                var admision_gender = $('input[name="gender"]:checked').val();
+                var admision_nric = $("#txt_NRIC").val();
+                var admision_dob = $("#txt_dob").val();
+                var admision_application_date = $("#appDate").text();  //no val
+                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_occupation = $("#txt_occup").val();
+                var admision_contact = $("#txt_cont").val();
+                var admision_nok_name = $("#txt_knok").val();
+                var admision_nok_contact = $("#txt_nok").val();
+                var admision_pa_plan = $("#txt_plan").val();
+                var admision_exclusion_plan = $('input[name="txt_AnyExc"]:checked').val();
+                var admision_pre_existing_condition = $('input[name="txt_condition"]:checked').val();
+                var admision_hign_bp = $('input[name="txt_Pressure"]:checked').val();
+                var admision_diabetes = $('input[name="txt_Diabetes"]:checked').val();
+                var admision_high_cholesterol = $('input[name="txt_highCol"]:checked').val();
+                var admision_pending_claims = $('input[name="txt_Pending"]:checked').val();
+                var admision_cash_pay_mc = $('input[name="MC_pressure"]:checked').val();
+                var admision_cause_complaint = $("#txt_compliant").val();
+                var admision_sign_symptoms = $("#txt_signSymp").val();
+                var admision_preferred_date_admission = $("#txt_DOA").val();
+                var admision_insurance_agent_id = user_id; //no val
+                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
+                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
+                var admision_remarks_admin = "Nil"; //no val
+                var admision_remarks_agent = "Nil"; //no val
+                var admision_status = "Pending"; //no val
+                var status = "1"; //no val
+                var saveType = "mobile";
+                var submissionType = "normal";
+                //var appSave = "Draft";
+                //---------------previous-
+                var nricF = $('#nricF').val();
+                var nricB = $('#nricB').val();
+                var f1 = $('#f1').val();
+                var f2 = $('#f2').val();
+                var f3 = $('#f3').val();
+                var f4 = $('#f4').val();
+
+                if (admision_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_name").focus();
+                } else if (admision_gender == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_nric == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_NRIC").focus();
+                } else if (admision_dob == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_dob").focus();
+                } else if (admision_occupation == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_occup").focus();
+                } else if (admision_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_cont").focus();
+                } else if (admision_nok_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_knok").focus();
+                } else if (admision_nok_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_nok").focus();
+                } else if (admision_pa_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_plan").focus();
+                } else if (admision_exclusion_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_pre_existing_condition == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_hign_bp == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_diabetes == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_high_cholesterol == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_pending_claims == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_cash_pay_mc == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_cause_complaint == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_compliant").focus();
+                } else if (admision_sign_symptoms == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_signSymp").focus();
+                } else if (admision_preferred_date_admission == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_DOA").focus();
+                }
+                //----------------prev
+                else if (nricF == "") {
+                    Materialize.toast('Please upload NRIC files', 4000);
+                } else if (nricB == "") {
+                    Materialize.toast('Please upload NRIC files', 4000);
+                } else if (f1 == "") {
+                    Materialize.toast('Please upload files', 4000);
+                }
+                else {
+                    $("#formApplication").hide();
+                    $("#gifer").show();
+
+                    var admission_number = localStorage.getItem('admission_number');
+
+                    var nricFront = "Demo file";
+
+                    var appSave = "Complete";
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/update_ApplicationDocuments_nricFront",
+                        data: "{admission_number :'" + admission_number + "',nricFront :'" + nricFront + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            //uploadDocNricBack();
+                            /*$("#gifer").hide();
+                            $("#formApplication").show();
+
+                            alert("Successfully applied the application..!");
+                            window.location = "dashboad.html";*/
+
+                            
+
+                        }
+                    });
+                }
+
+            });
+
+
+
+            //Update start
+            $("#btn_Submit").click(function () {
+                $("#gifer").show();
+                $("#formApplication").hide();
+                //var admision_slno = localStorage.getItem('totApp');//no val
+                var user_id = localStorage.getItem('uid');
+
+                var admission_number = localStorage.getItem('admission_number');
+                //var admission_number = $('#appNum').text();//no val
+                var admision_name = $('#txt_name').val();
+                var admision_gender = $('input[name="gender"]:checked').val();
+                var admision_nric = $("#txt_NRIC").val();
+                var admision_dob = $("#txt_dob").val();
+                var admision_application_date = $("#appDate").text();  //no val                   
+                //var admision_time = (new Date().toString("hh:mm tt"));//no val
+                var admision_occupation = $("#txt_occup").val();
+                var admision_contact = $("#txt_cont").val();
+                var admision_nok_name = $("#txt_knok").val();
+                var admision_nok_contact = $("#txt_nok").val();
+                var admision_pa_plan = $("#txt_plan").val();
+                var admision_exclusion_plan = $('input[name="txt_AnyExc"]:checked').val();
+                var admision_pre_existing_condition = $('input[name="txt_condition"]:checked').val();
+                var admision_hign_bp = $('input[name="txt_Pressure"]:checked').val();
+                var admision_diabetes = $('input[name="txt_Diabetes"]:checked').val();
+                var admision_high_cholesterol = $('input[name="txt_highCol"]:checked').val();
+                var admision_pending_claims = $('input[name="txt_Pending"]:checked').val();
+                var admision_cash_pay_mc = $('input[name="MC_pressure"]:checked').val();
+                var admision_cause_complaint = $("#txt_compliant").val();
+                var admision_sign_symptoms = $("#txt_signSymp").val();
+                var admision_preferred_date_admission = $("#txt_DOA").val();
+                var admision_insurance_agent_id = user_id; //no val
+                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
+                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
+                //var admision_remarks_admin = "Nil";//no val
+                var admision_remarks_agent = $("#Span24").val();
+                var admision_status = "Pending"; //no val
+                var status = "1"; //no val
+
+                if (admision_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_name").focus();
+                } else if (admision_gender == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_nric == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_NRIC").focus();
+                } else if (admision_dob == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_dob").focus();
+                } else if (admision_occupation == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_occup").focus();
+                } else if (admision_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_cont").focus();
+                } else if (admision_nok_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_knok").focus();
+                } else if (admision_nok_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_nok").focus();
+                } else if (admision_pa_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_plan").focus();
+                } else if (admision_exclusion_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_pre_existing_condition == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_hign_bp == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_diabetes == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_high_cholesterol == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_pending_claims == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_cash_pay_mc == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_cause_complaint == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_compliant").focus();
+                } else if (admision_sign_symptoms == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_signSymp").focus();
+                } else if (admision_preferred_date_admission == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_DOA").focus();
+                } else {
+                    //alert("success...!");
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/updateAmendApplicationWork",
+                        data: "{admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_status :'" + admision_status + "', status :'" + status + "'}", //admision_status
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.d === "true") {
+                                /*$("#gifer").hide();
+                                $("#formApplication").show();
+                                alert('Successfully updated....!');
+                                localStorage.setItem('admission_number', admission_number);
+                                window.location = "dashboad.html";*/
+                                $("#gifer").hide();
+                                $("#formApplication").show();
+                                Materialize.toast('You will upload the preffered documents...!', 2000);
+                                localStorage.setItem('admission_number', admission_number);
+                                $('ul.tabs').tabs('select_tab', 'test2');
+                            } else {
+                                //alert("Add Error...");
+                            }
+                        }
+                    });
+                }
+            });
+            //Update end   
+
+        });
+    </script>
+
+    <script>
+
+        function activeURL(admission_number) {
+            var status = "1";
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/updateActiveURL",
+                data: "{admission_number :'" + admission_number + "', status :'" + status + "'}",
+                dataType: "json",
+                success: function (data) {
+                    alert("Client application is resent...");
+                    window.location = "dashboad.html";
+                }
+            });
+        }
+
+        function getStatEditValues(admission_number) {
+            //alert(admission_number)
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getEditState",
+                data: "{dadmission_number:'" + admission_number + "'}",
+                dataType: "json",
+                //async: false, 
+                success: function (data) {
+                    //alert("happy" + admission_number);
+                    localStorage.setItem('E_admission_number', data.d[0].admission_number);
+                    localStorage.setItem('E_admision_name', data.d[0].admision_name);
+                    localStorage.setItem('E_admision_gender', data.d[0].admision_gender);
+                    localStorage.setItem('E_admision_nric', data.d[0].admision_nric);
+                    localStorage.setItem('E_admision_dob', data.d[0].admision_dob);
+                    localStorage.setItem('E_admision_occupation', data.d[0].admision_occupation);
+                    localStorage.setItem('E_admision_contact', data.d[0].admision_contact);
+                    localStorage.setItem('E_admision_nok_name', data.d[0].admision_nok_name);
+                    localStorage.setItem('E_admision_nok_contact', data.d[0].admision_nok_contact);
+                    localStorage.setItem('E_admision_pa_plan', data.d[0].admision_pa_plan);
+                    localStorage.setItem('E_admision_exclusion_plan', data.d[0].admision_exclusion_plan);
+                    localStorage.setItem('E_admision_pre_existing_condition', data.d[0].admision_pre_existing_condition);
+                    localStorage.setItem('E_admision_hign_bp', data.d[0].admision_hign_bp);
+                    localStorage.setItem('E_admision_diabetes', data.d[0].admision_diabetes);
+                    localStorage.setItem('E_admision_high_cholesterol', data.d[0].admision_high_cholesterol);
+                    localStorage.setItem('E_admision_pending_claims', data.d[0].admision_pending_claims);
+                    localStorage.setItem('E_admision_cash_pay_mc', data.d[0].admision_cash_pay_mc);
+                    localStorage.setItem('E_admision_cause_complaint', data.d[0].admision_cause_complaint);
+                    localStorage.setItem('E_admision_sign_symptoms', data.d[0].admision_sign_symptoms);
+                    localStorage.setItem('E_admision_preferred_date_admission', data.d[0].admision_preferred_date_admission);
+                },
+                error: function (result) {
+                    //alert("Error......");
+                }
+            });
+        }
+
+        function getAmendApplication(admission_number) {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Functions.aspx/getAmendSingle",
+                data: "{dadmission_number:'" + admission_number + "'}",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //alert(booking_id);    
+                    $("#appStatus_track").empty();
+                    $("#Span0").empty();
+                    $("#Span1").empty();
+                    $("#Span2").empty();
+                    $("#Span3").empty();
+                    $("#Span4").empty();
+                    $("#Span5").empty();
+                    $("#Span6").empty();
+                    $("#Span7").empty();
+                    $("#Span8").empty();
+                    $("#Span9").empty();
+                    $("#Span10").empty();
+                    $("#Span11").empty();
+                    $("#Span12").empty();
+                    $("#Span13").empty();
+                    $("#Span14").empty();
+                    $("#Span15").empty();
+                    $("#Span19").empty();
+                    $("#Span20").empty();
+                    $("#Span21").empty();
+                    $("#Span22").empty();
+                    $("#Span23").empty();
+                    $("#Span25").empty();
+                    $("#Span26").empty();
+                    $("#adminRemark").empty();
+
+                    $("#appStatus_track").append(data.d[0].admision_status);
+                    $("#Span25").append(data.d[0].admission_number);
+                    $("#Span26").append(data.d[0].admision_application_date);
+                    $("#Span0").append(data.d[0].admision_name);
+                    $("#Span1").append(data.d[0].admision_gender);
+                    $("#Span2").append(data.d[0].admision_nric);
+                    $("#Span3").append(data.d[0].admision_dob);
+                    $("#Span4").append(data.d[0].admision_occupation);
+                    $("#Span5").append(data.d[0].admision_contact);
+                    $("#Span6").append(data.d[0].admision_nok_name);
+                    $("#Span7").append(data.d[0].admision_nok_contact);
+                    $("#Span8").append(data.d[0].admision_pa_plan);
+                    $("#Span9").append(data.d[0].admision_exclusion_plan);
+                    $("#Span10").append(data.d[0].admision_pre_existing_condition);
+                    $("#Span11").append(data.d[0].admision_hign_bp);
+                    $("#Span12").append(data.d[0].admision_diabetes);
+                    $("#Span13").append(data.d[0].admision_high_cholesterol);
+                    $("#Span14").append(data.d[0].admision_pending_claims);
+                    $("#Span15").append(data.d[0].admision_cash_pay_mc);
+                    $("#Span19").append(data.d[0].admision_cause_complaint);
+                    $("#Span20").append(data.d[0].admision_sign_symptoms);
+                    $("#Span21").append(data.d[0].admision_preferred_date_admission);
+                    $("#Span22").append(data.d[0].admision_insurance_agent_name);
+                    $("#Span23").append(data.d[0].admision_insurance_agent_contact);
+                    $("#adminRemark").append(data.d[0].admision_remarks_admin);
+                },
+                error: function (result) {
+                    //alert("fail......."); bindCustomerBookings
+                }
+            });
+        }
+    </script>
+
+
+</body>
+</html>
