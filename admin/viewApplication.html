@@ -187,7 +187,8 @@
                     var status = "2";
 
                     if (admision_remarks_admin == "") {
-                        //alert("");
+                        Materialize.toast('Please fill remarks', 3000);
+                        $("#remarks_admin").focus();
                     } else {
                         $("#formApplication").hide();
                         $("#gifer").show();
