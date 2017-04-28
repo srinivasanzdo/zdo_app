@@ -675,8 +675,6 @@ margin: 0;
 
 
             $("#btn_Submit").click(function () {
-                $("#gifer").show();
-                $("#formApplication").hide();
                 var user_id = localStorage.getItem('E_agentId');
                 var admission_number = localStorage.getItem('admission_number');
                 var admision_name = $('#txt_name').val();
@@ -760,6 +758,8 @@ margin: 0;
                     Materialize.toast('Please fill all mandatory fields', 4000);
                     $("#Span24").focus();
                 } else {
+                    $("#gifer").show();
+                    $("#formApplication").hide();
                     $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",

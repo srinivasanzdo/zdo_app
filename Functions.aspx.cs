@@ -382,7 +382,7 @@ public partial class Functions : System.Web.UI.Page
 
     //file upload work start
     [System.Web.Services.WebMethod]
-    public static string SaveNRICfront(string Based64BinaryString)
+    public static string SaveNRICfront(string Based64BinaryString, string admision_slno)
     {
         string result = "";
         try
@@ -407,16 +407,11 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
-
+            
             byte[] data = Convert.FromBase64String(str);
 
             if (format == "png")
@@ -436,15 +431,16 @@ public partial class Functions : System.Web.UI.Page
                 image.Save(path + "/file" + name + ".jpg");
                 var imgpath = "files/file" + name + ".jpg";
                 result = imgpath;
-            }
-            else
-            {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+            }else if(format == "pdf") {
+                string samplepath = path + "file" + name + ".pdf";
+                System.IO.FileStream stream = new FileStream(samplepath, FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(data, 0, data.Length);
+                writer.Close();
+                var pdfpath = "files/file" + name + ".pdf";
+                result = pdfpath;
+            }else {
+                //other format return
             }
         }
         catch (Exception ex)
@@ -480,15 +476,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
-            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
-            str = str.Replace("data:image/png;base64,", " ");//png check
-            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");
+            str = str.Replace("data:image/png;base64,", " ");
+            str = str.Replace("data:application/pdf;base64,", " ");
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -512,12 +503,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -553,15 +543,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -585,12 +570,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -626,15 +610,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -658,12 +637,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -699,15 +677,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -731,12 +704,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -772,15 +744,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -804,12 +771,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -845,15 +811,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -877,12 +838,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -918,15 +878,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -950,12 +905,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -991,15 +945,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -1023,12 +972,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -1064,15 +1012,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -1096,12 +1039,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -1137,15 +1079,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -1169,12 +1106,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -1210,15 +1146,10 @@ public partial class Functions : System.Web.UI.Page
             {
                 format = "png";
             }
-            if (Based64BinaryString.Contains("data:text/plain;base64,"))
-            {
-                format = "txt";
-            }
 
             string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
             str = str.Replace("data:image/png;base64,", " ");//png check
             str = str.Replace("data:application/pdf;base64,", " ");//pdf check
-            str = str.Replace("data:text/plain;base64,", " ");//text file check
 
             byte[] data = Convert.FromBase64String(str);
 
@@ -1242,12 +1173,11 @@ public partial class Functions : System.Web.UI.Page
             }
             else
             {
-                MemoryStream ms = new MemoryStream(data, 0, data.Length);
-                ms.Write(data, 0, data.Length);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-                image.Save(path + "/file" + name + ".pdf");
-                var imgpath = "files/file" + name + ".pdf";
-                result = imgpath;
+                byte[] bytes = Convert.FromBase64String(str);
+                System.IO.FileStream stream = new FileStream(path + "/file/filename.pdf", FileMode.CreateNew);
+                System.IO.BinaryWriter writer = new BinaryWriter(stream);
+                writer.Write(bytes, 0, bytes.Length);
+                writer.Close();
             }
         }
         catch (Exception ex)
@@ -1989,7 +1919,11 @@ string main1 = usersendEmail ;
         {
             objlistapplication = new List<application>();
             objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication = (from m in objlistapplication where m.admision_insurance_agent_id == dagent_id orderby m.admision_slno descending select m).ToList();
+
+
+            objlistapplication = (from m in objlistapplication where m.admision_insurance_agent_id == dagent_id select m).ToList();
+
+
             if (objlistapplication.Count > 0)
             {
                 applicationcls.admision_slno = objlistapplication[0].admision_slno;

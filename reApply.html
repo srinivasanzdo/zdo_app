@@ -28,12 +28,12 @@
     }
 
     input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
-margin: 0; 
-}
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+    }
 </style>
 
 
@@ -738,7 +738,7 @@ margin: 0;
                 var saveType = "web";
                 var subType = localStorage.getItem('subType');
                 var submissionType = subType;
-                var appSave = "Draft";                
+                var appSave = "Complete";                
 
                 if (admision_name == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
