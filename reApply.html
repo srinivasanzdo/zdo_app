@@ -462,7 +462,7 @@ margin: 0;
                             </div>
                         </div>
                     </div>
-
+                    
 
                             <p id="nricFT" style="display:none">Nil</p>
                             <p id="nricBT" style="display:none">Nil</p>
@@ -574,12 +574,18 @@ margin: 0;
                 var admision_remarks_admin = "Nil"; //no val    
                 var admision_remarks_agent = $("#Span24").val();
                 //---------------previous-
-                var nricF = $('#nricF').val();
-                var nricB = $('#nricB').val();
-                var f1 = $('#f1').val();
-                var f2 = $('#f2').val();
-                var f3 = $('#f3').val();
-                var f4 = $('#f4').val();
+                var nricF = $('#nricFT').text();
+                var nricB = $('#nricBT').text();
+                var f1 = $('#f1T').text();
+                var f2 = $('#f2T').text();
+                var f3 = $('#f3T').text();
+                var f4 = $('#f4T').text();
+                var f5 = $('#f5T').text();
+                var f6 = $('#f6T').text();
+                var f7 = $('#f7T').text();
+                var f8 = $('#f8T').text();
+                var f9 = $('#f9T').text();
+                var f10 = $('#f10T').text();
 
                 if (admision_name == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
@@ -655,29 +661,18 @@ margin: 0;
                 }
 
                 //----------------prev
-                else if (nricF == "") {
+                else if (nricF == "Nil") {
                     Materialize.toast('Please upload NRIC files', 4000);
-                } else if (nricB == "") {
+                } else if (nricB == "Nil") {
                     Materialize.toast('Please upload NRIC files', 4000);
-                } else if (f1 == "") {
+                } else if (f1 == "Nil") {
                     Materialize.toast('Please upload files', 4000);
                 }
                 else {
                     $("#formApplication").hide();
                     $("#gifer").show();
                     var admission_number = localStorage.getItem('admission_number');
-                    var nricF = $('#nricFT').text();
-                    var nricB = $('#nricBT').text();
-                    var f1 = $('#f1T').text();
-                    var f2 = $('#f2T').text();
-                    var f3 = $('#f3T').text();
-                    var f4 = $('#f4T').text();
-                    var f5 = $('#f5T').text();
-                    var f6 = $('#f6T').text();
-                    var f7 = $('#f7T').text();
-                    var f8 = $('#f8T').text();
-                    var f9 = $('#f9T').text();
-                    var f10 = $('#f10T').text();
+                    
 
                     var admision_status = "Pending";
                     var status = "1";
@@ -685,6 +680,7 @@ margin: 0;
                     var subType = localStorage.getItem('subType');
                     var submissionType = subType;
                     var appSave = "Complete";
+
 
                     $.ajax({
                         type: "POST",
@@ -707,14 +703,14 @@ margin: 0;
 
 
             $("#btn_Submit").click(function () {
-                var admision_slno = localStorage.getItem('totApp'); //no val
-                var admission_number = $('#appNum').text(); //no val
+                var admision_slno = localStorage.getItem('totApp');
+                var admission_number = $('#appNum').text();
                 var admision_name = $('#txt_name').val();
                 var admision_gender = $('input[name="gender"]:checked').val();
                 var admision_nric = $("#txt_NRIC").val();
                 var admision_dob = $("#txt_dob").val();
-                var admision_application_date = $("#appDate").text();  //no val                   
-                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_application_date = $("#appDate").text();         
+                var admision_time = (new Date().toString("hh:mm tt"));
                 var admision_occupation = $("#txt_occup").val();
                 var admision_contact = $("#txt_cont").val();
                 var admision_nok_name = $("#txt_knok").val();
@@ -730,17 +726,19 @@ margin: 0;
                 var admision_cause_complaint = $("#txt_compliant").val();
                 var admision_sign_symptoms = $("#txt_signSymp").val();
                 var admision_preferred_date_admission = $("#txt_DOA").val();
-                var admision_insurance_agent_id = user_id; //no val
-                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
-                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
-                var admision_remarks_admin = "Nil"; //no val
+                var admision_insurance_agent_id = user_id;
+                var admision_insurance_agent_name = $("#insAgnetName").val();
+                var admision_insurance_agent_contact = $("#insAgnetContact").val();
+                
+
+                var admision_remarks_admin = "Nil";
                 var admision_remarks_agent = $("#Span24").val();
-                var admision_status = "New"; //no val
-                var status = "1"; //no val
+                var admision_status = "Pending";
+                var status = "1";
                 var saveType = "web";
                 var subType = localStorage.getItem('subType');
                 var submissionType = subType;
-                var appSave = "Draft";
+                var appSave = "Draft";                
 
                 if (admision_name == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
@@ -811,6 +809,7 @@ margin: 0;
                                 $("#formApplication").show();
                                 $("#btn_DraftSave").hide();
                                 localStorage.setItem('admission_number', admission_number);
+                                Materialize.toast('Please check the documents before submit application', 4000);
                                 $('ul.tabs').tabs('select_tab', 'test2');
                             } else {
                                 //alert("Add Error...");
@@ -1400,24 +1399,29 @@ margin: 0;
                      $("#Div10").empty();
 
 
-                     
                      if (data.d[0].admision_nric_front_screen == "Nil") {
                          $("#bnd1").empty();
                      } else {
                          var d1 = "http://test.zerodotone.net/" + data.d[0].admision_nric_front_screen;
                          $("#bnd1").append('<a href="' + d1 + '" target="_blank">NRIC FRONT</a>');
+                         $("#nricFT").empty();
+                         $("#nricFT").append(data.d[0].admision_nric_front_screen);
                      }
                      if (data.d[0].admision_nric_back_screen == "Nil") {
                          $("#bnd2").empty();
                      } else {
                          var d2 = "http://test.zerodotone.net/" + data.d[0].admision_nric_back_screen;
                          $("#bnd2").append('<a href="' + d2 + '" target="_blank">NRIC BACK</a>');
+                         $("#nricBT").empty();
+                         $("#nricBT").append(data.d[0].admision_nric_back_screen);
                      }
                      if (data.d[0].admision_policy_file1 == "Nil") {
                          $("#Div1").empty();
                      } else {
                          var df1 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file1;
                          $("#Div1").append('<a href="' + df1 + '" target="_blank">Document 1</a>');
+                         $("#f1T").empty();
+                         $("#f1T").append(data.d[0].admision_policy_file1);
                      }
 
                      if (data.d[0].admision_policy_file2 == "Nil") {
@@ -1425,6 +1429,8 @@ margin: 0;
                      } else {
                          var df2 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file2;
                          $("#Div2").append('<a href="' + df2 + '" target="_blank">Document 2</a>');
+                         $("#f2T").empty();
+                         $("#f2T").append(data.d[0].admision_policy_file2);
                      }
 
                      if (data.d[0].admision_policy_file3 == "Nil") {
@@ -1432,6 +1438,8 @@ margin: 0;
                      } else {
                          var df3 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file3;
                          $("#Div3").append('<a href="' + df3 + '" target="_blank">Document 3</a>');
+                         $("#f3T").empty();
+                         $("#f3T").append(data.d[0].admision_policy_file3);
                      }
 
                      if (data.d[0].admision_policy_file4 == "Nil") {
@@ -1439,6 +1447,8 @@ margin: 0;
                      } else {
                          var df4 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file4;
                          $("#Div4").append('<a href="' + df4 + '" target="_blank">Document 4</a>');
+                         $("#f4T").empty();
+                         $("#f4T").append(data.d[0].admision_policy_file4);
                      }
 
                      if (data.d[0].admision_policy_file5 == "Nil") {
@@ -1446,6 +1456,8 @@ margin: 0;
                      } else {
                          var df5 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file5;
                          $("#Div5").append('<a href="' + df5 + '" target="_blank">Document 5</a>');
+                         $("#f5T").empty();
+                         $("#f5T").append(data.d[0].admision_policy_file5);
                      }
 
                      if (data.d[0].admision_policy_file6 == "Nil") {
@@ -1453,6 +1465,8 @@ margin: 0;
                      } else {
                          var df6 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file6;
                          $("#Div6").append('<a href="' + df6 + '" target="_blank">Document 6</a>');
+                         $("#f6T").empty();
+                         $("#f6T").append(data.d[0].admision_policy_file6);
                      }
 
                      if (data.d[0].admision_policy_file7 == "Nil") {
@@ -1460,6 +1474,8 @@ margin: 0;
                      } else {
                          var df7 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file7;
                          $("#Div7").append('<a href="' + df7 + '" target="_blank">Document 7</a>');
+                         $("#f7T").empty();
+                         $("#f7T").append(data.d[0].admision_policy_file7);
                      }
 
                      if (data.d[0].admision_policy_file8 == "Nil") {
@@ -1467,6 +1483,8 @@ margin: 0;
                      } else {
                          var df8 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file8;
                          $("#Div8").append('<a href="' + df8 + '" target="_blank">Document 8</a>');
+                         $("#f8T").empty();
+                         $("#f8T").append(data.d[0].admision_policy_file8);
                      }
 
                      if (data.d[0].admision_policy_file9 == "Nil") {
@@ -1474,6 +1492,8 @@ margin: 0;
                      } else {
                          var df9 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file9;
                          $("#Div9").append('<a href="' + df9 + '" target="_blank">Document 9</a>');
+                         $("#f9T").empty();
+                         $("#f9T").append(data.d[0].admision_policy_file9);
                      }
 
                      if (data.d[0].admision_policy_file10 == "Nil") {
@@ -1481,6 +1501,8 @@ margin: 0;
                      } else {
                          var df10 = "http://test.zerodotone.net/" + data.d[0].admision_policy_file10;
                          $("#Div10").append('<a href="' + df10 + '" target="_blank">Document 10</a>');
+                         $("#f10T").empty();
+                         $("#f10T").append(data.d[0].admision_policy_file10);
                      }
 
                      

@@ -611,9 +611,9 @@ margin: 0;
                 var admision_insurance_agent_id = user_id;
                 var admision_insurance_agent_name = $("#insAgnetName").val();
                 var admision_insurance_agent_contact = $("#insAgnetContact").val();
-                var admision_remarks_admin = "Nil";
-                var admision_remarks_agent = "Nil";
                 
+                var admision_remarks_admin = "Nil";
+                var admision_remarks_agent = "Nil";                
                 var admision_status = "Pending";
                 var status = "1";
                 var saveType = "web";
@@ -725,12 +725,6 @@ margin: 0;
                     var submissionType = "normal";
                     var appSave = "Complete";
 
-                    //admision_status :'" + admision_status + "', 
-                    //status :'" + status + "', 
-                    //saveType :'" + saveType + "', 
-                    //submissionType :'" + submissionType + "', 
-                    //appSave :'" + appSave + "'
-
                     $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
@@ -754,13 +748,13 @@ margin: 0;
                 var user_id = $("#txt_user_id_bnd").val();
                 //alert(user_id);
 
-                var admission_number = $('#appNum').text(); //no val
+                var admission_number = $('#appNum').text();
                 var admision_name = $('#txt_name').val();
                 var admision_gender = $('input[name="gender"]:checked').val();
                 var admision_nric = $("#txt_NRIC").val();
                 var admision_dob = $("#txt_dob").val();
-                var admision_application_date = $("#appDate").text();  //no val
-                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_application_date = $("#appDate").text();
+                var admision_time = (new Date().toString("hh:mm tt"));
                 var admision_occupation = $("#txt_occup").val();
                 var admision_contact = $("#txt_cont").val();
                 var admision_nok_name = $("#txt_knok").val();
@@ -776,16 +770,19 @@ margin: 0;
                 var admision_cause_complaint = $("#txt_compliant").val();
                 var admision_sign_symptoms = $("#txt_signSymp").val();
                 var admision_preferred_date_admission = $("#txt_DOA").val();
-                var admision_insurance_agent_id = user_id; //no val
-                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
-                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
-                var admision_remarks_admin = "Nil"; //no val
-                var admision_remarks_agent = "Nil"; //no val
-                var admision_status = "Pending"; //no val
-                var status = "1"; //no val
+                var admision_insurance_agent_id = user_id;
+                var admision_insurance_agent_name = $("#insAgnetName").val();
+                var admision_insurance_agent_contact = $("#insAgnetContact").val();
+
+
+                var admision_remarks_admin = "Nil";
+                var admision_remarks_agent = "Nil";
+                var admision_status = "Pending";
+                var status = "1";
                 var saveType = "web";
                 var submissionType = "normal";
                 var appSave = "Draft";
+
 
                 if (admision_name == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
@@ -845,29 +842,6 @@ margin: 0;
                     // alert("Success");
                     $("#formApplication").hide();
                     $("#gifer").show();
-
-
-
-
-                    /*$.ajax({
-                        type: "POST",
-                        contentType: "application/json; charset=utf-8",
-                        url: "Functions.aspx/getAmendSingle",
-                        data: "{dadmission_number :'" + admission_number + "'}",
-                        dataType: "json",
-                        success: function (data) {
-                            if (data.d === "false") {
-                                alert("False");
-                            }
-                            else {
-                                alert("true..!");
-                                SaveDataApplicationDraft(admision_slno, admission_number, admision_name, admision_gender, admision_nric, admision_dob, admision_application_date, admision_time, admision_occupation, admision_contact, admision_nok_name, admision_nok_contact, admision_pa_plan, admision_exclusion_plan, admision_pre_existing_condition, admision_hign_bp, admision_diabetes, admision_high_cholesterol, admision_pending_claims, admision_cash_pay_mc, admision_cause_complaint, admision_sign_symptoms, admision_preferred_date_admission, admision_insurance_agent_id, admision_insurance_agent_name, admision_insurance_agent_contact, admision_remarks_admin, admision_remarks_agent, admision_status, status, saveType, submissionType,appSave);
-                            }
-                        },
-                        error: function (result) {
-                            // alert("fail.......");
-                        }
-                    });*/
 
                     $.ajax({
                         type: "POST",
