@@ -16,6 +16,7 @@
             color: #222222;
             font-weight: bold;
         }
+       
     </style>
 
 </head>
@@ -80,12 +81,12 @@
                             <div class="input-field col m2">
                             </div>
                             <div class="input-field col m4 s12">
-                                <input id="name" type="text" class="validate">
-                                <label for='name' style="text-align: left;">Name *</label>
-                            </div>
+                                 <h6 for='name' style="text-align: left;">Name *</h6>
+                                 <input id="name" type="text" class="validate">         
+                             </div>
                             <div class="input-field col m4 s12">
-                                <input id="semail" type="email" class="validate">
-                                <label for='semail' style="text-align: left;">Email *</label>
+                                <h6 for='semail' style="text-align: left;">Email *</h6>
+                               <input id="semail" type="email" class="validate">
                             </div>
                             <br /><br />
                             <div id="semailstate"></div>
@@ -110,23 +111,27 @@
                             <div class="input-field col s2">
                             </div>
                             <div class="input-field col m4 s12">
-                                <input id="sphone" type="text" class="validate">
-                                <label for='sphone' style="text-align: left;">Phone*</label>
+                                 <p>
+                                    <h6 for='sphone' style="text-align: left;">Phone*</h6>
+                                    <input id="sphone"  name="number" class="validate"  maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                 </p>
                             </div>
                             <div class="input-field col m4 s12">
-                                <input id="userID" type="text" class="validate" readonly placeholder="User Id">
+                                <p><br /><br />
+                                    <input id="userID" type="text" class="validate" readonly placeholder="User Id">
+                                </p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s2">
                             </div>
                             <div class="input-field col m4 s12">
+                                 <h6 for='password'>Password</h6>
                                 <input id="password" type="password" class="validate">
-                                <label for="password">Password</label>
                             </div>
                             <div class="input-field col m4 s12">
+                                <h6 for='confirm_password'>Confirm Password</h6>
                                 <input id="confirm_password" type="password" class="validate">
-                                <label for="confirm_password">Confirm Password</label>
                             </div><br /><br />
                             <div id="pasState"></div>
                         </div>

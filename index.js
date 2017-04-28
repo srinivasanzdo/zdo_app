@@ -139,11 +139,37 @@ $("#txt_NRIC").focusout(function () {
         $("#txt_NRIC").focus();
     }
 });
+$("#sphone").focusout(function () {
+    var ttbox = document.getElementById("sphone");
+    if (ttbox.value.length <= 8 && ttbox.value.length >= 8) {
+        //alert("success");
+    }
+    else {
+        Materialize.toast('Please enter valid mobile number', 2000);
+        $("#sphone").focus();
+    }
+});
 
 //Function to allow only numbers to textbox
 function validate1(key) {
     var keycode = (key.which) ? key.which : key.keyCode;
     var phn = document.getElementById('txt_cont');
+    if (!(keycode == 8 || keycode == 46) && (keycode < 48 || keycode > 57)) {
+        return false;
+    }
+    else {
+        if (phn.value.length < 10) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+function validate2(key) {
+    var keycode = (key.which) ? key.which : key.keyCode;
+    var phn = document.getElementById('sphone');
     if (!(keycode == 8 || keycode == 46) && (keycode < 48 || keycode > 57)) {
         return false;
     }
