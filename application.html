@@ -19,7 +19,6 @@
                 font-size: 15px;
             }
         }
-
         h6 {
             font-size: 17px;
             font-family: "arial";
@@ -114,7 +113,7 @@ margin: 0;
                                 </p><br>
                                 <p>
                                     <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
-                                    <input id="txt_NRIC" type="text" class="validate" maxlength="9">
+                                    <input id="txt_NRIC" type="text" class="validate" maxlength="9" onkeyup="nospaces(this)" />
                                 </p>
                                 <p>
                                     <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>

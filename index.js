@@ -1,4 +1,4 @@
-//$('.modal-trigger').leanModal();
+﻿//$('.modal-trigger').leanModal();
 $('select').material_select();
 $(".button-collapse").sideNav();
 
@@ -41,7 +41,7 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
@@ -56,7 +56,7 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
@@ -67,13 +67,13 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
     });
 
-    var pattern = /^[a-zA-Z!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/
+    var pattern = /^[a-zA-Z!@#$%^&*()_ +\-=\[\]{};':"\\|,.<>\/?]*$/
     $('#txt_knok').keyup(function (e) {
         var v = this.value;
         if (!v.match(pattern)) {
@@ -81,6 +81,8 @@ $(function () {
             this.value = this.value.slice(0, -1);
         }
     });
+
+    
 });
 
 
@@ -104,7 +106,6 @@ function validate(key) {
         }
     }
 }
-
 
 $("#txt_cont").focusout(function () {
     var textbox = document.getElementById("txt_cont");
@@ -139,6 +140,8 @@ $("#txt_NRIC").focusout(function () {
         $("#txt_NRIC").focus();
     }
 });
+
+
 $("#sphone").focusout(function () {
     var ttbox = document.getElementById("sphone");
     if (ttbox.value.length <= 8 && ttbox.value.length >= 8) {
@@ -182,7 +185,7 @@ function validate2(key) {
         }
     }
 }
-
+    
 $(function () {
 
     $('#txt_NRIC').keyup(function () {
@@ -203,10 +206,13 @@ $(function () {
             $(this).val(no_spl_char);
         }
     });
-
-
 });
 
+function nospaces(t) {
+    if (t.value.match(/\s/g)) {
+        t.value = t.value.replace(/\s/g, '');
+    }
+}
 
 //file upload works
 $(function () {
