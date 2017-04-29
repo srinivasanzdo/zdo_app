@@ -134,6 +134,7 @@
                     success: function (data) {
                         console.log(data);
                         $('#data_bind').DataTable({
+                            //"order": [[ 4, "desc" ]],
                             "data": data.d,
                             "columns": [
                                 { "data": "admission_number" },

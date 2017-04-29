@@ -288,32 +288,39 @@
                 });
 
                 $('#semail').focusout(function () {
-                    var uname = $('#semail').val();
-                    $.ajax({
-                        type: "POST",
-                        contentType: "application/json; charset=utf-8",
-                        url: "../Functions.aspx/checkUserName",
-                        data: "{duname:'" + uname + "'}",
-                        dataType: "json",
-                        async: false,
-                        success: function (data) {
-                            $("#semailstate").empty();
-                            if (data.d === "true") {
-                                $("#semailstate").append('<label for="emState" style="color:red;">Email Already Exist..!</label>');
+
+                    if (!ValidateEmail($("#semail").val())) {
+                        Materialize.toast('Please enter valid email', 2000);
+                        $("#semail").focus();
+                    }
+                    else {
+                        var uname = $('#semail').val();
+                        $.ajax({
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            url: "../Functions.aspx/checkUserName",
+                            data: "{duname:'" + uname + "'}",
+                            dataType: "json",
+                            async: false,
+                            success: function (data) {
+                                $("#semailstate").empty();
+                                if (data.d === "true") {
+                                    $("#semailstate").append('<label for="emState" style="color:red;">Email Already Exist..!</label>');
+                                }
+                                else {
+                                    $("#semailstate").append('<label for="emState" style="color:green;">Valid Email</label>');
+                                    var getUserId = $("#semail").val().substring(0, 4);
+                                    var slno = $('#slno').val();
+                                    //alert("slno");
+                                    var salesPersonId = getUserId + "_ZDO_" + slno;
+                                    $("#userID").val(salesPersonId);
+                                }
+                            },
+                            error: function (e) {
+                                //alert(e);
                             }
-                            else {
-                                $("#semailstate").append('<label for="emState" style="color:green;">Valid Email</label>');
-                                var getUserId = $("#semail").val().substring(0, 4);
-                                var slno = $('#slno').val();
-                                //alert("slno");
-                                var salesPersonId = getUserId + "_ZDO_" + slno;
-                                $("#userID").val(salesPersonId);
-                            }
-                        },
-                        error: function (e) {
-                            //alert(e);
-                        }
-                    });
+                        });
+                    }
                 });
 
                 $('#btnUpload1').click(function () {
