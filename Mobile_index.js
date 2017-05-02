@@ -43,7 +43,7 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
@@ -54,13 +54,13 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
     });
 
-    var pattern = /^[a-zA-Z!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/
+    var pattern = /^[a-zA-Z!@#$%^&*()_ +\-=\[\]{};':"\\|,.<>\/?]*$/
     $('#txt_knok').keyup(function (e) {
         var v = this.value;
         if (!v.match(pattern)) {
