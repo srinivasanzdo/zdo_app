@@ -1727,7 +1727,7 @@ public static string updateAmendApplicationWork(string admission_number, string 
                             string msgs = "";
                             string furl = "http://test.zerodotone.net/";
                             //string fdata = "";
-                            if (admision_nric_front_screen != "Nil") {
+                            /*if (admision_nric_front_screen != "Nil") {
                                 string fdata1 = furl + admision_nric_front_screen;
                                 msgs = "<a href='" + fdata1 + "' download><b>Download</b></a></br>";
                             }
@@ -1785,10 +1785,10 @@ public static string updateAmendApplicationWork(string admission_number, string 
                             {
                                 string fdata12 = furl + admision_policy_file10;
                                 msgs = "<a href='" + fdata12 + "' download><b>Download</b></a></br>";
-                            }
+                            }*/
                             //<a href='" + fdata1 + "' download><b>Download</b></a></br>
 
-                           /* string fdata1 = furl + admision_nric_front_screen;
+                            string fdata1 = furl + admision_nric_front_screen;
                             string fdata2 = furl + admision_nric_back_screen;
                             string fdata3 = furl + admision_policy_file1;
 
@@ -1796,7 +1796,7 @@ public static string updateAmendApplicationWork(string admission_number, string 
                                         + "<tr><td><a href='" + fdata1 + "' download><b>Download NRIC Front</b></a></br></br></td></tr>"
                             +"<tr><td><a href='" + fdata2 + "' download><b>Download NRIC Back</b></a></br></br></td></tr>"
                             + "<tr><td><a href='" + fdata3 + "' download><b>Download IC Document</b></a></br></br></td></tr></table>";
-                            */
+
                             msg.Attachments.Add(new Attachment(new MemoryStream(bytes), "Application.pdf"));
 
                             msg.IsBodyHtml = true;
