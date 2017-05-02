@@ -61,6 +61,7 @@
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="dashboad.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
@@ -588,75 +589,75 @@
                 var f10 = $('#f10T').text();
 
                 if (admision_name == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Name', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_name").focus();
-                } else if (admision_gender == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_gender == "summa") {
+                    Materialize.toast('Please select Gender', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                 } else if (admision_nric == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill NRIC', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_NRIC").focus();
                 } else if (admision_dob == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Date of Birth', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_dob").focus();
                 } else if (admision_occupation == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Occupation ', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_occup").focus();
                 } else if (admision_contact == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Contact ', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_cont").focus();
                 } else if (admision_nok_name == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Next of Kin (NOK) name and relationship ', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_knok").focus();
                 } else if (admision_nok_contact == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Contact of NOK', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_nok").focus();
                 } else if (admision_pa_plan == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Type of shield plan / PA plan & Inforce date', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_plan").focus();
-                } else if (admision_exclusion_plan == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_exclusion_plan == "summa") {
+                    Materialize.toast('Please select Exclusion in plans', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
-                } else if (admision_pre_existing_condition == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_pre_existing_condition == "summa") {
+                    Materialize.toast('Please select Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
-                } else if (admision_hign_bp == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_hign_bp == "summa") {
+                    Materialize.toast('Please select High Blood Pressure ', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
-                } else if (admision_diabetes == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_diabetes == "summa") {
+                    Materialize.toast('Please select Diabetes ', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
-                } else if (admision_high_cholesterol == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_high_cholesterol == "summa") {
+                    Materialize.toast('Please select High Cholesterol', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
-                } else if (admision_pending_claims == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_pending_claims == "summa") {
+                    Materialize.toast('Please select Any Pending Claims for the current shield plan', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
-                } else if (admision_cash_pay_mc == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_cash_pay_mc == "summa") {
+                    Materialize.toast('Please select Any other cash paying entitlement policies', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                 } else if (admision_cause_complaint == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Cause of complaint', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_compliant").focus();
                 } else if (admision_sign_symptoms == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Signs and Symptoms', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_signSymp").focus();
                 } else if (admision_preferred_date_admission == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Preffered date of admission', 4000);
                     $('ul.tabs').tabs('select_tab', 'test1');
                     $("#txt_DOA").focus();
                 } else if (admision_remarks_agent == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill remarks', 4000);
                     $("#Span24").focus();
                 }
 
@@ -738,59 +739,60 @@
                 var saveType = "web";
                 var subType = localStorage.getItem('subType');
                 var submissionType = subType;
-                var appSave = "Complete";                
+                var appSave = "Complete";
 
                 if (admision_name == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Name', 4000);
                     $("#txt_name").focus();
-                } else if (admision_gender == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_gender == "summa") {
+                    Materialize.toast('Please select Gender', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
                 } else if (admision_nric == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill NRIC', 4000);
                     $("#txt_NRIC").focus();
                 } else if (admision_dob == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Date of Birth', 4000);
                     $("#txt_dob").focus();
                 } else if (admision_occupation == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Occupation ', 4000);
                     $("#txt_occup").focus();
                 } else if (admision_contact == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Contact ', 4000);
                     $("#txt_cont").focus();
                 } else if (admision_nok_name == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Next of Kin (NOK) name and relationship ', 4000);
                     $("#txt_knok").focus();
                 } else if (admision_nok_contact == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Contact of NOK', 4000);
                     $("#txt_nok").focus();
                 } else if (admision_pa_plan == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Type of shield plan / PA plan & Inforce date', 4000);
                     $("#txt_plan").focus();
-                } else if (admision_exclusion_plan == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_pre_existing_condition == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_hign_bp == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_diabetes == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_high_cholesterol == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_pending_claims == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_cash_pay_mc == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_exclusion_plan == "summa") {
+                    Materialize.toast('Please select Exclusion in plans', 4000);
+                } else if (admision_pre_existing_condition == "summa") {
+                    Materialize.toast('Please select Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy', 4000);
+                } else if (admision_hign_bp == "summa") {
+                    Materialize.toast('Please select High Blood Pressure ', 4000);
+                } else if (admision_diabetes == "summa") {
+                    Materialize.toast('Please select Diabetes ', 4000);
+                } else if (admision_high_cholesterol == "summa") {
+                    Materialize.toast('Please select High Cholesterol', 4000);
+                } else if (admision_pending_claims == "summa") {
+                    Materialize.toast('Please select Any Pending Claims for the current shield plan', 4000);
+                } else if (admision_cash_pay_mc == "summa") {
+                    Materialize.toast('Please select Any other cash paying entitlement policies', 4000);
                 } else if (admision_cause_complaint == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Cause of complaint', 4000);
                     $("#txt_compliant").focus();
                 } else if (admision_sign_symptoms == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Signs and Symptoms', 4000);
                     $("#txt_signSymp").focus();
                 } else if (admision_preferred_date_admission == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill Preffered date of admission', 4000);
                     $("#txt_DOA").focus();
                 } else if (admision_remarks_agent == "") {
-                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    Materialize.toast('Please fill remarks', 4000);
                     $("#Span24").focus();
                 } else {
 
@@ -828,525 +830,6 @@
             });
 
         });
-    </script>
-
-    <script>
-        function uploadDocNricBack() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var nricBack = $('#nricBT').val();
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_nricBack",
-                data: "{admission_number :'" + admission_number + "',nricBack :'" + nricBack + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile1();
-                }
-            });
-        }
-
-        function uploadDocFile1() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file1 = $('#f1T').val();
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file1",
-                data: "{admission_number :'" + admission_number + "',file1 :'" + file1 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile2();
-                }
-            });
-        }
-
-        function uploadDocFile2() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file2 = "";
-            if (file2 == "") {
-                file2 = "No file";
-            } else {
-                file2 = $('#f2T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file2",
-                data: "{admission_number :'" + admission_number + "',file2 :'" + file2 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile3();
-                }
-            });
-        }
-
-        function uploadDocFile3() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file3 = "";
-            if (file3 == "") {
-                file3 = "No file";
-            } else {
-                file3 = $('#f3T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file3",
-                data: "{admission_number :'" + admission_number + "',file3 :'" + file3 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile4();
-                }
-            });
-        }
-
-        function uploadDocFile4() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file4 = "";
-            if (file4 == "") {
-                file4 = "No file";
-            } else {
-                file4 = $('#f4T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file4",
-                data: "{admission_number :'" + admission_number + "',file4 :'" + file4 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile5();
-                }
-            });
-        }
-
-        function uploadDocFile5() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file5 = "";
-            if (file5 == "") {
-                file5 = "No file";
-            } else {
-                file5 = $('#f5T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file5",
-                data: "{admission_number :'" + admission_number + "',file5 :'" + file5 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile6();
-                }
-            });
-        }
-
-        function uploadDocFile6() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file6 = "";
-            if (file6 == "") {
-                file6 = "No file";
-            } else {
-                file6 = $('#f6T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file6",
-                data: "{admission_number :'" + admission_number + "',file6 :'" + file6 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile7();
-                }
-            });
-        }
-
-        function uploadDocFile7() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file7 = "";
-            if (file7 == "") {
-                file7 = "No file";
-            } else {
-                file5 = $('#f7T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file7",
-                data: "{admission_number :'" + admission_number + "',file7 :'" + file7 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile8();
-                }
-            });
-        }
-
-        function uploadDocFile8() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file8 = "";
-            if (file8 == "") {
-                file8 = "No file";
-            } else {
-                file8 = $('#f8T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file8",
-                data: "{admission_number :'" + admission_number + "',file8 :'" + file8 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile9();
-                }
-            });
-        }
-
-        function uploadDocFile9() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file9 = "";
-            if (file9 == "") {
-                file9 = "No file";
-            } else {
-                file9 = $('#f9T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file9",
-                data: "{admission_number :'" + admission_number + "',file9 :'" + file9 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    uploadDocFile10();
-                }
-            });
-        }
-
-        function uploadDocFile10() {
-            var admission_number = localStorage.getItem('admission_number');
-
-            var file10 = "";
-            if (file10 == "") {
-                file10 = "No file";
-            } else {
-                file10 = $('#f10T').val();
-            }
-
-            var admision_status = "Pending";
-            var status = "1";
-            var saveType = "web";
-            var subType = localStorage.getItem('subType');
-            var submissionType = subType;
-            var appSave = "Complete";
-
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/update_ApplicationDocuments_file10",
-                data: "{admission_number :'" + admission_number + "',file10 :'" + file10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                dataType: "json",
-                success: function (data) {
-                    $("#gifer").hide();
-                    $("#formApplication").show();
-
-                    alert("Successfully applied the application..!");
-                    window.location = "dashboad.html";
-                }
-            });
-        }
-
-        //*************************************Upload documents***********************************************
-        //nric front
-        function nricFront() {
-            var nricF = document.getElementById("nricF").files;
-            if (nricF.length > 0) {
-                var fileToLoadNF = nricF[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var nricFT = document.getElementById
-                    (
-                        "nricFT"
-                    );
-                    nricFT.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadNF);
-            }
-        }
-        //nric back
-        function nricBack() {
-            var nricB = document.getElementById("nricB").files;
-            if (nricB.length > 0) {
-                var fileToLoadNB = nricB[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var nricBT = document.getElementById
-                    (
-                        "nricBT"
-                    );
-                    nricBT.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadNB);
-            }
-        }
-        //File 1
-        function file1() {
-            var f1 = document.getElementById("f1").files;
-            if (f1.length > 0) {
-                var fileToLoadf1 = f1[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f1T = document.getElementById
-                    (
-                        "f1T"
-                    );
-                    f1T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf1);
-            }
-        }
-
-        //File 2
-        function file2() {
-            var f2 = document.getElementById("f2").files;
-            if (f2.length > 0) {
-                var fileToLoadf2 = f2[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f2T = document.getElementById
-                    (
-                        "f2T"
-                    );
-                    f2T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf2);
-            }
-        }
-
-        //File 3
-        function file3() {
-            var f3 = document.getElementById("f3").files;
-            if (f3.length > 0) {
-                var fileToLoadf3 = f3[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f3T = document.getElementById
-                    (
-                        "f3T"
-                    );
-                    f3T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf3);
-            }
-        }
-
-        //File 4
-        function file4() {
-            var f4 = document.getElementById("f4").files;
-            if (f4.length > 0) {
-                var fileToLoadf4 = f4[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f4T = document.getElementById
-                    (
-                        "f4T"
-                    );
-                    f4T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf4);
-            }
-        }
-
-        //File 5
-        function file5() {
-            var f5 = document.getElementById("f5").files;
-            if (f5.length > 0) {
-                var fileToLoadf5 = f5[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f5T = document.getElementById
-                    (
-                        "f5T"
-                    );
-                    f5T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf5);
-            }
-        }
-
-        //File 6
-        function file6() {
-            var f6 = document.getElementById("f6").files;
-            if (f6.length > 0) {
-                var fileToLoadf6 = f6[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f6T = document.getElementById
-                    (
-                        "f6T"
-                    );
-                    f6T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf6);
-            }
-        }
-
-        //File 7
-        function file7() {
-            var f7 = document.getElementById("f7").files;
-            if (f7.length > 0) {
-                var fileToLoadf7 = f7[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f7T = document.getElementById
-                    (
-                        "f7T"
-                    );
-                    f7T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf7);
-            }
-        }
-
-        //File 8
-        function file8() {
-            var f8 = document.getElementById("f8").files;
-            if (f8.length > 0) {
-                var fileToLoadf8 = f8[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f8T = document.getElementById
-                    (
-                        "f8T"
-                    );
-                    f8T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf8);
-            }
-        }
-
-        //File 9
-        function file9() {
-            var f9 = document.getElementById("f9").files;
-            if (f9.length > 0) {
-                var fileToLoadf9 = f9[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f9T = document.getElementById
-            (
-                "f9T"
-            );
-                    f9T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf9);
-            }
-        }
-
-        //File 4
-        function file10() {
-            var f10 = document.getElementById("f10").files;
-            if (f10.length > 0) {
-                var fileToLoadf10 = f10[0];
-                var fileReader = new FileReader();
-                fileReader.onload = function (fileLoadedEvent) {
-                    var f10T = document.getElementById
-            (
-                "f10T"
-            );
-                    f10T.innerHTML = fileLoadedEvent.target.result;
-                };
-                fileReader.readAsDataURL(fileToLoadf10);
-            }
-        }
-        //*******************************************Upload documents*************************************************
     </script>
 
     <script>

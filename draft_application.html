@@ -52,6 +52,7 @@
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="dashboad.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
@@ -623,71 +624,71 @@
                  var f4 = $('#f4').val();
 
                  if (admision_name == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Name', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_name").focus();
-                 } else if (admision_gender == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_gender == "summa") {
+                     Materialize.toast('Please select Gender', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                  } else if (admision_nric == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill NRIC', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_NRIC").focus();
                  } else if (admision_dob == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Date of Birth', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_dob").focus();
                  } else if (admision_occupation == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Occupation ', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_occup").focus();
                  } else if (admision_contact == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Contact ', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_cont").focus();
                  } else if (admision_nok_name == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Next of Kin (NOK) name and relationship ', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_knok").focus();
                  } else if (admision_nok_contact == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Contact of NOK', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_nok").focus();
                  } else if (admision_pa_plan == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Type of shield plan / PA plan & Inforce date', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_plan").focus();
-                 } else if (admision_exclusion_plan == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_exclusion_plan == "summa") {
+                     Materialize.toast('Please select Exclusion in plans', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_pre_existing_condition == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_pre_existing_condition == "summa") {
+                     Materialize.toast('Please select Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_hign_bp == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_hign_bp == "summa") {
+                     Materialize.toast('Please select High Blood Pressure ', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_diabetes == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_diabetes == "summa") {
+                     Materialize.toast('Please select Diabetes ', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_high_cholesterol == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_high_cholesterol == "summa") {
+                     Materialize.toast('Please select High Cholesterol', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_pending_claims == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_pending_claims == "summa") {
+                     Materialize.toast('Please select Any Pending Claims for the current shield plan', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_cash_pay_mc == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_cash_pay_mc == "summa") {
+                     Materialize.toast('Please select Any other cash paying entitlement policies', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                  } else if (admision_cause_complaint == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Cause of complaint', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_compliant").focus();
                  } else if (admision_sign_symptoms == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Signs and Symptoms', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_signSymp").focus();
                  } else if (admision_preferred_date_admission == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Preffered date of admission', 4000);
                      $('ul.tabs').tabs('select_tab', 'test1');
                      $("#txt_DOA").focus();
                  }
@@ -780,53 +781,54 @@
                  var appSave = "Draft";
 
                  if (admision_name == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Name', 4000);
                      $("#txt_name").focus();
-                 } else if (admision_gender == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_gender == "summa") {
+                     Materialize.toast('Please select Gender', 4000);
+                     $('ul.tabs').tabs('select_tab', 'test1');
                  } else if (admision_nric == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill NRIC', 4000);
                      $("#txt_NRIC").focus();
                  } else if (admision_dob == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Date of Birth', 4000);
                      $("#txt_dob").focus();
                  } else if (admision_occupation == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Occupation ', 4000);
                      $("#txt_occup").focus();
                  } else if (admision_contact == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Contact ', 4000);
                      $("#txt_cont").focus();
                  } else if (admision_nok_name == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Next of Kin (NOK) name and relationship ', 4000);
                      $("#txt_knok").focus();
                  } else if (admision_nok_contact == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Contact of NOK', 4000);
                      $("#txt_nok").focus();
                  } else if (admision_pa_plan == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Type of shield plan / PA plan & Inforce date', 4000);
                      $("#txt_plan").focus();
-                 } else if (admision_exclusion_plan == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_pre_existing_condition == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_hign_bp == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_diabetes == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_high_cholesterol == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_pending_claims == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_cash_pay_mc == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                 } else if (admision_exclusion_plan == "summa") {
+                     Materialize.toast('Please select Exclusion in plans', 4000);
+                 } else if (admision_pre_existing_condition == "summa") {
+                     Materialize.toast('Please select Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy', 4000);
+                 } else if (admision_hign_bp == "summa") {
+                     Materialize.toast('Please select High Blood Pressure ', 4000);
+                 } else if (admision_diabetes == "summa") {
+                     Materialize.toast('Please select Diabetes ', 4000);
+                 } else if (admision_high_cholesterol == "summa") {
+                     Materialize.toast('Please select High Cholesterol', 4000);
+                 } else if (admision_pending_claims == "summa") {
+                     Materialize.toast('Please select Any Pending Claims for the current shield plan', 4000);
+                 } else if (admision_cash_pay_mc == "summa") {
+                     Materialize.toast('Please select Any other cash paying entitlement policies', 4000);
                  } else if (admision_cause_complaint == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Cause of complaint', 4000);
                      $("#txt_compliant").focus();
                  } else if (admision_sign_symptoms == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Signs and Symptoms', 4000);
                      $("#txt_signSymp").focus();
                  } else if (admision_preferred_date_admission == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
+                     Materialize.toast('Please fill Preffered date of admission', 4000);
                      $("#txt_DOA").focus();
                  } else {
 
