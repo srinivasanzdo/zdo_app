@@ -16,7 +16,14 @@
             color: #222222;
             font-weight: bold;
         }
-       
+       @media screen and (max-width: 580px) and (min-width: 120px) {
+            #test1 {
+                width: 300px;
+            }
+            .vidhya
+            {
+                padding: 20px;
+                }
     </style>
 
 </head>
@@ -76,13 +83,14 @@
                         <h2 style="font-size: 25px;text-align:center;">CREATE SALES PERSON PROFILE</h2><br />
 
                         <div class="grey lighten-3">
+                        <div class="vidhya">
                         <br />
                         <div class="row">
                             <div class="input-field col m2">
                             </div>
                             <div class="input-field col m4 s12">
                                  <h6 for='name' style="text-align: left;">Name *</h6>
-                                 <input id="name" type="text" class="validate">         
+                                 <input id="name" type="text">         
                              </div>
                             <div class="input-field col m4 s12">
                                 <h6 for='semail' style="text-align: left;">Email *</h6>
@@ -144,6 +152,7 @@
                             <center>
                                 <button type='submit' id="btnRegister" name='btn_login' class='col s4 btn btn-large waves-effect ' style="background-color: #40abdf;">Submit</button>
                             </center><br>
+                        </div>
                         </div>
                         </div>
                     </div>
