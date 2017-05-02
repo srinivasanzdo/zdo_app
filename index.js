@@ -1,4 +1,4 @@
-//$('.modal-trigger').leanModal();
+﻿//$('.modal-trigger').leanModal();
 $('select').material_select();
 $(".button-collapse").sideNav();
 
@@ -7,6 +7,11 @@ selectMonths: true,
 selectYears: 150,
 format: 'yyyy-mm-dd'
 });*/
+
+ $('input:radio').change(function() {
+       alert('ole');
+    });
+});
 
 $('.datepicker_pdate').pickadate({
     minDate: 0,
@@ -26,7 +31,7 @@ $('.datepicker_dob').pickadate({
 
 $('.datepicker_dod').pickadate({
     maxDate: 0,
-    selectMonths: true, // Creates a dropdown to control month
+    selectMonths: true, // Creates a dropdown to control month          user_Forget_Email
     selectYears: 100,
     format: 'yyyy-mm-dd',
     max: new Date()
@@ -41,7 +46,7 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
@@ -180,6 +185,16 @@ $(function () {
 
 
 });
+
+function validateEmail(semail) {
+    var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+    if (filter.test(semail)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 
 //file upload works

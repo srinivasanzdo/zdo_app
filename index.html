@@ -25,7 +25,8 @@
 		<div class="row">			
 			<div class="col m12 s12">
 				<div class="cyan lighten-1">
-					<p class="flow-text" style="text-align:center;color:white;    padding: 15px;">PLEASE LOGIN INTO YOUR ACCOUNT</p>					
+					<p class="flow-text" style="text-align:center;color:white;padding: 15px;" id="head_Login">PLEASE LOGIN INTO YOUR ACCOUNT</p>
+                    <p class="flow-text" style="text-align:center;color:white;padding: 15px;" id="head_Forget">KNOW YOUR PASSWORD</p>
 				</div>
 			</div>
 		</div>
@@ -34,19 +35,29 @@
 	<div class="row">
 		
 		<div class="col m12 s12">
-			<br><br>
+			
+
+            <div class="row">
+                <label for="user_Forget_Email" id ="ufp" style="font-size:15px;">Enter Email</label>
+				<div class="input-field col s12">
+				  <input id="user_Forget_Email" type="text" class="validate">
+                  <p style="text-align:right" id="P2">Login</p>
+                  <p style="text-align:right" id="P1"><button id="fgetPassSend" class="waves-effect waves-light btn btn-large col s4 cyan lighten-1">Submit</button></p>
+				</div>
+			 </div>
 			
 			<div class="row">
-                <label for="user_name" style="font-size:15px;">User name</label>
+                <label for="user_name" id="un" style="font-size:15px;">User name</label>
 				<div class="input-field col s12">
 				  <input id="user_name" type="text" class="validate">
 				</div>
 			</div>
 			<br>
 			<div class="row">
-                <label for="user_password" style="font-size:15px;">Password</label>
+                <label for="user_password" id ="up" style="font-size:15px;">Password</label>
 				<div class="input-field col s12">
 				  <input id="user_password" type="password" class="validate">
+                  <p style="text-align:right" id="fgetPass">Forgot password?</p>
 				</div>
 			 </div>
 			<br>
@@ -61,6 +72,7 @@
 				</div>
 			 </div>
 			<br>
+
 		</div>
 		
 	</div><br>
@@ -81,119 +93,213 @@
 
   <script src="js/jquery-3.1.1.js"></script>
   <script>
-    $(document).ready(function () {
-        $("#btn_login").click(function () {
-            var uname = $('#user_name').val();
-            var password = $('#user_password').val();
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "Functions.aspx/user_login",
-                data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
-                dataType: "json",
-                success: function (data) {
-                    if (data.d === "false") {
-                        alert("Please enter valid login information");
-                    }
-                    else {
-                        var ttt = data.d;
-                        var res = ttt;
-                        var param = res.split("%");
-                        var uid = param[0];
-                        var ustatus = param[1];
-                        localStorage.setItem('uid', uid);
-                        if (ustatus == "S") {
-                            alert("Sales Person Logged in...!");
-                            window.location = "dashboad.html";
-                        } else {
-                            alert("Admin Logged in..!");
-                            window.location = "admin/";
-                        }
-                    }
-                },
-                error: function (result) {
-                    //alert("fail.......");
-                }
-            });
-        });
-        $('#user_name').keypress(function (e) {
-            if (e.which == 13) {
-                //alert("hello");
-                var uname = $('#user_name').val();
-                var password = $('#user_password').val();
-                $.ajax({
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    url: "Functions.aspx/user_login",
-                    data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.d === "false") {
-                            alert("Please enter valid login information");
-                        }
-                        else {
-                            var ttt = data.d;
-                            var res = ttt;
-                            var param = res.split("%");
-                            var uid = param[0];
-                            var ustatus = param[1];
-                            localStorage.setItem('uid', uid);
-                            if (ustatus == "S") {
-                                alert("Sales Person Logged in...!");
-                                window.location = "dashboad.html";
-                            } else {
-                                alert("Admin Logged in..!");
-                                window.location = "admin/";
-                            }
-                        }
-                    },
-                    error: function (result) {
-                        //alert("fail.......");
-                    }
-                });
-            }
-        });
+      $(document).ready(function () {
 
-        $('#user_password').keypress(function (e) {
-            if (e.which == 13) {
-                // alert("hello");
-                var uname = $('#user_name').val();
-                var password = $('#user_password').val();
-                $.ajax({
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    url: "Functions.aspx/user_login",
-                    data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.d === "false") {
-                            alert("Please enter valid login information");
-                        }
-                        else {
-                            var ttt = data.d;
-                            var res = ttt;
-                            var param = res.split("%");
-                            var uid = param[0];
-                            var ustatus = param[1];
-                            localStorage.setItem('uid', uid);
-                            if (ustatus == "S") {
-                                alert("Sales Person Logged in...!");
-                                window.location = "dashboad.html";
-                            } else {
-                                alert("Admin Logged in..!");
-                                window.location = "admin/";
-                            }
-                        }
-                    },
-                    error: function (result) {
-                        //alert("fail.......");
-                    }
-                });
-            }
-        });	
-	});
+          $("#head_Forget").hide();
+          $("#ufp").hide();
+          $("#user_Forget_Email").hide();
+          $("#P1").hide();
+          $("#P2").hide();
+
+          $("#fgetPassSend").click(function () {
+              var uname = $('#user_Forget_Email').val();
+
+              if (!ValidateEmail($("#user_Forget_Email").val())) {
+                  Materialize.toast('Please enter valid email', 2000);
+                  $("#user_Forget_Email").focus();
+              } else {
+
+                  $.ajax({
+                      type: "POST",
+                      contentType: "application/json; charset=utf-8",
+                      url: "Functions.aspx/getPassword",
+                      data: "{userEmail :'" + uname + "'}",
+                      dataType: "json",
+                      success: function (data) {
+                          if (data.d === "false") {
+                              alert("Please enter valid login information");
+                          }
+                          else {
+                              var userPass_Get = data.d;
+                              //alert("Password is : " + userPass_Get);
+                              sendPassword(userPass_Get, uname);
+                          }
+                      },
+                      error: function (result) {
+                          //alert("fail.......");
+                      }
+                  });
+
+              }
+          });
+
+
+          $("#fgetPass").click(function () {
+              $("#head_Login").hide();
+              $("#head_Forget").show();
+
+              $("#fgetPass").hide();
+              $("#user_name").hide();
+              $("#user_password").hide();
+              $("#up").hide();
+              $("#un").hide();
+              $("#btn_login").hide();
+
+              $("#ufp").show();
+              $("#user_Forget_Email").show();
+              $("#P1").show();
+              $("#P2").show();
+          });
+
+          $("#P2").click(function () {
+              $("#head_Login").show();
+              $("#head_Forget").hide();
+
+              $("#fgetPass").show();
+              $("#user_name").show();
+              $("#user_password").show();
+              $("#up").show();
+              $("#un").show();
+              $("#btn_login").show();
+
+              $("#ufp").hide();
+              $("#user_Forget_Email").hide();
+              $("#P1").hide();
+              $("#P2").hide();
+          });
+
+
+
+          $("#btn_login").click(function () {
+              var uname = $('#user_name').val();
+              var password = $('#user_password').val();
+              $.ajax({
+                  type: "POST",
+                  contentType: "application/json; charset=utf-8",
+                  url: "Functions.aspx/user_login",
+                  data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
+                  dataType: "json",
+                  success: function (data) {
+                      if (data.d === "false") {
+                          alert("Please enter valid login information");
+                      }
+                      else {
+                          var ttt = data.d;
+                          var res = ttt;
+                          var param = res.split("%");
+                          var uid = param[0];
+                          var ustatus = param[1];
+                          localStorage.setItem('uid', uid);
+                          if (ustatus == "S") {
+                              alert("Sales Person Logged in...!");
+                              window.location = "dashboad.html";
+                          } else {
+                              alert("Admin Logged in..!");
+                              window.location = "admin/";
+                          }
+                      }
+                  },
+                  error: function (result) {
+                      //alert("fail.......");
+                  }
+              });
+          });
+          $('#user_name').keypress(function (e) {
+              if (e.which == 13) {
+                  //alert("hello");
+                  var uname = $('#user_name').val();
+                  var password = $('#user_password').val();
+                  $.ajax({
+                      type: "POST",
+                      contentType: "application/json; charset=utf-8",
+                      url: "Functions.aspx/user_login",
+                      data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
+                      dataType: "json",
+                      success: function (data) {
+                          if (data.d === "false") {
+                              alert("Please enter valid login information");
+                          }
+                          else {
+                              var ttt = data.d;
+                              var res = ttt;
+                              var param = res.split("%");
+                              var uid = param[0];
+                              var ustatus = param[1];
+                              localStorage.setItem('uid', uid);
+                              if (ustatus == "S") {
+                                  alert("Sales Person Logged in...!");
+                                  window.location = "dashboad.html";
+                              } else {
+                                  alert("Admin Logged in..!");
+                                  window.location = "admin/";
+                              }
+                          }
+                      },
+                      error: function (result) {
+                          //alert("fail.......");
+                      }
+                  });
+              }
+          });
+
+          $('#user_password').keypress(function (e) {
+              if (e.which == 13) {
+                  // alert("hello");
+                  var uname = $('#user_name').val();
+                  var password = $('#user_password').val();
+                  $.ajax({
+                      type: "POST",
+                      contentType: "application/json; charset=utf-8",
+                      url: "Functions.aspx/user_login",
+                      data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
+                      dataType: "json",
+                      success: function (data) {
+                          if (data.d === "false") {
+                              alert("Please enter valid login information");
+                          }
+                          else {
+                              var ttt = data.d;
+                              var res = ttt;
+                              var param = res.split("%");
+                              var uid = param[0];
+                              var ustatus = param[1];
+                              localStorage.setItem('uid', uid);
+                              if (ustatus == "S") {
+                                  alert("Sales Person Logged in...!");
+                                  window.location = "dashboad.html";
+                              } else {
+                                  alert("Admin Logged in..!");
+                                  window.location = "admin/";
+                              }
+                          }
+                      },
+                      error: function (result) {
+                          //alert("fail.......");
+                      }
+                  });
+              }
+          });
+      });
   </script>
   
+  <script>
+      function sendPassword(userPass_Get, uname) {
+          //alert(userPass_Get);
+          $.ajax({
+              type: "POST",
+              contentType: "application/json; charset=utf-8",
+              url: "Functions.aspx/sendPasswordMail",
+              data: "{userPass_Get :'" + userPass_Get + "',uname :'" + uname + "'}",
+              dataType: "json",
+              success: function (data) {
+                  alert("Password successfully sent to agent..!");
+                  window.location = "index.html";
+              }
+          });
+      }
+  </script>
+
+
   </body>
 
 </html>

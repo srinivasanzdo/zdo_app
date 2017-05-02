@@ -80,11 +80,11 @@
                             <div class="input-field col m2">
                             </div>
                             <div class="input-field col m4 s12">
-                                <input id="name" type="text" class="validate">
+                                <input id="name" type="text">
                                 <label for='name' style="text-align: left;">Name *</label>
                             </div>
                             <div class="input-field col m4 s12">
-                                <input id="semail" type="email" class="validate">
+                                <input id="semail" type="email">
                                 <label for='semail' style="text-align: left;">Email *</label>
                             </div>
                             <br /><br />
@@ -101,7 +101,7 @@
                                 <input id="Mal" type="radio" name="gender" value="Male">
                                 <label for="Mal">Male</label>
                                 <input id="Fem" type="radio" name="gender" value="FeMale">
-                                <label for="Fem">FeMale</label>
+                                <label for="Fem">Female</label>
                                 <input id="dum1" type="radio" name="gender" value="summa" checked="checked">
                                 <label for="dum1" style="display:none;">summa</label>
                             </div>
@@ -289,7 +289,7 @@
 
                 $('#semail').focusout(function () {
 
-                    if (!ValidateEmail($("#semail").val())) {
+                    if (!validateEmail($("#semail").val())) {
                         Materialize.toast('Please enter valid email', 2000);
                         $("#semail").focus();
                     }

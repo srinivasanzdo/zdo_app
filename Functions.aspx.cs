@@ -1840,6 +1840,32 @@ string main1 = usersendEmail ;
         return "true";
     }
 
+
+    [WebMethod]
+    public static string sendPasswordMail(string userPass_Get, string uname)
+    {
+        //string main1 = "hemachandru21@gmail.com";
+        string main1 = uname;
+        var un = "website@1migrate.net";
+        var pass = "Welcome123!@#";
+        MailMessage msg = new MailMessage();
+        msg.From = new MailAddress(un, "ZDO");
+        msg.To.Add(main1);
+        msg.Subject = "Mail From Site : Application form URL";
+        msg.Body = "<br><br><div style='background-color: white;padding: 25px;border: 2px solid navy;margin: 25px;color:black;'><center><h1>Application URL</h1><br><br><table border='1' style='border-collapse: collapse;'> " +
+                   "<table border='1' style='border-collapse: collapse;'><tr><td style='padding-top:10px;padding-bottem:10px;'>EMAIL : </td><td style='padding-top:10px;padding-bottem:10px;'>" + uname + " </td></tr>" +
+                   "<tr><td style='padding-top:10px;padding-bottem:10px;'>PASSWORD : </td><td style='padding-top:10px;padding-bottem:10px;'>" + userPass_Get + "</td></tr>" +
+                   "<table></center></div><br><br><br>";
+        msg.IsBodyHtml = true;
+        SmtpClient smtp = new SmtpClient();
+        smtp.Host = "relay-hosting.secureserver.net";
+        smtp.Credentials = new NetworkCredential(un, pass);
+        smtp.EnableSsl = false;
+        smtp.Send(msg);
+        return "true";
+    }
+
+
     //send mail work
 
 
@@ -2072,6 +2098,31 @@ string main1 = usersendEmail ;
         return ret;
     }
 
+
+    //getPassword start
+    [WebMethod]
+    public static string getPassword(string userEmail)
+    {
+        string ret = "false";
+        string json = string.Empty;
+        List<agent> objlistagent = new List<agent>();
+        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/agent.txt"));
+        string data = File.ReadAllText(fileSavePath1);
+        agent agentcls = new agent();
+        if (data != "" && data != string.Empty && data != " ")
+        {
+            //agent_password
+            objlistagent = JsonConvert.DeserializeObject<List<agent>>(data);
+            objlistagent = (from m in objlistagent where m.agent_email == userEmail select m).ToList();
+            if (objlistagent.Count > 0)
+            {
+                var res_agent_password = agentcls.agent_password = objlistagent[0].agent_password;
+                ret = res_agent_password;
+            }
+        }
+        return ret;
+    }
+    //get password end
 
     //Agent Dashboad status start
     //Agent Customer list start
