@@ -32,11 +32,6 @@ $('.datepicker_dod').pickadate({
     max: new Date()
 });
 
-
-
-
-
-
 $(function () {
     $('#txt_name').keydown(function (e) {
         if (e.ctrlKey || e.altKey) {
@@ -64,7 +59,6 @@ $(function () {
     $('#txt_knok').keyup(function (e) {
         var v = this.value;
         if (!v.match(pattern)) {
-            //chop off the last char entered
             this.value = this.value.slice(0, -1);
         }
     });
@@ -168,6 +162,11 @@ $(function () {
 
 });
 
+function nospaces(t) {
+    if (t.value.match(/\s/g)) {
+        t.value = t.value.replace(/\s/g, '');
+    }
+}
 
 //file upload works
 $(function () {
