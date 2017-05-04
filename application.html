@@ -8,7 +8,7 @@
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
-
+    
     <style>
         @media screen and (max-width: 580px) and (min-width: 120px) {
             .pAppnum {
@@ -513,11 +513,11 @@ margin: 0;
 
     <script>
         $(document).ready(function () {
-            
+
 
             $("#gifer").hide();
-            
-            
+
+
 
             var user_id = localStorage.getItem('uid');
 
@@ -579,7 +579,10 @@ margin: 0;
             getSessionName(user_id)
             getToday()
 
-
+            //Mal
+            $("#Mal").focus(function () {
+                console.log("Test");
+            });
 
             $("#btn_compSave").click(function () {
                 var admision_slno = localStorage.getItem('totApp');
@@ -612,7 +615,7 @@ margin: 0;
                 var admision_insurance_agent_contact = $("#insAgnetContact").val();
                 var admision_remarks_admin = "Nil";
                 var admision_remarks_agent = "Nil";
-                
+
                 var admision_status = "Pending";
                 var status = "1";
                 var saveType = "web";
@@ -863,23 +866,23 @@ margin: 0;
 
 
                     /*$.ajax({
-                        type: "POST",
-                        contentType: "application/json; charset=utf-8",
-                        url: "Functions.aspx/getAmendSingle",
-                        data: "{dadmission_number :'" + admission_number + "'}",
-                        dataType: "json",
-                        success: function (data) {
-                            if (data.d === "false") {
-                                alert("False");
-                            }
-                            else {
-                                alert("true..!");
-                                SaveDataApplicationDraft(admision_slno, admission_number, admision_name, admision_gender, admision_nric, admision_dob, admision_application_date, admision_time, admision_occupation, admision_contact, admision_nok_name, admision_nok_contact, admision_pa_plan, admision_exclusion_plan, admision_pre_existing_condition, admision_hign_bp, admision_diabetes, admision_high_cholesterol, admision_pending_claims, admision_cash_pay_mc, admision_cause_complaint, admision_sign_symptoms, admision_preferred_date_admission, admision_insurance_agent_id, admision_insurance_agent_name, admision_insurance_agent_contact, admision_remarks_admin, admision_remarks_agent, admision_status, status, saveType, submissionType,appSave);
-                            }
-                        },
-                        error: function (result) {
-                            // alert("fail.......");
-                        }
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/getAmendSingle",
+                    data: "{dadmission_number :'" + admission_number + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                    if (data.d === "false") {
+                    alert("False");
+                    }
+                    else {
+                    alert("true..!");
+                    SaveDataApplicationDraft(admision_slno, admission_number, admision_name, admision_gender, admision_nric, admision_dob, admision_application_date, admision_time, admision_occupation, admision_contact, admision_nok_name, admision_nok_contact, admision_pa_plan, admision_exclusion_plan, admision_pre_existing_condition, admision_hign_bp, admision_diabetes, admision_high_cholesterol, admision_pending_claims, admision_cash_pay_mc, admision_cause_complaint, admision_sign_symptoms, admision_preferred_date_admission, admision_insurance_agent_id, admision_insurance_agent_name, admision_insurance_agent_contact, admision_remarks_admin, admision_remarks_agent, admision_status, status, saveType, submissionType,appSave);
+                    }
+                    },
+                    error: function (result) {
+                    // alert("fail.......");
+                    }
                     });*/
 
                     $.ajax({
@@ -889,16 +892,14 @@ margin: 0;
                         data: "{admision_slno :'" + admision_slno + "', admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_time :'" + admision_time + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_remarks_admin :'" + admision_remarks_admin + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_status:'" + admision_status + "', status:'" + status + "', saveType:'" + saveType + "', submissionType:'" + submissionType + "', appSave:'" + appSave + "'}",
                         dataType: "json",
                         success: function (data) {
-                            if (data.d === "true") 
-                            {
+                            if (data.d === "true") {
                                 $("#gifer").hide();
                                 $("#formApplication").show();
                                 Materialize.toast('You will upload the preffered documents...!', 2000);
                                 localStorage.setItem('admission_number', admission_number);
                                 $('ul.tabs').tabs('select_tab', 'test2');
                             }
-                            else 
-                            {
+                            else {
                                 //alert("Add Error...");
                             }
                         }
