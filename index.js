@@ -8,6 +8,9 @@ selectYears: 150,
 format: 'yyyy-mm-dd'
 });*/
 
+
+
+
 $('.datepicker_pdate').pickadate({
     minDate: 0,
     selectMonths: true, // Creates a dropdown to control month
@@ -48,8 +51,29 @@ $(function () {
     });
 });
 
+$("#log_out").click(function () {
+    if (confirm('Are you sure to leave')) {
+        alert('Thanks for confirming');
+        var uid = "";
+        localStorage.setItem('uid', uid);
+        window.location = "index.html";
+    } else {
+    alert('You are still logged in');
+    }
+    //alert('Thanks for confirming');
+});
 
-
+$("#log_outM").click(function () {
+    if (confirm('Are you sure to leave')) {
+        alert('Thanks for confirming');
+        var uid = "";
+        localStorage.setItem('uid', uid);
+        window.location = "index.html";
+    } else {
+        alert('You are still logged in');
+    }
+    //alert('Thanks for confirming');
+});
 $(function () {
     $('#txt_name').keydown(function (e) {
         if (e.ctrlKey || e.altKey) {

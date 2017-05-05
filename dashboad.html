@@ -68,7 +68,7 @@
                     <li>
                         <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
                         <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top:; left: 619.875px; opacity: 1; display: none;">
-                            <li><a href="index.html">LOG OUT</a></li>
+                            <li id="log_out"><a >LOG OUT</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -76,6 +76,7 @@
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="dashboad.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
+                    <li><a ID="log_outM">LOGOUT</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
@@ -266,6 +267,7 @@
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
         <script src="session.js"></script>
+    <script src="index.js" type="text/javascript"></script>
         <script src="js/jquery-3.1.1.js"></script>
         <script>
             $(document).ready(function () {
@@ -325,15 +327,9 @@
                             alert('You are still logged in');
                         }
                     }                    
-                 })  
-
-                  window.onbeforeunload = function() { 
-                   return "You work will be lost.";                
-                   };
-
+                 });
                     
-
-
+                    
 
               $("#btn_SendEmail").click(function () {
                     var usersendEmail = $('#Text1').val();
