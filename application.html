@@ -114,11 +114,7 @@ margin: 0;
                                 </p><br>
                                 <p>
                                     <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
-<<<<<<< HEAD
-                                    <input id="txt_NRIC" type="text" maxlength="9">
-=======
                                     <input id="txt_NRIC" type="text" maxlength="9" onkeyup="nospaces(this)" />
->>>>>>> zdo-vidya
                                 </p>
                                 <p>
                                     <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>
@@ -219,11 +215,7 @@ margin: 0;
                                 </p>
                                 <p>
                                     <h6 for='txt_signSymp' style="text-align: left;">Signs and Symptoms *</h6>
-<<<<<<< HEAD
-                                    <input id="txt_signSymp" type="text" >
-=======
                                     <input id="txt_signSymp" type="text">
->>>>>>> zdo-vidya
                                 </p>
                                 <p>
                                     <h6 for='txt_DOA' style="text-align: left;">Preffered date of admission*</h6>
@@ -622,15 +614,11 @@ margin: 0;
                 var admision_insurance_agent_id = user_id;
                 var admision_insurance_agent_name = $("#insAgnetName").val();
                 var admision_insurance_agent_contact = $("#insAgnetContact").val();
-<<<<<<< HEAD
-                
-                var admision_remarks_admin = "Nil";
-                var admision_remarks_agent = "Nil";                
-=======
+
+
                 var admision_remarks_admin = "Nil";
                 var admision_remarks_agent = "Nil";
 
->>>>>>> zdo-vidya
                 var admision_status = "Pending";
                 var status = "1";
                 var saveType = "web";
@@ -749,8 +737,8 @@ margin: 0;
                         data: "{admission_number :'" + admission_number + "',admision_nric_front_screen :'" + nricF + "', admision_nric_back_screen :'" + nricB + "' , admision_policy_file1 :'" + f1 + "', admision_policy_file2 :'" + f2 + "', admision_policy_file3 :'" + f3 + "', admision_policy_file4 :'" + f4 + "', admision_policy_file5 :'" + f5 + "', admision_policy_file6 :'" + f6 + "', admision_policy_file7 :'" + f7 + "', admision_policy_file8 :'" + f8 + "', admision_policy_file9 :'" + f9 + "', admision_policy_file10 :'" + f10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_remarks_admin :'" + admision_remarks_admin + "'}",
                         dataType: "json",
                         success: function (data) {
-                            sendEmail();
-                            //alert("Success....!");
+                           // sendEmail();
+                            alert("Success....!");
                         }
                     });
                 }
@@ -857,8 +845,7 @@ margin: 0;
                     $("#formApplication").hide();
                     $("#gifer").show();
 
-<<<<<<< HEAD
-=======
+
 
 
 
@@ -882,7 +869,7 @@ margin: 0;
                     }
                     });*/
 
->>>>>>> zdo-vidya
+
                     $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",

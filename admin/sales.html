@@ -326,6 +326,8 @@
                             $("#semailstate").empty();
                             if (data.d === "true") {
                                 $("#semailstate").append('<label for="emState" style="color:red;">Email Already Exist..!</label>');
+                                $("#semail").focus();
+                                $("#btnRegister").hide();                               
                             }
                             else {
                                 $("#semailstate").append('<label for="emState" style="color:green;">Valid Email</label>');
@@ -334,6 +336,7 @@
                                 //alert("slno");
                                 var salesPersonId = getUserId + "_ZDO_" + slno;
                                 $("#userID").val(salesPersonId);
+                                $("#btnRegister").show(); 
                             }
                         },
                         error: function (e) {

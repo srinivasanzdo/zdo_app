@@ -72,11 +72,6 @@
 				<div class="col m4 s0">				  
 				</div>
 			 </div>
-             <div class="col m6 s0">				  
-			 </div>
-             <div class="col m6 s12">
-				<a id="forgot_pw" href="#">Forgot password?</a>
-			 </div>
              
 			<br>
 
@@ -323,82 +318,9 @@
                 }
             });
         });
-        $('#user_name').keypress(function (e) {
-            if (e.which == 13) {
-                //alert("hello");
-                var uname = $('#user_name').val();
-                var password = $('#user_password').val();
-                $.ajax({
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    url: "Functions.aspx/user_login",
-                    data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.d === "false") {
-                            alert("Please enter valid login information");
-                        }
-                        else {
-                            var ttt = data.d;
-                            var res = ttt;
-                            var param = res.split("%");
-                            var uid = param[0];
-                            var ustatus = param[1];
-                            localStorage.setItem('uid', uid);
-                            if (ustatus == "S") {
-                                alert("Sales Person Logged in...!");
-                                window.location = "dashboad.html";
-                            } else {
-                                alert("Admin Logged in..!");
-                                window.location = "admin/";
-                            }
-                        }
-                    },
-                    error: function (result) {
-                        //alert("fail.......");
-                    }
-                });
-            }
-        });
+        
 
-
-        $('#user_password').keypress(function (e) {
-            if (e.which == 13) {
-                // alert("hello");
-                var uname = $('#user_name').val();
-                var password = $('#user_password').val();
-                $.ajax({
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    url: "Functions.aspx/user_login",
-                    data: "{du_name :'" + uname + "',du_password :'" + password + "'}",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.d === "false") {
-                            alert("Please enter valid login information");
-                        }
-                        else {
-                            var ttt = data.d;
-                            var res = ttt;
-                            var param = res.split("%");
-                            var uid = param[0];
-                            var ustatus = param[1];
-                            localStorage.setItem('uid', uid);
-                            if (ustatus == "S") {
-                                alert("Sales Person Logged in...!");
-                                window.location = "dashboad.html";
-                            } else {
-                                alert("Admin Logged in..!");
-                                window.location = "admin/";
-                            }
-                        }
-                    },
-                    error: function (result) {
-                        //alert("fail.......");
-                    }
-                });
-            }
-        });	
+        
 	});
   </script>
   
