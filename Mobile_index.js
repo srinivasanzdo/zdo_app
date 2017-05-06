@@ -32,18 +32,13 @@ $('.datepicker_dod').pickadate({
     max: new Date()
 });
 
-
-
-
-
-
 $(function () {
     $('#txt_name').keydown(function (e) {
         if (e.ctrlKey || e.altKey) {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
@@ -54,17 +49,16 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
     });
 
-    var pattern = /^[a-zA-Z!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/
+    var pattern = /^[a-zA-Z!@#$%^&*()_ +\-=\[\]{};':"\\|,.<>\/?]*$/
     $('#txt_knok').keyup(function (e) {
         var v = this.value;
         if (!v.match(pattern)) {
-            //chop off the last char entered
             this.value = this.value.slice(0, -1);
         }
     });
@@ -168,6 +162,11 @@ $(function () {
 
 });
 
+function nospaces(t) {
+    if (t.value.match(/\s/g)) {
+        t.value = t.value.replace(/\s/g, '');
+    }
+}
 
 //file upload works
 $(function () {

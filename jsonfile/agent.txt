@@ -167,5 +167,5 @@
       "agent_photo":"no file upload",
       "agent_status":"Active",
       "status":"S"
-   }
-,{"agent_slno":"14","agent_id":"","agent_name":"mngfbs","agent_gender":"FeMale","agent_email":"sdfgdswg","agent_phone":"dsafc","agent_username":"","agent_password":"dsacf","agent_photo":"no file upload","agent_status":"Active","status":"S"},{"agent_slno":"15","agent_id":"","agent_name":"Vidhya","agent_gender":"FeMale","agent_email":"sdgrg","agent_phone":"31454564","agent_username":"","agent_password":"653454","agent_photo":"no file upload","agent_status":"Active","status":"S"}]
+   },
+   {"agent_slno":"14","agent_id":"","agent_name":"mngfbs","agent_gender":"FeMale","agent_email":"sdfgdswg","agent_phone":"dsafc","agent_username":"","agent_password":"dsacf","agent_photo":"no file upload","agent_status":"Active","status":"S"},{"agent_slno":"15","agent_id":"","agent_name":"Vidhya","agent_gender":"FeMale","agent_email":"sdgrg","agent_phone":"31454564","agent_username":"","agent_password":"653454","agent_photo":"no file upload","agent_status":"Active","status":"S"}]

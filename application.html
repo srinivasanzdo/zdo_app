@@ -8,7 +8,7 @@
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
-
+    
     <style>
         @media screen and (max-width: 580px) and (min-width: 120px) {
             .pAppnum {
@@ -19,7 +19,6 @@
                 font-size: 15px;
             }
         }
-
         h6 {
             font-size: 17px;
             font-family: "arial";
@@ -54,7 +53,7 @@ margin: 0;
                     <li>
                         <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
                         <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
-                            <li><a href="index.html">LOG OUT</a></li>
+                            <li><a id="log_out">LOG OUT</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -62,8 +61,8 @@ margin: 0;
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="dashboad.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
-                    <li><a href="index.html">LOG OUT</a></li>
-                </ul>
+                    <li><a href="../index.html" id="log_outM">LOGOUT</a></li>
+                    </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
         </nav>
@@ -115,7 +114,11 @@ margin: 0;
                                 </p><br>
                                 <p>
                                     <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
+<<<<<<< HEAD
                                     <input id="txt_NRIC" type="text" maxlength="9">
+=======
+                                    <input id="txt_NRIC" type="text" maxlength="9" onkeyup="nospaces(this)" />
+>>>>>>> zdo-vidya
                                 </p>
                                 <p>
                                     <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>
@@ -216,11 +219,15 @@ margin: 0;
                                 </p>
                                 <p>
                                     <h6 for='txt_signSymp' style="text-align: left;">Signs and Symptoms *</h6>
+<<<<<<< HEAD
                                     <input id="txt_signSymp" type="text" >
+=======
+                                    <input id="txt_signSymp" type="text">
+>>>>>>> zdo-vidya
                                 </p>
                                 <p>
                                     <h6 for='txt_DOA' style="text-align: left;">Preffered date of admission*</h6>
-                                    <input class="datepicker_pdate" id="txt_DOA" type="text">
+                                    <input class="datepicker_pdate" id="txt_DOA" type="text" class="validation">
                                 </p>
                                 <p>
                                     <input id="insAgnetName" type="text" class="validate" readonly>
@@ -515,11 +522,11 @@ margin: 0;
 
     <script>
         $(document).ready(function () {
-            
+
 
             $("#gifer").hide();
-            
-            
+
+
 
             var user_id = localStorage.getItem('uid');
 
@@ -581,7 +588,10 @@ margin: 0;
             getSessionName(user_id)
             getToday()
 
-
+            //Mal
+            $("#Mal").focus(function () {
+                console.log("Test");
+            });
 
             $("#btn_compSave").click(function () {
                 var admision_slno = localStorage.getItem('totApp');
@@ -612,9 +622,15 @@ margin: 0;
                 var admision_insurance_agent_id = user_id;
                 var admision_insurance_agent_name = $("#insAgnetName").val();
                 var admision_insurance_agent_contact = $("#insAgnetContact").val();
+<<<<<<< HEAD
                 
                 var admision_remarks_admin = "Nil";
                 var admision_remarks_agent = "Nil";                
+=======
+                var admision_remarks_admin = "Nil";
+                var admision_remarks_agent = "Nil";
+
+>>>>>>> zdo-vidya
                 var admision_status = "Pending";
                 var status = "1";
                 var saveType = "web";
@@ -841,6 +857,32 @@ margin: 0;
                     $("#formApplication").hide();
                     $("#gifer").show();
 
+<<<<<<< HEAD
+=======
+
+
+
+                    /*$.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/getAmendSingle",
+                    data: "{dadmission_number :'" + admission_number + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                    if (data.d === "false") {
+                    alert("False");
+                    }
+                    else {
+                    alert("true..!");
+                    SaveDataApplicationDraft(admision_slno, admission_number, admision_name, admision_gender, admision_nric, admision_dob, admision_application_date, admision_time, admision_occupation, admision_contact, admision_nok_name, admision_nok_contact, admision_pa_plan, admision_exclusion_plan, admision_pre_existing_condition, admision_hign_bp, admision_diabetes, admision_high_cholesterol, admision_pending_claims, admision_cash_pay_mc, admision_cause_complaint, admision_sign_symptoms, admision_preferred_date_admission, admision_insurance_agent_id, admision_insurance_agent_name, admision_insurance_agent_contact, admision_remarks_admin, admision_remarks_agent, admision_status, status, saveType, submissionType,appSave);
+                    }
+                    },
+                    error: function (result) {
+                    // alert("fail.......");
+                    }
+                    });*/
+
+>>>>>>> zdo-vidya
                     $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
@@ -848,16 +890,14 @@ margin: 0;
                         data: "{admision_slno :'" + admision_slno + "', admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_time :'" + admision_time + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_remarks_admin :'" + admision_remarks_admin + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_status:'" + admision_status + "', status:'" + status + "', saveType:'" + saveType + "', submissionType:'" + submissionType + "', appSave:'" + appSave + "'}",
                         dataType: "json",
                         success: function (data) {
-                            if (data.d === "true") 
-                            {
+                            if (data.d === "true") {
                                 $("#gifer").hide();
                                 $("#formApplication").show();
                                 Materialize.toast('Please upload the preffered documents...!', 2000);
                                 localStorage.setItem('admission_number', admission_number);
                                 $('ul.tabs').tabs('select_tab', 'test2');
                             }
-                            else 
-                            {
+                            else {
                                 //alert("Add Error...");
                             }
                         }

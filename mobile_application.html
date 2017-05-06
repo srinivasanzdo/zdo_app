@@ -58,13 +58,13 @@
             <div class="row">
                 <div class="input-field col l4 m12 s12">
                     <p style="text-align:left;"><b>Date :<span id="appDate"></span></p>
-                    <br />
+                </div>
+                    <div class="input-field col l4 m12 s12">
                     <p style="text-align:left;font-weight:bold" class="pAppnum">
                         Application Number :<span id="appNum">ZDO_APP_125</span>
                     </p>
                 </div>
-                <div class="input-field col l8 m12 s12">
-                    <br />
+                <div class="input-field col l4 m12 s12">
                     <p style="text-align:left;font-weight:bold;" class="pAppnum" id="">
                         Application Remark : <span id="App_rmk" style="color:Red;"></span>
                     </p>
@@ -87,7 +87,7 @@
                             <div class="row">
                                 <div>
                                     <h6>Name*</h6>
-                                    <input id="txt_name" type="text" class="validate">
+                                    <input id="txt_name" type="text">
                                 </div>
 
                                 <div id="e_gender">
@@ -101,7 +101,7 @@
                                 </div><br>
                                 <div>
                                     <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
-                                    <input id="txt_NRIC" type="text" class="validate" maxlength="9">
+                                    <input id="txt_NRIC" type="text" maxlength="9" onkeyup="nospaces(this)">
                                 </div>
                                 <div>
                                     <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>
@@ -109,7 +109,7 @@
                                 </div>
                                 <div>
                                     <h6 for='txt_occup' style="text-align: left;">Occupation *</h6>
-                                    <input id="txt_occup" type="text" class="validate">
+                                    <input id="txt_occup" type="text">
                                 </div>
                                 <div>
                                     <h6 for='txt_cont' style="text-align: left;">Contact *</h6>
@@ -117,7 +117,7 @@
                                 </div>
                                 <div>
                                     <h6 for='txt_knok' style="text-align: left;"> Next of Kin (NOK) name and relationship *</h6>
-                                    <input id="txt_knok" type="text" class="validate">
+                                    <input id="txt_knok" type="text">
                                 </div>
                                 <div>
                                     <h6 for='txt_nok' style="text-align: left;">Contact of NOK *</h6>
@@ -201,11 +201,11 @@
                                 </div><br>
                                 <div>
                                     <h6 for='txt_compliant' style="text-align: left;">Cause of complaint *</h6>
-                                    <input id="txt_compliant" type="text" class="validate">
+                                    <input id="txt_compliant" type="text">
                                 </div>
                                 <div>
                                     <h6 for='txt_signSymp' style="text-align: left;">Signs and Symptoms *</h6>
-                                    <input id="txt_signSymp" type="text" class="validate">
+                                    <input id="txt_signSymp" type="text">
                                 </div>
                                 <div>
                                     <h6 for='txt_DOA' style="text-align: left;">Preffered date of admission*</h6>

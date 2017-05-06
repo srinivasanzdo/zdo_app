@@ -8,10 +8,6 @@ selectYears: 150,
 format: 'yyyy-mm-dd'
 });*/
 
- $('input:radio').change(function() {
-       alert('ole');
-    });
-});
 
 $('.datepicker_pdate').pickadate({
     minDate: 0,
@@ -53,15 +49,61 @@ $(function () {
     });
 });
 
+$("#log_out").click(function () {
+    if (confirm('Are you sure to leave')) {
+        alert('Thanks for confirming');
+        var uid = "";
+        localStorage.setItem('uid', uid);
+        window.location = "index.html";
+    } else {
+    alert('You are still logged in');
+    }
+    //alert('Thanks for confirming');
+});
+
+$("#log_outM").click(function () {
+    if (confirm('Are you sure to leave')) {
+        alert('Thanks for confirming');
+        var uid = "";
+        localStorage.setItem('uid', uid);
+        window.location = "index.html";
+    } else {
+        alert('You are still logged in');
+    }
+    //alert('Thanks for confirming');
+});
+
+$("#log_outA").click(function () {
+    if (confirm('Are you sure to leave')) {
+        alert('Thanks for confirming');
+        var uid = "";
+        localStorage.setItem('uid', uid);
+        window.location = "../index.html";
+    } else {
+        alert('You are still logged in');
+    }
+    //alert('Thanks for confirming');
+});
 
 
+$("#log_outAM").click(function () {
+    if (confirm('Are you sure to leave')) {
+        alert('Thanks for confirming');
+        var uid = "";
+        localStorage.setItem('uid', uid);
+        window.location = "../index.html";
+    } else {
+        alert('You are still logged in');
+    }
+    //alert('Thanks for confirming');
+});
 $(function () {
     $('#txt_name').keydown(function (e) {
         if (e.ctrlKey || e.altKey) {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
@@ -72,13 +114,13 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
     });
 
-    var pattern = /^[a-zA-Z!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/
+    var pattern = /^[a-zA-Z!@#$%^&*()_ +\-=\[\]{};':"\\|,.<>\/?]*$/
     $('#txt_knok').keyup(function (e) {
         var v = this.value;
         if (!v.match(pattern)) {
@@ -86,6 +128,8 @@ $(function () {
             this.value = this.value.slice(0, -1);
         }
     });
+   
+    
 });
 
 
@@ -109,7 +153,6 @@ function validate(key) {
         }
     }
 }
-
 
 $("#txt_cont").focusout(function () {
     var textbox = document.getElementById("txt_cont");
@@ -145,6 +188,18 @@ $("#txt_NRIC").focusout(function () {
     }
 });
 
+
+$("#sphone").focusout(function () {
+    var ttbox = document.getElementById("sphone");
+    if (ttbox.value.length <= 8 && ttbox.value.length >= 8) {
+        //alert("success");
+    }
+    else {
+        Materialize.toast('Please enter valid mobile number', 2000);
+        $("#sphone").focus();
+    }
+});
+
 //Function to allow only numbers to textbox
 function validate1(key) {
     var keycode = (key.which) ? key.which : key.keyCode;
@@ -162,6 +217,22 @@ function validate1(key) {
     }
 }
 
+function validate2(key) {
+    var keycode = (key.which) ? key.which : key.keyCode;
+    var phn = document.getElementById('sphone');
+    if (!(keycode == 8 || keycode == 46) && (keycode < 48 || keycode > 57)) {
+        return false;
+    }
+    else {
+        if (phn.value.length < 10) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+    
 $(function () {
 
     $('#txt_NRIC').keyup(function () {
@@ -182,9 +253,8 @@ $(function () {
             $(this).val(no_spl_char);
         }
     });
-
-
 });
+
 
 function validateEmail(semail) {
     var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
@@ -193,6 +263,13 @@ function validateEmail(semail) {
     }
     else {
         return false;
+    }
+}
+
+
+function nospaces(t) {
+    if (t.value.match(/\s/g)) {
+        t.value = t.value.replace(/\s/g, '');
     }
 }
 
