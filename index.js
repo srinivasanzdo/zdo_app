@@ -1,5 +1,4 @@
-﻿//$('.modal-trigger').leanModal();
-$('select').material_select();
+﻿$('select').material_select();
 $(".button-collapse").sideNav();
 
 /*$('.datepicker').pickadate({
@@ -42,7 +41,7 @@ $(function () {
             e.preventDefault();
         } else {
             var key = e.keyCode;
-            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 17) || (key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
         }
@@ -50,13 +49,13 @@ $(function () {
 });
 
 $("#log_out").click(function () {
-    if (confirm('Are you sure to leave')) {
-        alert('Thanks for confirming');
-        var uid = "";
+   if (confirm('Are you sure to leave')) {
+     alert('Thanks for confirming');
+       var uid = "";
         localStorage.setItem('uid', uid);
-        window.location = "index.html";
+       window.location = "index.html";
     } else {
-    alert('You are still logged in');
+        alert('You are still logged in');
     }
     //alert('Thanks for confirming');
 });
@@ -98,25 +97,12 @@ $("#log_outAM").click(function () {
     //alert('Thanks for confirming');
 });
 $(function () {
-    $('#txt_name').keydown(function (e) {
-        if (e.ctrlKey || e.altKey) {
-            e.preventDefault();
-        } else {
-            var key = e.keyCode;
-            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
-                e.preventDefault();
-            }
-        }
-    });
-
-    $('#txt_occup').keydown(function (e) {
-        if (e.ctrlKey || e.altKey) {
-            e.preventDefault();
-        } else {
-            var key = e.keyCode;
-            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
-                e.preventDefault();
-            }
+    var pattern = /^[a-zA-Z ]*$/
+    $('#txt_name').keyup(function (e) {
+        var t = this.value;
+        if (!t.match(pattern)) {
+            //chop off the last char entered
+            this.value = this.value.slice(0, -1);
         }
     });
 
@@ -128,11 +114,16 @@ $(function () {
             this.value = this.value.slice(0, -1);
         }
     });
-   
-    
 });
 
-
+var pattern = /^[a-zA-Z ]*$/
+$('#txt_occup').keyup(function (e) {
+    var t = this.value;
+    if (!t.match(pattern)) {
+        //chop off the last char entered
+        this.value = this.value.slice(0, -1);
+    }
+});
 
 //Function to allow only numbers to textbox
 function validate(key) {

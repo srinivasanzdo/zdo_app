@@ -33,25 +33,12 @@ $('.datepicker_dod').pickadate({
 });
 
 $(function () {
-    $('#txt_name').keydown(function (e) {
-        if (e.ctrlKey || e.altKey) {
-            e.preventDefault();
-        } else {
-            var key = e.keyCode;
-            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
-                e.preventDefault();
-            }
-        }
-    });
-
-    $('#txt_occup').keydown(function (e) {
-        if (e.ctrlKey || e.altKey) {
-            e.preventDefault();
-        } else {
-            var key = e.keyCode;
-            if (!((key == 9) || (key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
-                e.preventDefault();
-            }
+    var pattern = /^[a-zA-Z ]*$/
+    $('#txt_name').keyup(function (e) {
+        var t = this.value;
+        if (!t.match(pattern)) {
+            //chop off the last char entered
+            this.value = this.value.slice(0, -1);
         }
     });
 
@@ -59,9 +46,19 @@ $(function () {
     $('#txt_knok').keyup(function (e) {
         var v = this.value;
         if (!v.match(pattern)) {
+            //chop off the last char entered
             this.value = this.value.slice(0, -1);
         }
     });
+});
+
+var pattern = /^[a-zA-Z ]*$/
+$('#txt_occup').keyup(function (e) {
+    var t = this.value;
+    if (!t.match(pattern)) {
+        //chop off the last char entered
+        this.value = this.value.slice(0, -1);
+    }
 });
 
 
